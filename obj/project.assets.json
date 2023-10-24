@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matt\\Documents\\UTS Spring 2023\\App Development with .Net\\Assessment Task 2\\Wage Wizard\\Wage Wizard\\Wage Wizard.csproj",
+      "projectUniqueName": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
       "projectName": "Wage Wizard",
-      "projectPath": "C:\\Users\\Matt\\Documents\\UTS Spring 2023\\App Development with .Net\\Assessment Task 2\\Wage Wizard\\Wage Wizard\\Wage Wizard.csproj",
+      "projectPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
       "packagesPath": "C:\\Users\\Matt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matt\\Documents\\UTS Spring 2023\\App Development with .Net\\Assessment Task 2\\Wage Wizard\\Wage Wizard\\obj\\",
+      "outputPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "G:\\Visual Studio Resources\\NuGetPackages"
