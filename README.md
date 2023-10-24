@@ -10,9 +10,10 @@
 
  ## Instructions for running.
  1. Open the file "Wage Wizard.sln". Or select from Visual Studio recent projects list.
- 2. In the menu bar, under the menu option "Git", select "Sync" and wait for the operation to complete.
- 3. Once the git sync completed, Rebuild the project by selecting under the menu option "Build" selecting "Rebuild Solution".
- 4. Wage Wizard should now be able to be executed.
+ 2. Under the "Solution Explorer" and double click the "Wage Wizard.sln" to initalise the WinForms editors.
+ 3. In the menu bar, under the menu option "Git", select "Sync" and wait for the operation to complete.
+ 4. Once the git sync completed, Rebuild the project by selecting under the menu option "Build" selecting "Rebuild Solution".
+ 5. Wage Wizard should now be able to be executed.
 
  ## Instructions for comitting.
  1. In the menu bar, under the menu option "Git", select "Commit or Stash".
