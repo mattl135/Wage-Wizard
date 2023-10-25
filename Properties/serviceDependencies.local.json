@@ -1,3 +1,11 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/australiaeast/connectors/WageWizard_47E75E8902",
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/wage-wizard/databases/Wage-Wizard-DB",
+      "type": "mssql.azure",
+      "connectionId": "Wage-Wizard"
+    }
+  }
 }
