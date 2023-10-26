@@ -9,9 +9,14 @@ using Wage_Wizard.Models;
 
 namespace Wage_Wizard.Data
 {
+    
     //Table-Per-Type (TPT) approach selected
     public class WageWizardContext : DbContext
     {
+        //!!!! Caution !!!!//
+        //Flag for using either the localDB or Live Azure Cloud MySQL Database.
+        public const bool useProductionDB = true; 
+
         public DbSet<Person> Persons { get; set; } = null!;
         public DbSet<GlobalSettings> GlobalSettings { get; set; } = null!;
 
@@ -22,7 +27,14 @@ namespace Wage_Wizard.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WageWizzardLocal");
+            if (useProductionDB)
+            {
+                optionsBuilder.UseSqlServer(@"Data Source=tcp:wage-wizard.database.windows.net,1433;Initial Catalog=Wage-Wizard-DB;User Id=SuperAdmin@wage-wizard;Password=7As3GfsZ97hU");
+            }
+            else
+            {
+                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WageWizzardLocal");
+            }
         }
 
         //Method TPT
