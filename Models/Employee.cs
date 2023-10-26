@@ -14,18 +14,19 @@ namespace Wage_Wizard.Models
         public int bsb {  get; set; }
         public string accountName { get; set; }
         public int accountNumber { get; set; }
-        public int hourlyRate {  get; set; }
+        
+        [Column(TypeName = "decimal(18, 2)")]
+        public double hourlyRate {  get; set; }
         public int taxFileNumber { get; set;}
         public string paymentCurrencyCode {  get; set; }
 
-        protected Employee(
+        public Employee(
             int bsb,
             string accountName,
             int accountNumber,
-            int hourlyRate,
+            double hourlyRate,
             int taxFileNumber,
             string paymentCurrencyCode,
-            int id,
             string password,
             Title title,
             string fName,
@@ -40,7 +41,6 @@ namespace Wage_Wizard.Models
             string state,
             string country
             ) : base(
-                id,
                 password,
                 title,
                 fName,
@@ -56,7 +56,12 @@ namespace Wage_Wizard.Models
                 country
             )
         {
-
+            this.bsb = bsb;
+            this.accountName = accountName;
+            this.accountNumber = accountNumber;
+            this.hourlyRate = hourlyRate;
+            this.taxFileNumber = taxFileNumber;
+            this.paymentCurrencyCode = paymentCurrencyCode;
         }
     }
 }

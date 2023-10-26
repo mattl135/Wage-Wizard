@@ -11,8 +11,7 @@ namespace Wage_Wizard.Models
     [Table("Administrators")]
     public class Administrator : Person
     {
-        protected Administrator(
-            int id,
+        public Administrator(
             string password,
             Title title,
             string fName,
@@ -27,7 +26,6 @@ namespace Wage_Wizard.Models
             string state,
             string country
             ) : base(
-                id,
                 password,
                 title,
                 fName,

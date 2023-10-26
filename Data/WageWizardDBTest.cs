@@ -18,27 +18,27 @@ namespace Wage_Wizard.Data
         {
             Console.WriteLine("-Begin Create and Save Test-");
             CreateAndSaveTest(context);
-            Console.WriteLine("-End Create and Save Test-");
+            Console.WriteLine("-End Create and Save Test-\n");
 
             Console.WriteLine("-Begin Read From DB Test-");
             ReadFromDBTest(context);
-            Console.WriteLine("-End Read From DB Test-");
+            Console.WriteLine("-End Read From DB Test-\n");
 
             Console.WriteLine("-Begin Edit DB Test-");
             EditDBTest(context);
-            Console.WriteLine("-End Edit DB Test-");
+            Console.WriteLine("-End Edit DB Test-\n");
 
             Console.WriteLine("-Begin Verify Edit DB Test-");
             VerifyIncreasedGlobalSettings(context);
-            Console.WriteLine("-End Verify Edit DB Test-");
+            Console.WriteLine("-End Verify Edit DB Test-\n");
             
             Console.WriteLine("-Begin Delete DB Test-");
             DeleteGlobalSettings(context);
-            Console.WriteLine("-End Delete DB Test-");
+            Console.WriteLine("-End Delete DB Test-\n");
 
             Console.WriteLine("-Begin Verify Delete DB Test-");
             VerifyGlobalSettingsDeletion(context);
-            Console.WriteLine("-End Verify Delete DB Test-");
+            Console.WriteLine("-End Verify Delete DB Test-\n");
         }
 
         public static void CreateAndSaveTest(WageWizardContext context)

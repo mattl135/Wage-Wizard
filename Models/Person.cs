@@ -29,7 +29,6 @@ namespace Wage_Wizard.Models
 
 
         protected Person(
-        int id,
         string password,
         Title title,
         string fName,
@@ -45,7 +44,6 @@ namespace Wage_Wizard.Models
         string country
         )
         {
-            this.id = id;
             this.password = password;
             this.title = title;
             this.fName = fName;

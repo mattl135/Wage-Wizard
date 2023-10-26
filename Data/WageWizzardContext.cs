@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using Wage_Wizard.Models;
@@ -31,12 +32,19 @@ namespace Wage_Wizard.Data
                 .ToTable("Persons");
 
             modelBuilder.Entity<Administrator>()
-                .ToTable("Administrators");
+            .ToTable("Administrators");
 
             modelBuilder.Entity<Employee>()
                 .ToTable("Employees");
 
             modelBuilder.Entity<GlobalSettings>();
+
+            // Execute raw SQL to set identity seed and increment for Administrators
+            modelBuilder.Entity<Administrator>()
+                .HasAnnotation("SqlServer:ExecuteSql", "DBCC CHECKIDENT ('Administrators', RESEED, 900000)");
+            // Execute raw SQL to set identity seed and increment for Employees
+            modelBuilder.Entity<Employee>()
+                .HasAnnotation("SqlServer:ExecuteSql", "DBCC CHECKIDENT ('Employees', RESEED, 100000)");
         }
 
         //Method TPH
@@ -48,5 +56,6 @@ namespace Wage_Wizard.Data
                 .HasValue<Employee>("Employee");
         }*/
 
+        //
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wage_Wizard.Data;
 
@@ -10,9 +11,11 @@ using Wage_Wizard.Data;
 namespace Wage_Wizard.Migrations
 {
     [DbContext(typeof(WageWizardContext))]
-    partial class ApplicationDBContextbModelSnapshot : ModelSnapshot
+    [Migration("20231026134954_setBusinessRulesForIDs")]
+    partial class setBusinessRulesForIDs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,8 +134,8 @@ namespace Wage_Wizard.Migrations
                     b.Property<int>("bsb")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("hourlyRate")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<int>("hourlyRate")
+                        .HasColumnType("int");
 
                     b.Property<string>("paymentCurrencyCode")
                         .IsRequired()

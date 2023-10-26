@@ -33,8 +33,19 @@ namespace Wage_Wizard
             {
                 WageWizardDBTest.dbTestCRUD(context);
             } catch (Exception e) {
+                Console.WriteLine(e.Message);
                 Console.WriteLine(e.ToString());
                 MessageBox.Show(e.Message, "Database CRUD Test Failed");
+            }
+
+            try
+            {
+                WageWizardDBPopulate.PopulateDB(context);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.ToString());
+                MessageBox.Show(e.Message, "An error occured when attempting to populate the database");
             }
 
             // To customize application configuration such as set high DPI settings or default font,
