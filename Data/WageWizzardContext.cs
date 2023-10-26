@@ -36,8 +36,7 @@ namespace Wage_Wizard.Data
             modelBuilder.Entity<Employee>()
                 .ToTable("Employees");
 
-            modelBuilder.Entity<GlobalSettings>()
-                .HasNoKey();
+            modelBuilder.Entity<GlobalSettings>();
         }
 
         //Method TPH

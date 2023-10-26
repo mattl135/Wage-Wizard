@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wage_Wizard.Data;
 
@@ -10,9 +11,11 @@ using Wage_Wizard.Data;
 namespace Wage_Wizard.Migrations
 {
     [DbContext(typeof(WageWizardContext))]
-    partial class ApplicationDBContextbModelSnapshot : ModelSnapshot
+    [Migration("20231026111615_AddPrimaryKeyToGlobalSettings")]
+    partial class AddPrimaryKeyToGlobalSettings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,10 +27,7 @@ namespace Wage_Wizard.Migrations
             modelBuilder.Entity("Wage_Wizard.Models.GlobalSettings", b =>
                 {
                     b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<double>("globalLeaveRate")
                         .HasColumnType("float");
@@ -37,8 +37,6 @@ namespace Wage_Wizard.Migrations
 
                     b.Property<double>("globalTaxRate")
                         .HasColumnType("float");
-
-                    b.HasKey("ID");
 
                     b.ToTable("GlobalSettings");
                 });

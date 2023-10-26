@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wage_Wizard.Data;
 
@@ -10,9 +11,11 @@ using Wage_Wizard.Data;
 namespace Wage_Wizard.Migrations
 {
     [DbContext(typeof(WageWizardContext))]
-    partial class ApplicationDBContextbModelSnapshot : ModelSnapshot
+    [Migration("20231026113858_RemoveKeyLessFromGlobalSettingsDB")]
+    partial class RemoveKeyLessFromGlobalSettingsDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

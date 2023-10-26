@@ -9,9 +9,14 @@ namespace Wage_Wizard.Models
 {
     public class GlobalSettings
     {
-        //public int id { get; set; } = 1; //Always 1 for DB Initialisation
+        public int ID { get; set; }  // Primary key 
         public double globalTaxRate {  get; set; }
         public double globalSuperAnnuationRate { get; set; }
         public double globalLeaveRate { get; set; }
+
+        // Parameterless constructor for Entity Framework
+        public GlobalSettings()
+        {
+        }
     }
 }
