@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Wage_Wizard.Models
 {
-    class Employee : Person
+    //Comment me out when using TPH method.
+    [Table("Employees")]
+    public class Employee : Person
     {
-        private int bsb {  get; set; }
-        private string accountName { get; set; }
-        private int accountNumber { get; set; }
-        private int hourlyRate {  get; set; }
-        private int taxFileNumber { get; set;}
-        private string paymentCurrencyCode {  get; set; }
+        public int bsb {  get; set; }
+        public string accountName { get; set; }
+        public int accountNumber { get; set; }
+        public int hourlyRate {  get; set; }
+        public int taxFileNumber { get; set;}
+        public string paymentCurrencyCode {  get; set; }
 
         protected Employee(
             int bsb,

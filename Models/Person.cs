@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,8 @@ using static Wage_Wizard.Models.Person;
 
 namespace Wage_Wizard.Models
 {
-    public class Person
+    [Table("Persons")]
+    public abstract class Person
     {
         public int id { get; protected set; }
         public string password { get; protected set; }

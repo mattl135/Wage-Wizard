@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,9 @@ namespace Wage_Wizard.Models
 {
     public class GlobalSettings
     {
-        public static double globalTaxRate {  get; set; }
-        public static double globalSuperAnnuationRate { get; set; }
-        public static double globalLeaveRate { get; set; }
+        //public int id { get; set; } = 1; //Always 1 for DB Initialisation
+        public double globalTaxRate {  get; set; }
+        public double globalSuperAnnuationRate { get; set; }
+        public double globalLeaveRate { get; set; }
     }
 }
