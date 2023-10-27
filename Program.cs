@@ -1,7 +1,6 @@
 using System.Runtime.InteropServices;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
-using Wage_Wizard.Views;
 
 namespace Wage_Wizard
 {
