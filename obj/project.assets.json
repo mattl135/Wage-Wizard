@@ -3503,7 +3503,7 @@
   },
   "packageFolders": {
     "C:\\Users\\Matt\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "G:\\Visual Studio Resources\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3515,7 +3515,7 @@
       "outputPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "G:\\Visual Studio Resources\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\Matt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3527,7 +3527,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

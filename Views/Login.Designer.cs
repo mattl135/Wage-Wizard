@@ -32,41 +32,44 @@
             passwordTextField = new TextBox();
             loginBtn = new Button();
             label1 = new Label();
+            loginDescription = new Label();
             SuspendLayout();
             // 
             // userIDTextField
             // 
             userIDTextField.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            userIDTextField.Location = new Point(139, 169);
+            userIDTextField.Location = new Point(139, 222);
             userIDTextField.MaxLength = 8;
             userIDTextField.Name = "userIDTextField";
-            userIDTextField.PlaceholderText = "Username";
+            userIDTextField.PlaceholderText = "User ID";
             userIDTextField.Size = new Size(183, 27);
             userIDTextField.TabIndex = 0;
-            userIDTextField.TextChanged += textBox1_TextChanged;
+            userIDTextField.KeyDown += LoginForm_KeyDown;
             // 
             // passwordTextField
             // 
             passwordTextField.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextField.Location = new Point(139, 217);
-            passwordTextField.MaxLength = 8;
+            passwordTextField.Location = new Point(139, 270);
+            passwordTextField.MaxLength = 32;
             passwordTextField.Name = "passwordTextField";
             passwordTextField.PasswordChar = '*';
             passwordTextField.PlaceholderText = "Password";
             passwordTextField.Size = new Size(183, 27);
             passwordTextField.TabIndex = 1;
             passwordTextField.UseSystemPasswordChar = true;
+            passwordTextField.KeyDown += LoginForm_KeyDown;
             // 
             // loginBtn
             // 
             loginBtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            loginBtn.Location = new Point(169, 273);
+            loginBtn.Location = new Point(169, 326);
             loginBtn.Name = "loginBtn";
             loginBtn.Size = new Size(111, 46);
             loginBtn.TabIndex = 2;
             loginBtn.Text = "Login";
             loginBtn.UseVisualStyleBackColor = true;
             loginBtn.Click += loginBtn_Click;
+            loginBtn.KeyDown += LoginForm_KeyDown;
             // 
             // label1
             // 
@@ -78,11 +81,23 @@
             label1.TabIndex = 3;
             label1.Text = "Wage Wizard";
             // 
+            // loginDescription
+            // 
+            loginDescription.AutoSize = true;
+            loginDescription.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            loginDescription.Location = new Point(65, 171);
+            loginDescription.Name = "loginDescription";
+            loginDescription.Size = new Size(350, 20);
+            loginDescription.TabIndex = 4;
+            loginDescription.Text = "Please enter your User ID and Password to continue.";
+            loginDescription.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(473, 450);
+            Controls.Add(loginDescription);
             Controls.Add(label1);
             Controls.Add(loginBtn);
             Controls.Add(passwordTextField);
@@ -90,7 +105,8 @@
             Name = "Login";
             Padding = new Padding(25);
             Text = "Wage Wizard - Login";
-            Load += Login_Load;
+            Click += LoginForm_Click;
+            KeyDown += LoginForm_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,5 +117,6 @@
         private TextBox passwordTextField;
         private Button loginBtn;
         private Label label1;
+        private Label loginDescription;
     }
 }

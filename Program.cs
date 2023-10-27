@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
+using Wage_Wizard.Views;
 
 namespace Wage_Wizard
 {
@@ -35,7 +36,9 @@ namespace Wage_Wizard
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.ToString());
-                MessageBox.Show(e.Message, "Database CRUD Test Failed");
+                MessageBox.Show(e.Message, "Database CRUD Test Failed",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop);
             }
 
             try
@@ -45,7 +48,9 @@ namespace Wage_Wizard
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.ToString());
-                MessageBox.Show(e.Message, "An error occured when attempting to populate the database");
+                MessageBox.Show(e.Message, "An error occured when attempting to populate the database",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop);
             }
 
             // To customize application configuration such as set high DPI settings or default font,
