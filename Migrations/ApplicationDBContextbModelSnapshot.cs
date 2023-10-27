@@ -40,7 +40,7 @@ namespace Wage_Wizard.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("GlobalSettings");
+                    b.ToTable("GlobalSettings", (string)null);
                 });
 
             modelBuilder.Entity("Wage_Wizard.Models.Person", b =>

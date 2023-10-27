@@ -59,7 +59,7 @@ namespace Wage_Wizard
                 }
                 else
                 {
-                    using WageWizardContext context = new WageWizardContext();
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
                     var persons = context.Persons;
                     if (context.Persons.Any(person => person.id == userIDInput))
                     {
