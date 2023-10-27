@@ -56,6 +56,7 @@ namespace Wage_Wizard
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
+            //Application.Run(new Views.DisplayDBTable());
         }
     }
 }

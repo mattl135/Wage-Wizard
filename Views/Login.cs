@@ -2,6 +2,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Collections.Immutable;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
+using Wage_Wizard.Views;
 
 namespace Wage_Wizard
 {
@@ -91,6 +92,11 @@ namespace Wage_Wizard
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Stop
                             );
+                    } else
+                    {
+                        this.Hide();
+                        DisplayDBTable displayDBTable = new DisplayDBTable();
+                        displayDBTable.ShowDialog();
                     }
                 }
             }
