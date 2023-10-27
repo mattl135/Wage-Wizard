@@ -9,5 +9,6 @@ namespace Wage_Wizard.Utilities
     public class Utilities
     {
         //Really usefull stuff in here!
+        //test
     }
 }
