@@ -31,8 +31,8 @@ namespace Wage_Wizard.Utilities
             Console.WriteLine($"The id {peopleIDs.Last()} should return True and returned {Utilities.isValidID(peopleIDs.Last()).ToString()}");
             
             //isValidCredentials
-            Console.WriteLine($"The credentials id {peopleIDs.First()} and password abc123 should return True and returned {Utilities.isValidCredentials(peopleIDs.First(), "password1").ToString()}");
-            Console.WriteLine($"The credentials id {peopleIDs.First()} and password password1 should return False and returned {Utilities.isValidCredentials(peopleIDs.First(), "abc123").ToString()}");
+            Console.WriteLine($"The credentials id {peopleIDs.First()} and password password1 should return True and returned {Utilities.isValidCredentials(peopleIDs.First(), "password1").ToString()}");
+            Console.WriteLine($"The credentials id {peopleIDs.First()} and password abc123 should return False and returned {Utilities.isValidCredentials(peopleIDs.First(), "abc123").ToString()}");
 
             //######## Begin Testing Utilities - Administrators ###############
             //getAdministratorCount

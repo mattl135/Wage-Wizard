@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Wage_Wizard.Models.Person;
 using Wage_Wizard.Models;
+using Wage_Wizard.Utilities;
 
 namespace Wage_Wizard.Data
 {
@@ -13,13 +14,26 @@ namespace Wage_Wizard.Data
     {
         public static void PopulateDB(WageWizardContext context)
         {
-            Console.WriteLine("-Begin Verify Administrators Count / Populate Administrators -");
+            Console.WriteLine("- Begin Verify Administrators Count / Populate Administrators -");
             PopulateAdministrators(context);
-            Console.WriteLine("-End Verify Administrators Count / Populate Administrators -\n");
+            Console.WriteLine("- End Verify Administrators Count / Populate Administrators -\n");
 
-            Console.WriteLine("-Begin Verify Employee Count / Populate Employee -");
+            Console.WriteLine("- Begin Verify Employee Count / Populate Employee -");
             PopulateEmployees(context);
-            Console.WriteLine("-End Verify Employee Count / Populate Employee -\n");
+            Console.WriteLine("- End Verify Employee Count / Populate Employee -\n");
+
+            Console.WriteLine("- Begin Verify Payment Requests Count / Populate Payment Requests -");
+            PopulatePaymentRequests(context);
+            Console.WriteLine("- Begin Verify Payment Requests Count / Populate Payment Requests -\n");
+
+            Console.WriteLine("- Begin Verify Leave Requests Count / Populate Leave Requests -");
+            PopulateLeaveRequests(context);
+            Console.WriteLine("- End Verify Leave Requests Count / Populate Leave Requests -\n");
+
+            Console.WriteLine("- Begin Verify Person Change Requests Count / Populate Person Change Requests -");
+            PopulatePersonChangeRequests(context);
+            Console.WriteLine("- End Verify Person Change Requests Count / Populate Person Change Requests -\n");
+
         }
 
         public static void PopulateAdministrators(WageWizardContext context) 
@@ -71,44 +85,180 @@ namespace Wage_Wizard.Data
             }
         }
 
-/*        public static void PopulatePaymentRequests(WageWizardContext context)
+        public static void PopulatePaymentRequests(WageWizardContext context)
         {
             var paymentRequests = context.PaymentRequests;
             var Employees = context.Employees;
             if (paymentRequests.Count() == 0)
             {
-                PaymentRequest payRequest1;
-            } else
-            {
-                Console.WriteLine($"{paymentRequests.Count()} Employees already exist in the table. No need to populate.");
-            }
-        }*/
+                Console.WriteLine("No Payment Requests exist in the table. Attempting to Populate");
 
-/*        public static void PopulateLeaveRequests(WageWizardContext context)
-        {
-            var paymentRequests = context.LeaveRequests;
-            if (paymentRequests.Count() == 0)
-            {
-
+                List<int> employees = Utilities.Utilities.getEmployeeIDs();
+                PaymentRequest paymentRequest1 = new PaymentRequest(employees[0], 15.53);
+                PaymentRequest paymentRequest2 = new PaymentRequest(employees[0], 53.23);
+                PaymentRequest paymentRequest3 = new PaymentRequest(employees[1], 83.63);
+                PaymentRequest paymentRequest4 = new PaymentRequest(employees[2], 83.63);
+                PaymentRequest paymentRequest5 = new PaymentRequest(employees[3], 25.20);
+                PaymentRequest paymentRequest6 = new PaymentRequest(employees[3], 41.00);
+                PaymentRequest paymentRequest7 = new PaymentRequest(employees[4], 32.50);
+                PaymentRequest paymentRequest8 = new PaymentRequest(employees[4], 75.25);
+                PaymentRequest paymentRequest9 = new PaymentRequest(employees[5], 18.00);
+                PaymentRequest paymentRequest10 = new PaymentRequest(employees[5], 30.75);
+                PaymentRequest paymentRequest11 = new PaymentRequest(employees[6], 44.23);
+                PaymentRequest paymentRequest12 = new PaymentRequest(employees[6], 53.12);
+                PaymentRequest paymentRequest13 = new PaymentRequest(employees[7], 21.98);
+                PaymentRequest paymentRequest14 = new PaymentRequest(employees[7], 64.34);
+                PaymentRequest paymentRequest15 = new PaymentRequest(employees[8], 39.12);
+                PaymentRequest paymentRequest16 = new PaymentRequest(employees[8], 56.90);
+                PaymentRequest paymentRequest17 = new PaymentRequest(employees[9], 72.25);
+                PaymentRequest paymentRequest18 = new PaymentRequest(employees[9], 89.50);
+                PaymentRequest paymentRequest19 = new PaymentRequest(employees[10], 20.75);
+                PaymentRequest paymentRequest20 = new PaymentRequest(employees[10], 33.40);
+                PaymentRequest paymentRequest21 = new PaymentRequest(employees[11], 27.90);
+                PaymentRequest paymentRequest22 = new PaymentRequest(employees[11], 49.30);
+                PaymentRequest paymentRequest23 = new PaymentRequest(employees[12], 60.25);
+                PaymentRequest paymentRequest24 = new PaymentRequest(employees[12], 90.00);
+                PaymentRequest paymentRequest25 = new PaymentRequest(employees[13], 42.55);
+                PaymentRequest paymentRequest26 = new PaymentRequest(employees[13], 55.70);
+                PaymentRequest paymentRequest27 = new PaymentRequest(employees[14], 38.90);
+                PaymentRequest paymentRequest28 = new PaymentRequest(employees[14], 47.65);
+                PaymentRequest paymentRequest29 = new PaymentRequest(employees[14], 62.20);
+                PaymentRequest paymentRequest30 = new PaymentRequest(employees[14], 74.30);
+                PaymentRequest paymentRequest31 = new PaymentRequest(employees[14], 20.15);
+                PaymentRequest paymentRequest32 = new PaymentRequest(employees[14], 29.40);
+                PaymentRequest paymentRequest33 = new PaymentRequest(employees[14], 15.65);
+                PaymentRequest paymentRequest34 = new PaymentRequest(employees[14], 33.80);
+                paymentRequests.AddRange(paymentRequest1, paymentRequest2, paymentRequest3, paymentRequest4,
+                                        paymentRequest5, paymentRequest6, paymentRequest7, paymentRequest8,
+                                        paymentRequest9, paymentRequest10, paymentRequest11, paymentRequest12,
+                                        paymentRequest13, paymentRequest14, paymentRequest15, paymentRequest16,
+                                        paymentRequest17, paymentRequest18, paymentRequest19, paymentRequest20,
+                                        paymentRequest21, paymentRequest22, paymentRequest23, paymentRequest24,
+                                        paymentRequest25, paymentRequest26, paymentRequest27, paymentRequest28,
+                                        paymentRequest29, paymentRequest30, paymentRequest31, paymentRequest32,
+                                        paymentRequest33, paymentRequest34);
+                context.SaveChanges();
             }
             else
             {
-                Console.WriteLine($"{paymentRequests.Count()} Employees already exist in the table. No need to populate.");
+                Console.WriteLine($"{paymentRequests.Count()} payment requests already exist in the table. No need to populate.");
+            }
+        }
+
+        public static void PopulateLeaveRequests(WageWizardContext context)
+        {
+            var leaveRequests = context.LeaveRequests;
+            if (leaveRequests.Count() == 0)
+            {
+                Console.WriteLine("No Leave Requests exist in the table. Attempting to Populate");
+
+                List<int> employees = Utilities.Utilities.getEmployeeIDs();
+                LeaveRequest leaveRequest1 = new LeaveRequest(employees[0], 15.53, "sick");
+                LeaveRequest leaveRequest2 = new LeaveRequest(employees[1], 5.53, "Dr Appointment");
+                LeaveRequest leaveRequest3 = new LeaveRequest(employees[1], 15.53, "Surgery");
+                LeaveRequest leaveRequest4 = new LeaveRequest(employees[2], 8.00, "Vacation");
+                LeaveRequest leaveRequest5 = new LeaveRequest(employees[2], 4.50, "Personal");
+                LeaveRequest leaveRequest6 = new LeaveRequest(employees[3], 10.25, "Sick");
+                LeaveRequest leaveRequest7 = new LeaveRequest(employees[3], 6.75, "Family Emergency");
+                LeaveRequest leaveRequest8 = new LeaveRequest(employees[4], 12.00, "Maternity");
+                LeaveRequest leaveRequest9 = new LeaveRequest(employees[4], 8.50, "Paternity");
+                LeaveRequest leaveRequest10 = new LeaveRequest(employees[5], 7.25, "Sick");
+                LeaveRequest leaveRequest11 = new LeaveRequest(employees[5], 3.00, "Vacation");
+                LeaveRequest leaveRequest12 = new LeaveRequest(employees[6], 9.75, "Personal");
+                LeaveRequest leaveRequest13 = new LeaveRequest(employees[6], 4.25, "Sick");
+                LeaveRequest leaveRequest14 = new LeaveRequest(employees[7], 11.00, "Dr Appointment");
+                LeaveRequest leaveRequest15 = new LeaveRequest(employees[7], 5.50, "Family Emergency");
+                LeaveRequest leaveRequest16 = new LeaveRequest(employees[8], 14.25, "Vacation");
+                LeaveRequest leaveRequest17 = new LeaveRequest(employees[8], 7.00, "Sick");
+                LeaveRequest leaveRequest18 = new LeaveRequest(employees[9], 10.50, "Maternity");
+                LeaveRequest leaveRequest19 = new LeaveRequest(employees[9], 6.75, "Paternity");
+                LeaveRequest leaveRequest20 = new LeaveRequest(employees[10], 12.25, "Dr Appointment");
+                LeaveRequest leaveRequest21 = new LeaveRequest(employees[10], 4.00, "Surgery");
+                LeaveRequest leaveRequest22 = new LeaveRequest(employees[11], 8.25, "Vacation");
+                LeaveRequest leaveRequest23 = new LeaveRequest(employees[11], 5.75, "Personal");
+                LeaveRequest leaveRequest24 = new LeaveRequest(employees[12], 9.00, "Family Emergency");
+                LeaveRequest leaveRequest25 = new LeaveRequest(employees[12], 4.25, "Sick");
+                LeaveRequest leaveRequest26 = new LeaveRequest(employees[13], 7.50, "Vacation");
+                LeaveRequest leaveRequest27 = new LeaveRequest(employees[13], 3.75, "Personal");
+                LeaveRequest leaveRequest28 = new LeaveRequest(employees[14], 11.25, "Dr Appointment");
+                LeaveRequest leaveRequest29 = new LeaveRequest(employees[14], 6.00, "Surgery");
+                LeaveRequest leaveRequest30 = new LeaveRequest(employees[14], 9.25, "Family Emergency");
+                LeaveRequest leaveRequest31 = new LeaveRequest(employees[14], 5.50, "Sick");
+                LeaveRequest leaveRequest32 = new LeaveRequest(employees[14], 10.75, "Vacation");
+                LeaveRequest leaveRequest33 = new LeaveRequest(employees[14], 4.25, "Personal");
+                leaveRequests.AddRange(leaveRequest1, leaveRequest2, leaveRequest3, leaveRequest4,
+                                        leaveRequest5, leaveRequest6, leaveRequest7, leaveRequest8,
+                                        leaveRequest9, leaveRequest10, leaveRequest11, leaveRequest12,
+                                        leaveRequest13, leaveRequest14, leaveRequest15, leaveRequest16,
+                                        leaveRequest17, leaveRequest18, leaveRequest19, leaveRequest20,
+                                        leaveRequest21, leaveRequest22, leaveRequest23, leaveRequest24,
+                                        leaveRequest25, leaveRequest26, leaveRequest27, leaveRequest28,
+                                        leaveRequest29, leaveRequest30, leaveRequest31, leaveRequest32,
+                                        leaveRequest33);
+                context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine($"{leaveRequests.Count()} Leave requests already exist in the table. No need to populate.");
             }
         }
 
         public static void PopulatePersonChangeRequests(WageWizardContext context)
         {
-            var paymentRequests = context.PaymentRequests;
-            if (paymentRequests.Count() == 0)
+            var personChangeRequests = context.PersonChangeRequests;
+            if (personChangeRequests.Count() == 0)
             {
+                Console.WriteLine("No Person Change Requests exist in the table. Attempting to Populate");
 
+                List<int> employees = Utilities.Utilities.getEmployeeIDs();
+                Employee employee1 = Utilities.Utilities.getEmployeeWithID(employees[0]);
+                PersonChangeRequest personChangeRequest1 = new PersonChangeRequest(employees[0],
+                    "password101",
+                    (PersonChangeRequest.Title)employee1.title,
+                    employee1.fName,
+                    employee1.lName,
+                    employee1.emailAddress,
+                    employee1.dob,
+                    0412334353,
+                    employee1.streetNumber,
+                    employee1.streetName,
+                    employee1.suburb,
+                    employee1.city,
+                    employee1.state,
+                    employee1.country,
+                    employee1.bsb,
+                    employee1.accountName,
+                    employee1.accountNumber,
+                    employee1.taxFileNumber,
+                    "USD");
+                Employee employee2 = Utilities.Utilities.getEmployeeWithID(employees[4]);
+                PersonChangeRequest personChangeRequest2 = new PersonChangeRequest(employees[4],
+                    "iLoveCatsAndDogs",
+                    (PersonChangeRequest.Title)employee1.title,
+                    employee2.fName,
+                    employee2.lName,
+                    "ILoveCatsAndDogs@gmail.com",
+                    employee2.dob,
+                    employee2.mobileNumber,
+                    15,
+                    "MyNewStreet",
+                    "MyNewSuburb",
+                    "CatAndDogTown",
+                    "NSW",
+                    "Australia",
+                    employee2.bsb,
+                    employee2.accountName,
+                    employee2.accountNumber,
+                    employee2.taxFileNumber,
+                    "USD");
+                personChangeRequests.AddRange(personChangeRequest1, personChangeRequest2);
+                context.SaveChanges();
             }
             else
             {
-                Console.WriteLine($"{paymentRequests.Count()} Employees already exist in the table. No need to populate.");
+                Console.WriteLine($"{personChangeRequests.Count()} Employees change requests already exist in the table. No need to populate.");
             }
-        }*/
+        }
         /*
                 public static List<Employee> SeedEmployees()
                 {
