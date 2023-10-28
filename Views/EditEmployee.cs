@@ -48,5 +48,10 @@ namespace Wage_Wizard.Views
 
             MessageBox.Show($"You clicked: {cellValue}, the userID of that person is {empId}", "Clicked Value");
         }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
