@@ -98,7 +98,6 @@ namespace Wage_Wizard.Utilities
             //addEmployeeToDB
             Employee testEmployee = new Employee(123458, "Chuck's Account", 78901236, 35, 876543210, "AUD", "passwordChuck", Title.Mr, "Chuck", "Williams", "chuck.williams@example.com", "1982-03-03", 0412345673, 103, "3rd St", "Suburb3", "Brisbane", "QLD", "Australia");
 
-            //Utilities.addEmployeeToDB(testEmployee);
             testEmployee.hourlyRate = 1000;            
 
             Console.WriteLine($"ID of new employee is: {testEmployee.id}");
@@ -110,6 +109,37 @@ namespace Wage_Wizard.Utilities
             int employeeTempID = testEmployee.id;
             Utilities.removeEmployeeFromDB(testEmployee);
             Console.WriteLine($"The id {employeeTempID} should return False and returned {Utilities.isEmployee(employeeTempID).ToString()}");
+
+            //Attempt PersonalChangeRequest
+            Console.WriteLine("Attempting to implement change request.");
+            Employee employee2 = Utilities.getEmployeeWithID(Utilities.getEmployeeIDs().Last());
+            PersonChangeRequest personChangeRequest2 = new PersonChangeRequest(employee2.id,
+                "password102",
+                (PersonChangeRequest.Title)
+                employee2.title,
+                "James",
+                "Bond",
+                employee2.emailAddress,
+                employee2.dob,
+                0410074354,
+                employee2.streetNumber,
+                employee2.streetName,
+                employee2.suburb,
+                employee2.city,
+                employee2.state,
+                employee2.country,
+                employee2.bsb,
+                employee2.accountName,
+                employee2.accountNumber,
+                employee2.taxFileNumber,
+                "EUR");
+            Utilities.addPersonChangeRequestsToDB(personChangeRequest2);
+            employee2.updatePersonalInformationFromPersonChangeRequest(personChangeRequest2.id);
+            int tmpEmployeeID = employee2.id;
+            employee2 = null;
+            employee2 = Utilities.getEmployeeWithID(tmpEmployeeID);
+            Console.WriteLine($"Change Request implemented. Output for userID {tmpEmployeeID} should be James Bond: {employee2.GetPersonFullName()}");
+
         }
 
 

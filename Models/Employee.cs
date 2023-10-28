@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wage_Wizard.Data;
 
 namespace Wage_Wizard.Models
 {
@@ -65,6 +66,63 @@ namespace Wage_Wizard.Models
             this.hourlyRate = hourlyRate;
             this.taxFileNumber = taxFileNumber;
             this.paymentCurrencyCode = paymentCurrencyCode;
+        }
+
+        public void updatePersonalInformationFromPersonChangeRequest(int personChangeRequestID)
+        {
+            try
+            {
+                if (Utilities.Utilities.isValidRequestID(personChangeRequestID) && Utilities.Utilities.isPersonChangeRequest(personChangeRequestID))
+                {
+                    using WageWizardContext context = new WageWizardContext();
+                    var personChangeRequests = context.PersonChangeRequests;
+
+                    if (Utilities.Utilities.isValidRequestID(personChangeRequestID) && Utilities.Utilities.isPersonChangeRequest(personChangeRequestID))
+                    {
+                        PersonChangeRequest personChangeRequest = Utilities.Utilities.getPersonChangeReqestWithID(personChangeRequestID);
+                        int changeRequestEmployeeID = personChangeRequest.employeeID;
+                        if (Utilities.Utilities.isValidID(changeRequestEmployeeID) && this.id == changeRequestEmployeeID)
+                        {
+                            if (personChangeRequest.approvalStatus == Request.ApprovalStatus.Pending) 
+                            {
+                                this.password = personChangeRequest.updatedPassword;
+                                this.title = (Title)personChangeRequest.updatedTitle;
+                                this.fName = personChangeRequest.updatedFName;
+                                this.lName = personChangeRequest.updatedLName;
+                                this.emailAddress = personChangeRequest.updatedEmailAddress;
+                                this.dob = personChangeRequest.updatedDOB;
+                                this.mobileNumber = personChangeRequest.updatedMobileNumber;
+                                this.streetNumber = personChangeRequest.updatedStreetNumber;
+                                this.streetName = personChangeRequest.updatedStreetName;
+                                this.suburb = personChangeRequest.updatedSuburb;
+                                this.city = personChangeRequest.updatedCity;
+                                this.state = personChangeRequest.updatedState;
+                                this.country = personChangeRequest.updatedCountry;
+                                this.bsb = personChangeRequest.updatedBSB;
+                                this.accountName = personChangeRequest.updatedAccountName;
+                                this.accountNumber = personChangeRequest.updatedAccountNumber;
+                                this.taxFileNumber = personChangeRequest.updatedTaxFileNumber;
+                                this.paymentCurrencyCode = personChangeRequest.updatedPaymentCurrencyCode;
+                                Utilities.Utilities.saveEmployeeChangesToDB(this);
+                            } else
+                            {
+                                Console.WriteLine("Error - Approval status not correct.");
+                            }
+                        } else
+                        {
+                            Console.WriteLine("Error - EmployeeID not valid.");
+                        }
+                    } else
+                    {
+                        Console.WriteLine("Error - PersonChangeRequestID not valid.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
