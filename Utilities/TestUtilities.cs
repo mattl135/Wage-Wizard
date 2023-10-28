@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wage_Wizard.Data;
+using Wage_Wizard.Models;
+using static Wage_Wizard.Models.Person;
 
 namespace Wage_Wizard.Utilities
 {
@@ -57,14 +60,24 @@ namespace Wage_Wizard.Utilities
 
             Console.WriteLine($"The admin object returned is: {Utilities.getAdministratorWithID(adminIDs.First()).GetPersonFullName()}");
 
+            //addAdministratorToDB
+            Administrator testAdmin = new Administrator("testAdminPass", Title.Ms, "Emily", "Williams", "emily.williams@example.com", "1985-12-12", 0412345678, 321, "Sixth Ave", "Sydney", "Sydney", "NSW", "Australia");
+            Console.WriteLine("Attempting to create an administrator.");
+            Utilities.addAdministratorToDB(testAdmin);
+            Console.WriteLine($"ID of new admin is: {testAdmin.id}");
+
+            //removeAdministratorFromDB
+            Console.WriteLine("Attempting to delete an administrator.");
+            int adminTempID = testAdmin.id;
+            Utilities.removeAdministratorFromDB(testAdmin);
+            Console.WriteLine($"The id {adminTempID} should return False and returned {Utilities.isAdministrator(adminTempID).ToString()}");
+
 
             //######## Begin Testing Utilities - Employees ###############
-            //getAdministratorCount
+            //getEmployeeCount
             Console.WriteLine("\nBegin Testing Utilities - Employees");
             Console.WriteLine($"Total Number of Employees = {Utilities.getEmployeeCount()}");
-            //getAdministratorCount
-            Console.WriteLine($"Total Number of Persons = {Utilities.getEmployeeCount()}");
-            //getAdministratorsIDs
+            //getEmployeeIDs
             Console.WriteLine($"Begin Print of all ID's of Employees");
             //getAdministratorsIDs
             List<int> employeeIDs = Utilities.getEmployeeIDs();
@@ -78,8 +91,25 @@ namespace Wage_Wizard.Utilities
             //isEmployee
             Console.WriteLine($"The id {peopleIDs.Last()} and should return True and returned {Utilities.isEmployee(peopleIDs.Last()).ToString()}");
             Console.WriteLine($"The id {peopleIDs.First()} and should return False and returned {Utilities.isEmployee(peopleIDs.First()).ToString()}");
+            
+            //getEmployeeWithID
+            Console.WriteLine($"The employee object returned is: {Utilities.getEmployeeWithID(employeeIDs.Last()).GetPersonFullName()}");
 
-            Console.WriteLine($"The admin object returned is: {Utilities.getEmployeeWithID(employeeIDs.Last()).GetPersonFullName()}");
+            //addEmployeeToDB
+            Employee testEmployee = new Employee(123458, "Chuck's Account", 78901236, 35, 876543210, "AUD", "passwordChuck", Title.Mr, "Chuck", "Williams", "chuck.williams@example.com", "1982-03-03", 0412345673, 103, "3rd St", "Suburb3", "Brisbane", "QLD", "Australia");
+
+            //Utilities.addEmployeeToDB(testEmployee);
+            testEmployee.hourlyRate = 1000;            
+
+            Console.WriteLine($"ID of new employee is: {testEmployee.id}");
+            Utilities.saveEmployeeChangesToDB(testEmployee);
+            Console.WriteLine($"chucks new hourly rate is {testEmployee.hourlyRate}");
+
+            //removeAdministratorFromDB
+            Console.WriteLine("Attempting to delete an employee.");
+            int employeeTempID = testEmployee.id;
+            Utilities.removeEmployeeFromDB(testEmployee);
+            Console.WriteLine($"The id {employeeTempID} should return False and returned {Utilities.isEmployee(employeeTempID).ToString()}");
         }
 
 

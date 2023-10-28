@@ -33,7 +33,6 @@ namespace Wage_Wizard.Data
             Console.WriteLine("- Begin Verify Person Change Requests Count / Populate Person Change Requests -");
             PopulatePersonChangeRequests(context);
             Console.WriteLine("- End Verify Person Change Requests Count / Populate Person Change Requests -\n");
-
         }
 
         public static void PopulateAdministrators(WageWizardContext context) 

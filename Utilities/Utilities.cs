@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
@@ -36,8 +37,10 @@ namespace Wage_Wizard.Utilities
             return false;
         }
 
-        /*********************Administrators***********************/
+       
 
+        /*********************Administrators***********************/
+        
         public static bool isAdministrator(Person unknownPerson)
         {
             using WageWizardContext context = new WageWizardContext();
@@ -81,6 +84,72 @@ namespace Wage_Wizard.Utilities
             return adminIds;
         }
 
+        public static void addAdministratorToDB(Administrator administrator)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var administrators = context.Administrators;
+                administrators.Add(administrator);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }   
+        }
+
+        public static void saveAdministratorChangesToDB(Administrator administrator) //Confirmed
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                context.Administrators.Update(administrator);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void removeAdministratorFromDB(Administrator administrator)
+        {
+            try
+            {
+                if (Utilities.isValidID(administrator.id) && Utilities.isAdministrator(administrator.id))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.Administrators.Remove(administrator);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void removeAdministratorFromDB(int administratorID)
+        {
+            try
+            {
+                if (Utilities.isValidID(administratorID) && Utilities.isAdministrator(administratorID))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.Administrators.Remove(getAdministratorWithID(administratorID));
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
         /*********************Employees***********************/
         public static Employee? getEmployeeWithID(int userID) //Confirmed Working
         {
@@ -90,15 +159,14 @@ namespace Wage_Wizard.Utilities
                 var employees = context.Employees;
                 var user = employees.SingleOrDefault(p => p.id == userID);
                 return user;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.ToString());
                 return null;
             }
-            
         }
-
         public static bool isEmployee(Person unknownPerson)
         {
             using WageWizardContext context = new WageWizardContext();
@@ -127,6 +195,72 @@ namespace Wage_Wizard.Utilities
             return employeeIds;
         }
 
+        public static void addEmployeeToDB(Employee employee)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var employees = context.Employees;
+                employees.Add(employee);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void saveEmployeeChangesToDB(Employee employee) //Confirmed
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                context.Employees.Update(employee);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void removeEmployeeFromDB(Employee employee)
+        {
+            try
+            {
+                if (Utilities.isValidID(employee.id) && Utilities.isEmployee(employee.id))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.Employees.Remove(employee);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void removeEmployeeFromDB(int employeeeID)
+        {
+            try
+            {
+                if (Utilities.isValidID(employeeeID) && Utilities.isEmployee(employeeeID))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.Employees.Remove(getEmployeeWithID(employeeeID));
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+
         /*********************Persons***********************/
 
         public static int getPersonCount() //Confirmed Working
@@ -136,7 +270,6 @@ namespace Wage_Wizard.Utilities
             return persons.Count();
 
         }
-
         public static List<int> getPersonsIDs() //Confirmed Working
         {
             using WageWizardContext context = new WageWizardContext();
