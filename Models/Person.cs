@@ -19,14 +19,13 @@ namespace Wage_Wizard.Models
         public string lName { get; protected set; }
         public string emailAddress { get; protected set; }
         public string dob { get; protected set; }
-        public string mobileNumber { get; protected set; }
+        public int mobileNumber { get; protected set; }
         public int streetNumber { get; protected set; }
         public string streetName { get; protected set; }
         public string suburb { get; protected set; }
         public string city { get; protected set; }
         public string state { get; protected set; }
         public string country { get; protected set; }
-
 
         protected Person(
         string password,
@@ -35,7 +34,7 @@ namespace Wage_Wizard.Models
         string lName,
         string emailAddress,
         string dob,
-        string mobileNumber,
+        int mobileNumber,
         int streetNumber,
         string streetName,
         string suburb,

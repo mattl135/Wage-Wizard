@@ -18,7 +18,7 @@ namespace Wage_Wizard.Models
             string lName,
             string emailAddress,
             string dob,
-            string mobileNumber,
+            int mobileNumber,
             int streetNumber,
             string streetName,
             string suburb,

@@ -19,10 +19,14 @@ namespace Wage_Wizard.Data
 
         public DbSet<Person> Persons { get; set; } = null!;
         public DbSet<GlobalSettings> GlobalSettings { get; set; } = null!;
+        public DbSet<Request> Requests { get; set; } = null!;
 
         //Comment me out when using TPH method.
         public DbSet<Administrator> Administrators { get; set; } = null!;
         public DbSet<Employee> Employees { get; set; } = null!;
+        public DbSet<LeaveRequest> LeaveRequests { get; set; } = null!;
+        public DbSet<PaymentRequest> PaymentRequests { get; set; } = null!;
+        public DbSet<PersonChangeRequest> PersonChangeRequests { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -48,6 +52,21 @@ namespace Wage_Wizard.Data
 
             modelBuilder.Entity<Employee>()
                 .ToTable("Employees");
+
+            modelBuilder.Entity<Request>()
+                .ToTable("Requests")
+                .HasOne(r => r.employee)
+                .WithMany(e => e.requests)
+                .HasForeignKey(r => r.employeeID);
+
+            modelBuilder.Entity<LeaveRequest>()
+                .ToTable("LeaveRequests");
+
+            modelBuilder.Entity<PaymentRequest>()
+                .ToTable("PaymentRequests");
+
+            modelBuilder.Entity<PersonChangeRequest>()
+                .ToTable("PersonChangeRequests");
 
             modelBuilder.Entity<GlobalSettings>();
 
