@@ -19,22 +19,26 @@ namespace Wage_Wizard.Views
 
         private void payApprovalBTN_Click(object sender, EventArgs e)
         {
-
+            AdminPayApproval adminPayApproval = new AdminPayApproval();
+            adminPayApproval.Show();
         }
 
         private void payHistoryBTN_Click(object sender, EventArgs e)
         {
-
+            AdminPayHistory adminPayHistory = new AdminPayHistory();
+            adminPayHistory.Show();
         }
 
         private void leaveApprovalBTN_Click(object sender, EventArgs e)
         {
-
+            AdminLeaveApproval adminLeaveApproval = new AdminLeaveApproval();
+            adminLeaveApproval.Show();
         }
 
         private void leaveHistoryBTN_Click(object sender, EventArgs e)
         {
-
+            AdminLeaveHistory adminLeaveHistory = new AdminLeaveHistory();
+            adminLeaveHistory.Show();
         }
 
         private void PICApprovalBTN_Click(object sender, EventArgs e)
