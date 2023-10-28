@@ -18,7 +18,7 @@ namespace Wage_Wizard.Models
         // Navigation Property
         public Employee employee { get; set; }
         public enum ApprovalStatus { Pending, Approved, Rejected }
-        public ApprovalStatus approvalStatus { get; protected set; }
+        public ApprovalStatus approvalStatus { get; set; }
 
         protected Request(int employeeID)
         {
