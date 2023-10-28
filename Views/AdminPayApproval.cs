@@ -29,7 +29,7 @@ namespace Wage_Wizard.Views
             dbContext = context;
             var payRequests = context.PaymentRequests;
             payRequests.Load();
-            //payRequestsDGV.DataSource = AdminPayApproval.Local.ToBindingList();
+            payRequestsDGV.DataSource = payRequests.Local.ToBindingList();
             payRequestsDGV.Refresh();
             // Uncomment the line below to start fresh with a new database.
             // this.dbContext.Database.EnsureDeleted();

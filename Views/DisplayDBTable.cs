@@ -15,7 +15,7 @@ namespace Wage_Wizard.Views
 {
     public partial class DisplayDBTable : Form
     {
-        private object? context;
+        private object? dbContext;
 
         public DisplayDBTable()
         {
@@ -26,6 +26,7 @@ namespace Wage_Wizard.Views
         {
             base.OnLoad(e);
             WageWizardContext context = new WageWizardContext();
+            dbContext = context;
             var admins = context.Administrators;
             var employees = context.Employees;
             admins.Load();
@@ -42,7 +43,7 @@ namespace Wage_Wizard.Views
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
-            context = null;
+            dbContext = null;
         }
     }
 }

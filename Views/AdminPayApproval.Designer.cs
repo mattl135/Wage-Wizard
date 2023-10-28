@@ -29,27 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            employeeBindingSource = new BindingSource(components);
             exitBtn = new Button();
             denyBtn = new Button();
             approveBtn = new Button();
             payRequestsDGV = new DataGridView();
+            paymentRequestBindingSource = new BindingSource(components);
             hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            paymentRequestBindingSource1 = new BindingSource(components);
-            paymentRequestBindingSource = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // employeeBindingSource
-            // 
-            employeeBindingSource.DataSource = typeof(Models.Employee);
             // 
             // exitBtn
             // 
@@ -80,6 +72,7 @@
             // 
             // payRequestsDGV
             // 
+            payRequestsDGV.AllowUserToDeleteRows = false;
             payRequestsDGV.AutoGenerateColumns = false;
             payRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             payRequestsDGV.Columns.AddRange(new DataGridViewColumn[] { hoursDataGridViewTextBoxColumn, idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, employeeDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
@@ -89,6 +82,10 @@
             payRequestsDGV.RowTemplate.Height = 25;
             payRequestsDGV.Size = new Size(852, 378);
             payRequestsDGV.TabIndex = 7;
+            // 
+            // paymentRequestBindingSource
+            // 
+            paymentRequestBindingSource.DataSource = typeof(Models.PaymentRequest);
             // 
             // hoursDataGridViewTextBoxColumn
             // 
@@ -124,14 +121,6 @@
             approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             approvalStatusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // paymentRequestBindingSource1
-            // 
-            paymentRequestBindingSource1.DataSource = typeof(Models.PaymentRequest);
-            // 
-            // paymentRequestBindingSource
-            // 
-            paymentRequestBindingSource.DataSource = typeof(Models.PaymentRequest);
-            // 
             // AdminPayApproval
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -143,15 +132,12 @@
             Controls.Add(payRequestsDGV);
             Name = "AdminPayApproval";
             Text = "AdminPayApproval";
-            ((System.ComponentModel.ISupportInitialize)employeeBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).EndInit();
-            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private BindingSource employeeBindingSource;
         private Button exitBtn;
         private Button denyBtn;
         private Button approveBtn;
@@ -162,6 +148,5 @@
         private DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
         private BindingSource paymentRequestBindingSource;
-        private BindingSource paymentRequestBindingSource1;
     }
 }
