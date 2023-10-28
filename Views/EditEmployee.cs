@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,8 +44,9 @@ namespace Wage_Wizard.Views
             int selectedRow = dataGridViewEmployees.SelectedCells[0].RowIndex;
             int columnIndex = dataGridViewEmployees.CurrentCell.ColumnIndex;
             string cellValue = dataGridViewEmployees.Rows[selectedRow].Cells[columnIndex].Value.ToString();
+            string empId = dataGridViewEmployees.Rows[selectedRow].Cells[6].Value.ToString();
 
-            MessageBox.Show($"You clicked: {cellValue}", "Clicked Value");
+            MessageBox.Show($"You clicked: {cellValue}, the userID of that person is {empId}", "Clicked Value");
         }
     }
 }

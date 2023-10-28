@@ -53,7 +53,7 @@
             employeeBindingSource = new BindingSource(components);
             Subtitle = new Label();
             Title = new Label();
-            button1 = new Button();
+            EditEmployeeBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             SuspendLayout();
@@ -277,22 +277,22 @@
             Title.TabIndex = 3;
             Title.Text = "Wage Wizard";
             // 
-            // button1
+            // EditEmployeeBtn
             // 
-            button1.Location = new Point(394, 610);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            EditEmployeeBtn.Location = new Point(12, 607);
+            EditEmployeeBtn.Name = "EditEmployeeBtn";
+            EditEmployeeBtn.Size = new Size(219, 47);
+            EditEmployeeBtn.TabIndex = 4;
+            EditEmployeeBtn.Text = "Edit Selected Employee";
+            EditEmployeeBtn.UseVisualStyleBackColor = true;
+            EditEmployeeBtn.Click += button1_Click;
             // 
             // EditEmployee
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(881, 707);
-            Controls.Add(button1);
+            Controls.Add(EditEmployeeBtn);
             Controls.Add(Title);
             Controls.Add(Subtitle);
             Controls.Add(dataGridViewEmployees);
@@ -330,6 +330,6 @@
         private BindingSource employeeBindingSource;
         private Label Subtitle;
         private Label Title;
-        private Button button1;
+        private Button EditEmployeeBtn;
     }
 }
