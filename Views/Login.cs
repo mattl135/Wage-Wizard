@@ -95,8 +95,10 @@ namespace Wage_Wizard
                     } else
                     {
                         this.Hide();
-                        DisplayDBTable displayDBTable = new DisplayDBTable();
-                        displayDBTable.ShowDialog();
+                        //DisplayDBTable displayDBTable = new DisplayDBTable();
+                        //displayDBTable.ShowDialog();
+                        AdminMenu adminMenu = new AdminMenu();
+                        adminMenu.Show();
                     }
                 }
             }

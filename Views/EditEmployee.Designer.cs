@@ -52,8 +52,8 @@
             countryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeBindingSource = new BindingSource(components);
             Subtitle = new Label();
-            Title = new Label();
             EditEmployeeBtn = new Button();
+            exitBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             SuspendLayout();
@@ -66,11 +66,11 @@
             dataGridViewEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEmployees.Columns.AddRange(new DataGridViewColumn[] { bsbDataGridViewTextBoxColumn, accountNameDataGridViewTextBoxColumn, accountNumberDataGridViewTextBoxColumn, hourlyRateDataGridViewTextBoxColumn, taxFileNumberDataGridViewTextBoxColumn, paymentCurrencyCodeDataGridViewTextBoxColumn, idDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, titleDataGridViewTextBoxColumn, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn, emailAddressDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, mobileNumberDataGridViewTextBoxColumn, streetNumberDataGridViewTextBoxColumn, streetNameDataGridViewTextBoxColumn, suburbDataGridViewTextBoxColumn, cityDataGridViewTextBoxColumn, stateDataGridViewTextBoxColumn, countryDataGridViewTextBoxColumn });
             dataGridViewEmployees.DataSource = employeeBindingSource;
-            dataGridViewEmployees.Location = new Point(12, 168);
+            dataGridViewEmployees.Location = new Point(12, 73);
             dataGridViewEmployees.Name = "dataGridViewEmployees";
             dataGridViewEmployees.ReadOnly = true;
             dataGridViewEmployees.RowHeadersWidth = 51;
-            dataGridViewEmployees.Size = new Size(857, 390);
+            dataGridViewEmployees.Size = new Size(975, 457);
             dataGridViewEmployees.TabIndex = 0;
             // 
             // bsbDataGridViewTextBoxColumn
@@ -261,39 +261,40 @@
             // 
             Subtitle.AutoSize = true;
             Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(273, 95);
+            Subtitle.Location = new Point(328, 9);
             Subtitle.Name = "Subtitle";
             Subtitle.Size = new Size(335, 46);
             Subtitle.TabIndex = 2;
             Subtitle.Text = "View / Edit Employee";
             // 
-            // Title
-            // 
-            Title.AutoSize = true;
-            Title.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Title.Location = new Point(273, 18);
-            Title.Name = "Title";
-            Title.Size = new Size(321, 67);
-            Title.TabIndex = 3;
-            Title.Text = "Wage Wizard";
-            // 
             // EditEmployeeBtn
             // 
-            EditEmployeeBtn.Location = new Point(12, 607);
+            EditEmployeeBtn.Location = new Point(33, 553);
             EditEmployeeBtn.Name = "EditEmployeeBtn";
-            EditEmployeeBtn.Size = new Size(219, 47);
+            EditEmployeeBtn.Size = new Size(219, 81);
             EditEmployeeBtn.TabIndex = 4;
             EditEmployeeBtn.Text = "Edit Selected Employee";
             EditEmployeeBtn.UseVisualStyleBackColor = true;
             EditEmployeeBtn.Click += button1_Click;
             // 
+            // exitBtn
+            // 
+            exitBtn.Location = new Point(863, 553);
+            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Name = "exitBtn";
+            exitBtn.Size = new Size(98, 81);
+            exitBtn.TabIndex = 11;
+            exitBtn.Text = "Exit";
+            exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
+            // 
             // EditEmployee
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 707);
+            ClientSize = new Size(999, 667);
+            Controls.Add(exitBtn);
             Controls.Add(EditEmployeeBtn);
-            Controls.Add(Title);
             Controls.Add(Subtitle);
             Controls.Add(dataGridViewEmployees);
             Name = "EditEmployee";
@@ -329,7 +330,7 @@
         private DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private BindingSource employeeBindingSource;
         private Label Subtitle;
-        private Label Title;
         private Button EditEmployeeBtn;
+        private Button exitBtn;
     }
 }
