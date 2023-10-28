@@ -112,7 +112,7 @@ namespace Wage_Wizard.Views
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(336, 158);
+            label3.Location = new Point(287, 166);
             label3.Name = "label3";
             label3.Size = new Size(175, 35);
             label3.TabIndex = 13;

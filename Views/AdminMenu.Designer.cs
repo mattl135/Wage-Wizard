@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            Header = new Label();
+            Subheader = new Label();
+            WelcomeMsg = new Label();
             payApprovalBTN = new Button();
             payHistoryBTN = new Button();
             leaveHistoryBTN = new Button();
@@ -42,35 +42,35 @@
             LogoutBtn = new Button();
             SuspendLayout();
             // 
-            // label1
+            // Header
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(256, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(321, 67);
-            label1.TabIndex = 0;
-            label1.Text = "Wage Wizard";
+            Header.AutoSize = true;
+            Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            Header.Location = new Point(256, 9);
+            Header.Name = "Header";
+            Header.Size = new Size(321, 67);
+            Header.TabIndex = 0;
+            Header.Text = "Wage Wizard";
             // 
-            // label2
+            // Subheader
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(312, 93);
-            label2.Name = "label2";
-            label2.Size = new Size(214, 46);
-            label2.TabIndex = 1;
-            label2.Text = "Admin Menu";
+            Subheader.AutoSize = true;
+            Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subheader.Location = new Point(312, 93);
+            Subheader.Name = "Subheader";
+            Subheader.Size = new Size(214, 46);
+            Subheader.TabIndex = 1;
+            Subheader.Text = "Admin Menu";
             // 
-            // label3
+            // WelcomeMsg
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(331, 153);
-            label3.Name = "label3";
-            label3.Size = new Size(175, 35);
-            label3.TabIndex = 2;
-            label3.Text = "Welcome User";
+            WelcomeMsg.AutoSize = true;
+            WelcomeMsg.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            WelcomeMsg.Location = new Point(286, 155);
+            WelcomeMsg.Name = "WelcomeMsg";
+            WelcomeMsg.Size = new Size(175, 35);
+            WelcomeMsg.TabIndex = 2;
+            WelcomeMsg.Text = "Welcome User";
             // 
             // payApprovalBTN
             // 
@@ -192,9 +192,9 @@
             Controls.Add(leaveApprovalBTN);
             Controls.Add(payHistoryBTN);
             Controls.Add(payApprovalBTN);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(WelcomeMsg);
+            Controls.Add(Subheader);
+            Controls.Add(Header);
             Margin = new Padding(3, 4, 3, 4);
             Name = "AdminMenu";
             Text = "AdminMenu";
@@ -205,9 +205,9 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label Header;
+        private Label Subheader;
+        private Label WelcomeMsg;
         private Button payApprovalBTN;
         private Button payHistoryBTN;
         private Button leaveHistoryBTN;

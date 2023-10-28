@@ -62,6 +62,9 @@ namespace Wage_Wizard
                     validLogin = Utilities.Utilities.isValidCredentials(userIDInput, passwordInput);
                     if (validLogin)
                     {
+                        //set the current user ID, for global use
+                        Utilities.Utilities.currentUserId = userIDInput;
+
                         this.Hide();
                         //DisplayDBTable displayDBTable = new DisplayDBTable();
                         //displayDBTable.ShowDialog();
