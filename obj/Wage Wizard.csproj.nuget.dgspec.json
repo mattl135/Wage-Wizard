@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {}
+    "C:\\Users\\madha\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {
+    "C:\\Users\\madha\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+        "projectUniqueName": "C:\\Users\\madha\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
         "projectName": "Wage Wizard",
-        "projectPath": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+        "projectPath": "C:\\Users\\madha\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
         "packagesPath": "C:\\Users\\madha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\obj\\",
+        "outputPath": "C:\\Users\\madha\\source\\repos\\mattl135\\Wage-Wizard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\madha\\AppData\\Roaming\\NuGet\\NuGet.Config",

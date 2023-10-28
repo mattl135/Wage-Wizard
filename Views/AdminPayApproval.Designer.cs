@@ -34,14 +34,16 @@
             denyBtn = new Button();
             approveBtn = new Button();
             payRequestsDGV = new DataGridView();
-            paymentRequestBindingSource = new BindingSource(components);
             hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            paymentRequestBindingSource1 = new BindingSource(components);
+            paymentRequestBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -88,10 +90,6 @@
             payRequestsDGV.Size = new Size(852, 378);
             payRequestsDGV.TabIndex = 7;
             // 
-            // paymentRequestBindingSource
-            // 
-            paymentRequestBindingSource.DataSource = typeof(Models.PaymentRequest);
-            // 
             // hoursDataGridViewTextBoxColumn
             // 
             hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
@@ -126,6 +124,14 @@
             approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             approvalStatusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // paymentRequestBindingSource1
+            // 
+            paymentRequestBindingSource1.DataSource = typeof(Models.PaymentRequest);
+            // 
+            // paymentRequestBindingSource
+            // 
+            paymentRequestBindingSource.DataSource = typeof(Models.PaymentRequest);
+            // 
             // AdminPayApproval
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -139,6 +145,7 @@
             Text = "AdminPayApproval";
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -155,5 +162,6 @@
         private DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
         private BindingSource paymentRequestBindingSource;
+        private BindingSource paymentRequestBindingSource1;
     }
 }
