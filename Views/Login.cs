@@ -59,32 +59,25 @@ namespace Wage_Wizard
                 }
                 else
                 {
-                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
-                    var persons = context.Persons;
-                    if (context.Persons.Any(person => person.id == userIDInput))
+                    validLogin = Utilities.Utilities.isValidCredentials(userIDInput, passwordInput);
+                    if (validLogin)
                     {
-                        Console.WriteLine("User ID is valid");
-                        if (context.Persons.Any(person => person.password == passwordInput))
+                        this.Hide();
+                        //DisplayDBTable displayDBTable = new DisplayDBTable();
+                        //displayDBTable.ShowDialog();
+
+                        if (Utilities.Utilities.isAdministrator(userIDInput))
                         {
-                            Console.WriteLine("Password is valid");
-                            validLogin = true;
-                            var user = persons.SingleOrDefault(p => p.id == userIDInput);
-                            if (user != null)
-                            {
-                                Console.WriteLine($"Current user: {user.GetPersonFullName()}, Role: {user.GetType()}");
-                                MessageBox.Show($"Welcome {user.GetPersonFullName()}.\nYou are logged in as a {user.GetType()}",
-                                                    "Login Successful",
-                                                    MessageBoxButtons.OK,
-                                                    MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                throw new Exception("The UserId and Password valid but the object could not be retrieved");
-                            }
+                            AdminMenu adminMenu = new AdminMenu();
+                            adminMenu.Show();
+                        }
+                        else if (Utilities.Utilities.isEmployee(userIDInput))
+                        {
+                            EmployeeMenu employeeMenu = new EmployeeMenu();
+                            employeeMenu.Show();
                         }
                     }
-
-                    if (!validLogin)
+                    else
                     {
                         Console.WriteLine("Invalid Login");
                         MessageBox.Show("Either the UserID or Password entered was incorrect.\nPlease double check the credentials and try again.",
@@ -92,13 +85,6 @@ namespace Wage_Wizard
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Stop
                             );
-                    } else
-                    {
-                        this.Hide();
-                        //DisplayDBTable displayDBTable = new DisplayDBTable();
-                        //displayDBTable.ShowDialog();
-                        AdminMenu adminMenu = new AdminMenu();
-                        adminMenu.Show();
                     }
                 }
             }
@@ -117,6 +103,11 @@ namespace Wage_Wizard
                 passwordTextField.Clear();
                 this.ActiveControl = null;
             }
+        }
+
+        private void userIDTextField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
