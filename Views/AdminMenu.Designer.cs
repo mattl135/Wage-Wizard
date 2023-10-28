@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            Header = new Label();
+            Subheader = new Label();
+            WelcomeMsg = new Label();
             payApprovalBTN = new Button();
             payHistoryBTN = new Button();
             leaveHistoryBTN = new Button();
@@ -39,44 +39,46 @@
             PICApprovalBTN = new Button();
             globalSettingsBTN = new Button();
             employeesBTN = new Button();
+            LogoutBtn = new Button();
             SuspendLayout();
             // 
-            // label1
+            // Header
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(256, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(257, 54);
-            label1.TabIndex = 0;
-            label1.Text = "Wage Wizard";
+            Header.AutoSize = true;
+            Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            Header.Location = new Point(256, 9);
+            Header.Name = "Header";
+            Header.Size = new Size(321, 67);
+            Header.TabIndex = 0;
+            Header.Text = "Wage Wizard";
             // 
-            // label2
+            // Subheader
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(295, 72);
-            label2.Name = "label2";
-            label2.Size = new Size(170, 37);
-            label2.TabIndex = 1;
-            label2.Text = "Admin Menu";
+            Subheader.AutoSize = true;
+            Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subheader.Location = new Point(312, 93);
+            Subheader.Name = "Subheader";
+            Subheader.Size = new Size(214, 46);
+            Subheader.TabIndex = 1;
+            Subheader.Text = "Admin Menu";
             // 
-            // label3
+            // WelcomeMsg
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(268, 120);
-            label3.Name = "label3";
-            label3.Size = new Size(137, 28);
-            label3.TabIndex = 2;
-            label3.Text = "Welcome User";
+            WelcomeMsg.AutoSize = true;
+            WelcomeMsg.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            WelcomeMsg.Location = new Point(286, 155);
+            WelcomeMsg.Name = "WelcomeMsg";
+            WelcomeMsg.Size = new Size(175, 35);
+            WelcomeMsg.TabIndex = 2;
+            WelcomeMsg.Text = "Welcome User";
             // 
             // payApprovalBTN
             // 
             payApprovalBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            payApprovalBTN.Location = new Point(93, 185);
+            payApprovalBTN.Location = new Point(106, 247);
+            payApprovalBTN.Margin = new Padding(3, 4, 3, 4);
             payApprovalBTN.Name = "payApprovalBTN";
-            payApprovalBTN.Size = new Size(231, 53);
+            payApprovalBTN.Size = new Size(264, 71);
             payApprovalBTN.TabIndex = 3;
             payApprovalBTN.Text = "Pay Approval";
             payApprovalBTN.UseVisualStyleBackColor = true;
@@ -85,9 +87,10 @@
             // payHistoryBTN
             // 
             payHistoryBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            payHistoryBTN.Location = new Point(416, 185);
+            payHistoryBTN.Location = new Point(475, 247);
+            payHistoryBTN.Margin = new Padding(3, 4, 3, 4);
             payHistoryBTN.Name = "payHistoryBTN";
-            payHistoryBTN.Size = new Size(231, 53);
+            payHistoryBTN.Size = new Size(264, 71);
             payHistoryBTN.TabIndex = 4;
             payHistoryBTN.Text = "Pay History";
             payHistoryBTN.UseVisualStyleBackColor = true;
@@ -96,9 +99,10 @@
             // leaveHistoryBTN
             // 
             leaveHistoryBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            leaveHistoryBTN.Location = new Point(416, 263);
+            leaveHistoryBTN.Location = new Point(475, 351);
+            leaveHistoryBTN.Margin = new Padding(3, 4, 3, 4);
             leaveHistoryBTN.Name = "leaveHistoryBTN";
-            leaveHistoryBTN.Size = new Size(231, 53);
+            leaveHistoryBTN.Size = new Size(264, 71);
             leaveHistoryBTN.TabIndex = 6;
             leaveHistoryBTN.Text = "Leave History";
             leaveHistoryBTN.UseVisualStyleBackColor = true;
@@ -107,9 +111,10 @@
             // leaveApprovalBTN
             // 
             leaveApprovalBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            leaveApprovalBTN.Location = new Point(93, 263);
+            leaveApprovalBTN.Location = new Point(106, 351);
+            leaveApprovalBTN.Margin = new Padding(3, 4, 3, 4);
             leaveApprovalBTN.Name = "leaveApprovalBTN";
-            leaveApprovalBTN.Size = new Size(231, 53);
+            leaveApprovalBTN.Size = new Size(264, 71);
             leaveApprovalBTN.TabIndex = 5;
             leaveApprovalBTN.Text = "Leave Approval";
             leaveApprovalBTN.UseVisualStyleBackColor = true;
@@ -118,9 +123,10 @@
             // PICHistoryBTN
             // 
             PICHistoryBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            PICHistoryBTN.Location = new Point(416, 339);
+            PICHistoryBTN.Location = new Point(475, 452);
+            PICHistoryBTN.Margin = new Padding(3, 4, 3, 4);
             PICHistoryBTN.Name = "PICHistoryBTN";
-            PICHistoryBTN.Size = new Size(231, 53);
+            PICHistoryBTN.Size = new Size(264, 71);
             PICHistoryBTN.TabIndex = 8;
             PICHistoryBTN.Text = "PIC History";
             PICHistoryBTN.UseVisualStyleBackColor = true;
@@ -129,9 +135,10 @@
             // PICApprovalBTN
             // 
             PICApprovalBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            PICApprovalBTN.Location = new Point(93, 339);
+            PICApprovalBTN.Location = new Point(106, 452);
+            PICApprovalBTN.Margin = new Padding(3, 4, 3, 4);
             PICApprovalBTN.Name = "PICApprovalBTN";
-            PICApprovalBTN.Size = new Size(231, 53);
+            PICApprovalBTN.Size = new Size(264, 71);
             PICApprovalBTN.TabIndex = 7;
             PICApprovalBTN.Text = "PIC Approval";
             PICApprovalBTN.UseVisualStyleBackColor = true;
@@ -140,9 +147,10 @@
             // globalSettingsBTN
             // 
             globalSettingsBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            globalSettingsBTN.Location = new Point(416, 416);
+            globalSettingsBTN.Location = new Point(475, 555);
+            globalSettingsBTN.Margin = new Padding(3, 4, 3, 4);
             globalSettingsBTN.Name = "globalSettingsBTN";
-            globalSettingsBTN.Size = new Size(231, 53);
+            globalSettingsBTN.Size = new Size(264, 71);
             globalSettingsBTN.TabIndex = 10;
             globalSettingsBTN.Text = "Global Settings";
             globalSettingsBTN.UseVisualStyleBackColor = true;
@@ -151,19 +159,31 @@
             // employeesBTN
             // 
             employeesBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            employeesBTN.Location = new Point(93, 416);
+            employeesBTN.Location = new Point(106, 555);
+            employeesBTN.Margin = new Padding(3, 4, 3, 4);
             employeesBTN.Name = "employeesBTN";
-            employeesBTN.Size = new Size(231, 53);
+            employeesBTN.Size = new Size(264, 71);
             employeesBTN.TabIndex = 9;
             employeesBTN.Text = "View/Edit Employees";
             employeesBTN.UseVisualStyleBackColor = true;
             employeesBTN.Click += employeesBTN_Click;
             // 
+            // LogoutBtn
+            // 
+            LogoutBtn.Location = new Point(775, 624);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(94, 71);
+            LogoutBtn.TabIndex = 11;
+            LogoutBtn.Text = "Logout";
+            LogoutBtn.UseVisualStyleBackColor = true;
+            LogoutBtn.Click += LogoutBtn_Click;
+            // 
             // AdminMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 530);
+            ClientSize = new Size(881, 707);
+            Controls.Add(LogoutBtn);
             Controls.Add(globalSettingsBTN);
             Controls.Add(employeesBTN);
             Controls.Add(PICHistoryBTN);
@@ -172,9 +192,10 @@
             Controls.Add(leaveApprovalBTN);
             Controls.Add(payHistoryBTN);
             Controls.Add(payApprovalBTN);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(WelcomeMsg);
+            Controls.Add(Subheader);
+            Controls.Add(Header);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminMenu";
             Text = "AdminMenu";
             Load += AdminMenu_Load;
@@ -184,9 +205,9 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label Header;
+        private Label Subheader;
+        private Label WelcomeMsg;
         private Button payApprovalBTN;
         private Button payHistoryBTN;
         private Button leaveHistoryBTN;
@@ -195,5 +216,6 @@
         private Button PICApprovalBTN;
         private Button globalSettingsBTN;
         private Button employeesBTN;
+        private Button LogoutBtn;
     }
 }

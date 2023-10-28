@@ -59,9 +59,11 @@ namespace Wage_Wizard
                 }
                 else
                 {
-                    validLogin = Utilities.Utilities.isValidCredentials(userIDInput, passwordInput);
-                    if (validLogin)
+                    if (Utilities.Utilities.isValidCredentials(userIDInput, passwordInput))
                     {
+                        //set the current user ID, for global use
+                        Utilities.Utilities.currentUserId = userIDInput;
+
                         this.Hide();
                         //DisplayDBTable displayDBTable = new DisplayDBTable();
                         //displayDBTable.ShowDialog();
@@ -103,11 +105,6 @@ namespace Wage_Wizard
                 passwordTextField.Clear();
                 this.ActiveControl = null;
             }
-        }
-
-        private void userIDTextField_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,5 +16,13 @@ namespace Wage_Wizard.Views
         {
             InitializeComponent();
         }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Utilities.Utilities.currentUserId = 0;
+            Login login = new Login();
+            login.Show();
+        }
     }
 }
