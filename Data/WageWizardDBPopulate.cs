@@ -70,46 +70,85 @@ namespace Wage_Wizard.Data
                 Console.WriteLine($"{employees.Count()} Employees already exist in the table. No need to populate.");
             }
         }
-/*
-        public static List<Employee> SeedEmployees()
+
+/*        public static void PopulatePaymentRequests(WageWizardContext context)
         {
-            // List to hold Employee objects
-            List<Employee> employees = new List<Employee>();
-
-            // Common fields for Employee objects
-            int commonBsb = 123456;
-            string commonAccountName = "Employee Account";
-            int commonAccountNumber = 78901234;
-            int commonHourlyRate = 25;
-            int commonTaxFileNumber = 123456789;
-
-            // Create 15 Employee objects
-            for (int i = 1; i <= 15; i++)
+            var paymentRequests = context.PaymentRequests;
+            var Employees = context.Employees;
+            if (paymentRequests.Count() == 0)
             {
-                employees.Add(new Employee(
-                    commonBsb,
-                    commonAccountName,
-                    commonAccountNumber,
-                    commonHourlyRate,
-                    commonTaxFileNumber,
-                    "AUD",
-                    //i + 100000, // ID starts from 6 to avoid conflict with Administrators
-                    $"password{i + 5}",
-                    Title.Mr,
-                    $"FirstName{i}",
-                    $"LastName{i}",
-                    $"email{i}@example.com",
-                    $"1990-01-{i.ToString("D2")}",
-                    $"04123456{i + 10}",
-                    100 + i,
-                    $"{i}th St",
-                    $"{i + 4}th Suburb",
-                    "Sydney",
-                    "NSW",
-                    "Australia"
-                ));
+                PaymentRequest payRequest1;
+            } else
+            {
+                Console.WriteLine($"{paymentRequests.Count()} Employees already exist in the table. No need to populate.");
             }
-            return employees;
         }*/
+
+/*        public static void PopulateLeaveRequests(WageWizardContext context)
+        {
+            var paymentRequests = context.LeaveRequests;
+            if (paymentRequests.Count() == 0)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine($"{paymentRequests.Count()} Employees already exist in the table. No need to populate.");
+            }
+        }
+
+        public static void PopulatePersonChangeRequests(WageWizardContext context)
+        {
+            var paymentRequests = context.PaymentRequests;
+            if (paymentRequests.Count() == 0)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine($"{paymentRequests.Count()} Employees already exist in the table. No need to populate.");
+            }
+        }*/
+        /*
+                public static List<Employee> SeedEmployees()
+                {
+                    // List to hold Employee objects
+                    List<Employee> employees = new List<Employee>();
+
+                    // Common fields for Employee objects
+                    int commonBsb = 123456;
+                    string commonAccountName = "Employee Account";
+                    int commonAccountNumber = 78901234;
+                    int commonHourlyRate = 25;
+                    int commonTaxFileNumber = 123456789;
+
+                    // Create 15 Employee objects
+                    for (int i = 1; i <= 15; i++)
+                    {
+                        employees.Add(new Employee(
+                            commonBsb,
+                            commonAccountName,
+                            commonAccountNumber,
+                            commonHourlyRate,
+                            commonTaxFileNumber,
+                            "AUD",
+                            //i + 100000, // ID starts from 6 to avoid conflict with Administrators
+                            $"password{i + 5}",
+                            Title.Mr,
+                            $"FirstName{i}",
+                            $"LastName{i}",
+                            $"email{i}@example.com",
+                            $"1990-01-{i.ToString("D2")}",
+                            $"04123456{i + 10}",
+                            100 + i,
+                            $"{i}th St",
+                            $"{i + 4}th Suburb",
+                            "Sydney",
+                            "NSW",
+                            "Australia"
+                        ));
+                    }
+                    return employees;
+                }*/
     }
 }

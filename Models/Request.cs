@@ -11,11 +11,19 @@ namespace Wage_Wizard.Models
     [Table("Requests")]
     public abstract class Request
     {
+        //Primary Key
         public int id { get; protected set; }
-        public int employeeId { get; protected set; }
-        public enum approvalStatus { Pending, Approved, Rejected }
-        public Title title { get; protected set; }
+        //Foreign Key
+        public int employeeID { get; protected set; }
+        // Navigation Property
+        public Employee employee { get; set; }
+        public enum ApprovalStatus { Pending, Approved, Rejected }
+        public ApprovalStatus approvalStatus { get; protected set; }
 
-        //Attributes: ID, employeeID, approvalStatus (enum: Pending, Approved, Rejected)
+        protected Request(int employeeID)
+        {
+            this.employeeID = employeeID;
+            this.approvalStatus = ApprovalStatus.Pending;
+        }
     }
 }

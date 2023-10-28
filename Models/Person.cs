@@ -27,7 +27,6 @@ namespace Wage_Wizard.Models
         public string state { get; protected set; }
         public string country { get; protected set; }
 
-
         protected Person(
         string password,
         Title title,

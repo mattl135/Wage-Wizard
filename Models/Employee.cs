@@ -20,6 +20,9 @@ namespace Wage_Wizard.Models
         public int taxFileNumber { get; set;}
         public string paymentCurrencyCode {  get; set; }
 
+        // Navigation Property
+        public ICollection<Request> requests { get; set; }
+
         public Employee(
             int bsb,
             string accountName,

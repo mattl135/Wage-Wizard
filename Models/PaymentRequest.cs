@@ -10,6 +10,14 @@ namespace Wage_Wizard.Models
     [Table("PaymentRequests")]
     public class PaymentRequest : Request
     {
-        public double hours {  get; protected set; }
+        [Column(TypeName = "decimal(18, 2)")]
+        public double hours { get; protected set; }
+
+        public PaymentRequest(int employeeID, double hours) : base(employeeID)
+        {
+            this.hours = hours;
+        }
     }
+
+
 }

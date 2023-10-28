@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wage_Wizard.Data;
 
@@ -10,9 +11,11 @@ using Wage_Wizard.Data;
 namespace Wage_Wizard.Migrations
 {
     [DbContext(typeof(WageWizardContext))]
-    partial class ApplicationDBContextbModelSnapshot : ModelSnapshot
+    [Migration("20231028052644_FixBugInRequests")]
+    partial class FixBugInRequests
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,12 +121,10 @@ namespace Wage_Wizard.Migrations
                     b.Property<int>("approvalStatus")
                         .HasColumnType("int");
 
-                    b.Property<int>("employeeID")
+                    b.Property<int>("employeeId")
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("employeeID");
 
                     b.ToTable("Requests", (string)null);
 
@@ -172,8 +173,8 @@ namespace Wage_Wizard.Migrations
                 {
                     b.HasBaseType("Wage_Wizard.Models.Request");
 
-                    b.Property<decimal>("hours")
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<double>("hours")
+                        .HasColumnType("float");
 
                     b.Property<string>("leaveDescription")
                         .IsRequired()
@@ -265,17 +266,6 @@ namespace Wage_Wizard.Migrations
                     b.ToTable("PersonChangeRequests", (string)null);
                 });
 
-            modelBuilder.Entity("Wage_Wizard.Models.Request", b =>
-                {
-                    b.HasOne("Wage_Wizard.Models.Employee", "employee")
-                        .WithMany("requests")
-                        .HasForeignKey("employeeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("employee");
-                });
-
             modelBuilder.Entity("Wage_Wizard.Models.Administrator", b =>
                 {
                     b.HasOne("Wage_Wizard.Models.Person", null)
@@ -319,11 +309,6 @@ namespace Wage_Wizard.Migrations
                         .HasForeignKey("Wage_Wizard.Models.PersonChangeRequest", "id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Wage_Wizard.Models.Employee", b =>
-                {
-                    b.Navigation("requests");
                 });
 #pragma warning restore 612, 618
         }
