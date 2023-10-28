@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client.Utils.Windows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wage_Wizard.Data;
+using Wage_Wizard.Models;
 
 namespace Wage_Wizard.Views
 {
     public partial class AdminMenu : Form
     {
+        //get the administrator object
+
         public AdminMenu()
         {
             InitializeComponent();
+            Administrator currentUser = Utilities.Utilities.getAdministratorWithID(Utilities.Utilities.currentUserId);
+            WelcomeMsg.Text = "Welcome " + currentUser.GetPersonFullName();
         }
 
         private void payApprovalBTN_Click(object sender, EventArgs e)
@@ -65,6 +72,15 @@ namespace Wage_Wizard.Views
         private void globalSettingsBTN_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Utilities.Utilities.currentUserId = 0;
+
+            Login login = new Login();
+            login.Show();
         }
     }
 }

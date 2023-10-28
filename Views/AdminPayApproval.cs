@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
+using Wage_Wizard.Utilities;
 
 namespace Wage_Wizard.Views
 {
@@ -40,6 +41,27 @@ namespace Wage_Wizard.Views
         {
             base.OnClosing(e);
             dbContext = null;
+        }
+
+        private void approveBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
+            {
+                /* PaymentRequest paymentRequest = new PaymentRequest(employees[0], 15.53);
+                r.Cells[3].Value = 1; //use the column name instead of column index
+                Utilities.Utilities.savePayRequestChangesToDB(paymentRequest); */
+            }
+            payRequestsDGV.Refresh();
+        }
+
+        private void payRequestsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /* int index = e.RowIndex;
+            int cell = 0;
+            DataGridViewRow selectedRow = payRequestsDGV.Rows[index];
+            cell = selectedRow.Cells[3] 
+            */
+            //return cell;
         }
     }
 }

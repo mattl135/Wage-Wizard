@@ -15,6 +15,8 @@ namespace Wage_Wizard.Utilities
 
         /********************Universal************************/
 
+        public static int currentUserId { get; set; }
+
         public static bool isValidID(int userIDInput) //Confirmed Working
         {
             using WageWizardContext context = new WageWizardContext();
