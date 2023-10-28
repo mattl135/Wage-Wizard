@@ -64,5 +64,10 @@ namespace Wage_Wizard.Models
         {
             return $"{title} {fName} {lName}";
         }
+
+        public void LoadMenu(string userID)
+        {
+
+        }
     }
 }
