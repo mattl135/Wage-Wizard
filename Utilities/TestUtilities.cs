@@ -140,6 +140,11 @@ namespace Wage_Wizard.Utilities
             employee2 = Utilities.getEmployeeWithID(tmpEmployeeID);
             Console.WriteLine($"Change Request implemented. Output for userID {tmpEmployeeID} should be James Bond: {employee2.GetPersonFullName()}");
 
+            //UpdatePaymentRequest
+            List<int> paymentRequests = Utilities.getPayRequestIDs();
+            PaymentRequest paymentRequest = Utilities.getPayRequestWithID(paymentRequests[0]);
+            paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
+            Utilities.savePayRequestChangesToDB(paymentRequest);
         }
 
 

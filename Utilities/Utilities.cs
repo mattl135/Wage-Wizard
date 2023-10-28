@@ -625,5 +625,112 @@ namespace Wage_Wizard.Utilities
             }
         }
 
+        /*********************Global Settings***********************/
+        public static double getGlobalTaxRate()
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var globalSettingsDB = context.GlobalSettings;
+                GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
+                return globalSettings.globalTaxRate;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                return -1;
+            }
+        }
+
+        public static double getGlobalSuperAnnuationRate()
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var globalSettingsDB = context.GlobalSettings;
+                GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
+                return globalSettings.globalSuperAnnuationRate;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                return -1;
+            }
+        }
+
+        public static double getGlobalLeaveRate()
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var globalSettingsDB = context.GlobalSettings;
+                GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
+                return globalSettings.globalLeaveRate;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                return -1;
+            }
+        }
+
+        public static void setGlobalTaxRate(double newGlobalTaxRate)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var globalSettingsDB = context.GlobalSettings;
+                GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
+                globalSettings.globalLeaveRate = newGlobalTaxRate;
+                globalSettingsDB.Update(globalSettings);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void setGlobalSuperAnnuationRate(double newGlobalSuperAnnuationRate)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var globalSettingsDB = context.GlobalSettings;
+                GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
+                globalSettings.globalSuperAnnuationRate = newGlobalSuperAnnuationRate;
+                globalSettingsDB.Update(globalSettings);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void setGlobalLeaveRate(double newGlobalLeaveRate)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var globalSettingsDB = context.GlobalSettings;
+                GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
+                globalSettings.globalLeaveRate = newGlobalLeaveRate;
+                globalSettingsDB.Update(globalSettings);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
     }
 }
