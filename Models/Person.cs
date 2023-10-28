@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wage_Wizard.Data;
+using Wage_Wizard.Utilities;
 using static Wage_Wizard.Models.Person;
+
+
 
 namespace Wage_Wizard.Models
 {
@@ -62,11 +67,6 @@ namespace Wage_Wizard.Models
         public string GetPersonFullName()
         {
             return $"{title} {fName} {lName}";
-        }
-
-        public void LoadMenu(string userID)
-        {
-
         }
     }
 }
