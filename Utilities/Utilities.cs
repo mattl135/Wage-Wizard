@@ -21,6 +21,12 @@ namespace Wage_Wizard.Utilities
             return context.Persons.Any(person => person.id == userIDInput);
         }
 
+        public static bool isValidRequestID(int requestIDInput) //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.Requests.Any(request => request.id == requestIDInput);
+        }
+
         public static bool isValidCredentials(int userIDInput, string passwordInput) //Confirmed Working
         {
             using WageWizardContext context = new WageWizardContext();
@@ -36,8 +42,6 @@ namespace Wage_Wizard.Utilities
             }
             return false;
         }
-
-       
 
         /*********************Administrators***********************/
         
@@ -273,11 +277,353 @@ namespace Wage_Wizard.Utilities
         public static List<int> getPersonsIDs() //Confirmed Working
         {
             using WageWizardContext context = new WageWizardContext();
-            var employees = context.Persons;
-            List<int> employeeIds = employees.Select(employee => employee.id).ToList();
-            return employeeIds;
+            var persons = context.Persons;
+            List<int> personIds = persons.Select(person => person.id).ToList();
+            return personIds;
         }
 
+        /*********************Requests***********************/
+        public static int getRequestCount() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var requests = context.Requests;
+            return requests.Count();
+        }
+
+        public static List<int> getRequestsIDs() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var requests = context.Requests;
+            List<int> requestsIds = requests.Select(request => request.id).ToList();
+            return requestsIds;
+        }
+
+        /*********************Pay-Requests***********************/
+        public static PaymentRequest? getPayRequestWithID(int requestID) //Confirmed Working
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                var requests = context.PaymentRequests;
+                var payRequest = requests.SingleOrDefault(r => r.id == requestID);
+                return payRequest;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+        public static bool isPayRequest(PaymentRequest unknownRequest)
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.PaymentRequests.Any(request => request.id == unknownRequest.id);
+        }
+
+        public static bool isPayRequest(int requestID) //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.PaymentRequests.Any(request => request.id == requestID);
+        }
+
+        public static int getPayRequestCount() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var paymentRequests = context.PaymentRequests;
+            return paymentRequests.Count();
+        }
+
+        public static List<int> getPayRequestIDs() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var paymentRequests = context.PaymentRequests;
+            List<int> paymentRequestsIds = paymentRequests.Select(request => request.id).ToList();
+            return paymentRequestsIds;
+        }
+
+        public static void addPayRequestToDB(PaymentRequest paymentRequest)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var paymentRequests = context.PaymentRequests;
+                paymentRequests.Add(paymentRequest);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void savePayRequestChangesToDB(PaymentRequest paymentRequest) //Confirmed
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                context.PaymentRequests.Update(paymentRequest);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void removePaymentRequestFromDB(PaymentRequest paymentRequest)
+        {
+            try
+            {
+                if (Utilities.isValidRequestID(paymentRequest.id) && Utilities.isPayRequest(paymentRequest.id))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.PaymentRequests.Remove(paymentRequest);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void removePaymentRequestFromDB(int paymentRequestID)
+        {
+            try
+            {
+                if (Utilities.isValidRequestID(paymentRequestID) && Utilities.isPayRequest(paymentRequestID))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.PaymentRequests.Remove(getPayRequestWithID(paymentRequestID));
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        /*********************Leave-Requests***********************/
+        public static LeaveRequest? getLeaveReqestWithID(int requestID) //Confirmed Working
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                var requests = context.LeaveRequests;
+                var leaveRequest = requests.SingleOrDefault(r => r.id == requestID);
+                return leaveRequest;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+        public static bool isLeaveRequest(LeaveRequest unknownRequest)
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.LeaveRequests.Any(request => request.id == unknownRequest.id);
+        }
+
+        public static bool isLeaveRequest(int requestID) //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.LeaveRequests.Any(request => request.id == requestID);
+        }
+
+        public static int getLeaveRequestCount() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var leaveRequests = context.LeaveRequests;
+            return leaveRequests.Count();
+        }
+
+        public static List<int> getLeaveRequestsIDs() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var leaveRequests = context.LeaveRequests;
+            List<int> leaveRequestsIds = leaveRequests.Select(request => request.id).ToList();
+            return leaveRequestsIds;
+        }
+
+        public static void addLeaveRequestToDB(LeaveRequest paymentRequest)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var leaveRequests = context.LeaveRequests;
+                leaveRequests.Add(paymentRequest);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void saveLeaveRequestChangesToDB(LeaveRequest leaveRequest) //Confirmed
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                context.LeaveRequests.Update(leaveRequest);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void removeLeaveRequestFromDB(LeaveRequest leaveRequest)
+        {
+            try
+            {
+                if (Utilities.isValidRequestID(leaveRequest.id) && Utilities.isLeaveRequest(leaveRequest.id))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.LeaveRequests.Remove(leaveRequest);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void removeLeaveRequestFromDB(int leaveRequestID)
+        {
+            try
+            {
+                if (Utilities.isValidRequestID(leaveRequestID) && Utilities.isPayRequest(leaveRequestID))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.LeaveRequests.Remove(getLeaveReqestWithID(leaveRequestID));
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        /*********************Person-Change-Requests***********************/
+        public static PersonChangeRequest? getPersonChangeReqestWithID(int requestID) //Confirmed Working
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                var requests = context.PersonChangeRequests;
+                var personChangeRequest = requests.SingleOrDefault(r => r.id == requestID);
+                return personChangeRequest;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+        public static bool isPersonChangeRequest(PersonChangeRequest unknownRequest)
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.PersonChangeRequests.Any(request => request.id == unknownRequest.id);
+        }
+
+        public static bool isPersonChangeRequest(int requestID) //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            return context.PersonChangeRequests.Any(request => request.id == requestID);
+        }
+
+        public static int getPersonChangeCount() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var personChangeRequests = context.PersonChangeRequests;
+            return personChangeRequests.Count();
+        }
+
+        public static List<int> getPersonChangeRequestsIDs() //Confirmed Working
+        {
+            using WageWizardContext context = new WageWizardContext();
+            var personChangeRequests = context.PersonChangeRequests;
+            List<int> personChangeRequestsIds = personChangeRequests.Select(request => request.id).ToList();
+            return personChangeRequestsIds;
+        }
+
+        public static void addPersonChangeRequestsToDB(PersonChangeRequest personChangeRequest)
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                var personChangeRequests = context.PersonChangeRequests;
+                personChangeRequests.Add(personChangeRequest);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void savePersonChangeRequestsChangesToDB(PersonChangeRequest personChangeRequest) //Confirmed
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                context.PersonChangeRequests.Update(personChangeRequest);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void removePersonChangeRequestFromDB(PersonChangeRequest personChangeRequest)
+        {
+            try
+            {
+                if (Utilities.isValidRequestID(personChangeRequest.id) && Utilities.isPersonChangeRequest(personChangeRequest.id))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.PersonChangeRequests.Remove(personChangeRequest);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public static void removePersonChangeRequestFromDB(int personChangeRequestID)
+        {
+            try
+            {
+                if (Utilities.isValidRequestID(personChangeRequestID) && Utilities.isPersonChangeRequest(personChangeRequestID))
+                {
+                    using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
+                    context.PersonChangeRequests.Remove(getPersonChangeReqestWithID(personChangeRequestID));
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+            }
+        }
 
     }
 }
