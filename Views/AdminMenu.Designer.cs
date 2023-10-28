@@ -197,7 +197,7 @@
             Controls.Add(Header);
             Margin = new Padding(3, 4, 3, 4);
             Name = "AdminMenu";
-            Text = "AdminMenu";
+            Text = "Admin Menu";
             Load += AdminMenu_Load;
             ResumeLayout(false);
             PerformLayout();
