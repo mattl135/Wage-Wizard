@@ -410,7 +410,7 @@ namespace Wage_Wizard.Utilities
         }
 
         /*********************Leave-Requests***********************/
-        public static LeaveRequest? getLeaveReqestWithID(int requestID) //Confirmed Working
+        public static LeaveRequest? getLeaveRequestWithID(int requestID) //Confirmed Working
         {
             try
             {
@@ -507,7 +507,7 @@ namespace Wage_Wizard.Utilities
                 if (Utilities.isValidRequestID(leaveRequestID) && Utilities.isPayRequest(leaveRequestID))
                 {
                     using WageWizardContext context = new WageWizardContext(); //THIS IS SAFE
-                    context.LeaveRequests.Remove(getLeaveReqestWithID(leaveRequestID));
+                    context.LeaveRequests.Remove(getLeaveRequestWithID(leaveRequestID));
                     context.SaveChanges();
                 }
             }
