@@ -688,7 +688,7 @@ namespace Wage_Wizard.Utilities
                 using WageWizardContext context = new WageWizardContext();
                 var globalSettingsDB = context.GlobalSettings;
                 GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
-                globalSettings.globalLeaveRate = newGlobalTaxRate;
+                globalSettings.globalTaxRate = newGlobalTaxRate;
                 globalSettingsDB.Update(globalSettings);
                 context.SaveChanges();
             }

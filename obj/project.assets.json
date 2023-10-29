@@ -3502,19 +3502,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\madha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
-      "projectName": "Wage Wizard",
-      "projectPath": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
-      "packagesPath": "C:\\Users\\madha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "G:\\Visual Studio Resources\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\madha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

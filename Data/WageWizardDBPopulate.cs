@@ -282,9 +282,9 @@ namespace Wage_Wizard.Data
             {
                 Console.WriteLine($"{globalSettingsDB.Count()} GlobalSettings Objects already exist in the table. No need to populate.");
                 Console.WriteLine($"Tax rate: {Utilities.Utilities.getGlobalTaxRate()}\nSuperannuation Rate: {Utilities.Utilities.getGlobalSuperAnnuationRate()}\nLeave Rate: {Utilities.Utilities.getGlobalLeaveRate()}");
-                Utilities.Utilities.setGlobalLeaveRate(0.15); //15% leave rate
-                Utilities.Utilities.setGlobalTaxRate(0.2); //20% tax rate
-                Utilities.Utilities.setGlobalSuperAnnuationRate(0.1); //10% super rate
+                //Utilities.Utilities.setGlobalLeaveRate(0.15); //15% leave rate
+                //Utilities.Utilities.setGlobalTaxRate(0.2); //20% tax rate
+                //Utilities.Utilities.setGlobalSuperAnnuationRate(0.1); //10% super rate
             }
         }
             /*
