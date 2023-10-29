@@ -27,18 +27,6 @@ namespace Wage_Wizard
 
             // This will open a console window if set to true
             if (showConsole) { AllocConsole(); } 
-            
-            // This will test if the database can be written or not.
-            /*try
-            {
-                WageWizardDBTest.dbTestCRUD(context);
-            } catch (Exception e) {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.ToString());
-                MessageBox.Show(e.Message, "Database CRUD Test Failed",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Stop);
-            }*/
 
             try
             {
@@ -52,13 +40,13 @@ namespace Wage_Wizard
                             MessageBoxIcon.Stop);
             }
 
-            Utilities.TestUtilities.UtilitiesTest();
+            if (showConsole)
+            {
+                Utilities.TestUtilities.UtilitiesTest();
+            }
 
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
-            //Application.Run(new Views.DisplayDBTable());
         }
     }
 }

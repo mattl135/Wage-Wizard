@@ -71,7 +71,8 @@ namespace Wage_Wizard.Views
 
         private void globalSettingsBTN_Click(object sender, EventArgs e)
         {
-
+            GlobalSettingsMenu globalSettingsMenu = new GlobalSettingsMenu();
+            globalSettingsMenu.Show();
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)

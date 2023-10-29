@@ -3502,19 +3502,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\spott\\.nuget\\packages\\": {}
+    "C:\\Users\\Matt\\.nuget\\packages\\": {},
+    "G:\\Visual Studio Resources\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\spott\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+      "projectUniqueName": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
       "projectName": "Wage Wizard",
-      "projectPath": "C:\\Users\\spott\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
-      "packagesPath": "C:\\Users\\spott\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\spott\\source\\repos\\mattl135\\Wage-Wizard\\obj\\",
+      "projectPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+      "packagesPath": "C:\\Users\\Matt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "G:\\Visual Studio Resources\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\spott\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Matt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
