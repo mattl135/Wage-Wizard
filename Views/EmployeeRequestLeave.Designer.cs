@@ -45,7 +45,7 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(276, 9);
+            Header.Location = new Point(282, 9);
             Header.Name = "Header";
             Header.Size = new Size(321, 67);
             Header.TabIndex = 12;
@@ -63,7 +63,7 @@
             // 
             // RequestLeaveBtn
             // 
-            RequestLeaveBtn.Location = new Point(581, 609);
+            RequestLeaveBtn.Location = new Point(590, 609);
             RequestLeaveBtn.Name = "RequestLeaveBtn";
             RequestLeaveBtn.Size = new Size(136, 71);
             RequestLeaveBtn.TabIndex = 37;
@@ -74,7 +74,7 @@
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(751, 609);
+            ExitBtn.Location = new Point(757, 609);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(94, 71);
             ExitBtn.TabIndex = 38;
