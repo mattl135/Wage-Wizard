@@ -33,45 +33,45 @@
             personalInformationGroupBox = new GroupBox();
             passwordTextBox = new TextBox();
             passwordLabel = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dateOfBirthPicker = new DateTimePicker();
             dobLabel = new Label();
             lNameTextField = new TextBox();
             lNameLabel = new Label();
             fNameTextField = new TextBox();
             fNameLabel = new Label();
             titleLabel = new Label();
-            comboBox1 = new ComboBox();
+            titleComboBox = new ComboBox();
             contactInformationGroupBox = new GroupBox();
-            emailLabel = new TextBox();
-            emailAddressLabel = new Label();
             mobileTextField = new TextBox();
             mobileLabel = new Label();
+            emailTextField = new TextBox();
+            emailAddressLabel = new Label();
             addressContactBox = new GroupBox();
+            countryTextField = new TextBox();
+            countryLabel = new Label();
+            stateTextField = new TextBox();
+            stateLabel = new Label();
+            cityTextField = new TextBox();
+            cityLabel = new Label();
+            suburbTextField = new TextBox();
+            SuburbLabel = new Label();
             streetNameField = new TextBox();
             streetNameLabel = new Label();
             streetNumberField = new TextBox();
             streetNumberLabel = new Label();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox4 = new TextBox();
-            SuburbLabel = new Label();
-            countryField = new TextBox();
-            countryLabel = new Label();
-            stateField = new TextBox();
-            stateLabel = new Label();
             groupBox1 = new GroupBox();
-            textBox2 = new TextBox();
-            accountNameLabel = new Label();
-            textBox5 = new TextBox();
-            taxFileNumberLabel = new Label();
-            textBox6 = new TextBox();
-            label5 = new Label();
-            currencyCodeLabel = new Label();
-            textBox8 = new TextBox();
-            bsbLabel = new Label();
             currencyComboBox = new ComboBox();
+            accountNameField = new TextBox();
+            accountNameLabel = new Label();
+            taxFileNumberTextField = new TextBox();
+            taxFileNumberLabel = new Label();
+            accountNumberTextField = new TextBox();
+            accountNumberLabel = new Label();
+            currencyCodeLabel = new Label();
+            bsbTextField = new TextBox();
+            bsbLabel = new Label();
             exitButton = new Button();
-            button1 = new Button();
+            saveChangesButton = new Button();
             personalInformationGroupBox.SuspendLayout();
             contactInformationGroupBox.SuspendLayout();
             addressContactBox.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(205, 63);
+            Subheader.Location = new Point(211, 63);
             Subheader.Name = "Subheader";
             Subheader.Size = new Size(462, 37);
             Subheader.TabIndex = 15;
@@ -92,7 +92,7 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(308, 9);
+            Header.Location = new Point(314, 9);
             Header.Name = "Header";
             Header.Size = new Size(257, 54);
             Header.TabIndex = 14;
@@ -102,14 +102,14 @@
             // 
             personalInformationGroupBox.Controls.Add(passwordTextBox);
             personalInformationGroupBox.Controls.Add(passwordLabel);
-            personalInformationGroupBox.Controls.Add(dateTimePicker1);
+            personalInformationGroupBox.Controls.Add(dateOfBirthPicker);
             personalInformationGroupBox.Controls.Add(dobLabel);
             personalInformationGroupBox.Controls.Add(lNameTextField);
             personalInformationGroupBox.Controls.Add(lNameLabel);
             personalInformationGroupBox.Controls.Add(fNameTextField);
             personalInformationGroupBox.Controls.Add(fNameLabel);
             personalInformationGroupBox.Controls.Add(titleLabel);
-            personalInformationGroupBox.Controls.Add(comboBox1);
+            personalInformationGroupBox.Controls.Add(titleComboBox);
             personalInformationGroupBox.Location = new Point(12, 116);
             personalInformationGroupBox.Name = "personalInformationGroupBox";
             personalInformationGroupBox.Size = new Size(528, 161);
@@ -134,12 +134,12 @@
             passwordLabel.TabIndex = 26;
             passwordLabel.Text = "Password";
             // 
-            // dateTimePicker1
+            // dateOfBirthPicker
             // 
-            dateTimePicker1.Location = new Point(6, 114);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(229, 23);
-            dateTimePicker1.TabIndex = 25;
+            dateOfBirthPicker.Location = new Point(6, 114);
+            dateOfBirthPicker.Name = "dateOfBirthPicker";
+            dateOfBirthPicker.Size = new Size(229, 23);
+            dateOfBirthPicker.TabIndex = 25;
             // 
             // dobLabel
             // 
@@ -171,7 +171,7 @@
             // 
             // fNameTextField
             // 
-            fNameTextField.Location = new Point(155, 46);
+            fNameTextField.Location = new Point(154, 46);
             fNameTextField.Name = "fNameTextField";
             fNameTextField.Size = new Size(165, 23);
             fNameTextField.TabIndex = 20;
@@ -180,7 +180,7 @@
             // 
             fNameLabel.AutoSize = true;
             fNameLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            fNameLabel.Location = new Point(155, 23);
+            fNameLabel.Location = new Point(154, 23);
             fNameLabel.Name = "fNameLabel";
             fNameLabel.Size = new Size(80, 20);
             fNameLabel.TabIndex = 19;
@@ -196,19 +196,19 @@
             titleLabel.TabIndex = 18;
             titleLabel.Text = "Title";
             // 
-            // comboBox1
+            // titleComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(6, 46);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 17;
+            titleComboBox.FormattingEnabled = true;
+            titleComboBox.Location = new Point(6, 46);
+            titleComboBox.Name = "titleComboBox";
+            titleComboBox.Size = new Size(121, 23);
+            titleComboBox.TabIndex = 17;
             // 
             // contactInformationGroupBox
             // 
             contactInformationGroupBox.Controls.Add(mobileTextField);
             contactInformationGroupBox.Controls.Add(mobileLabel);
-            contactInformationGroupBox.Controls.Add(emailLabel);
+            contactInformationGroupBox.Controls.Add(emailTextField);
             contactInformationGroupBox.Controls.Add(emailAddressLabel);
             contactInformationGroupBox.Location = new Point(556, 116);
             contactInformationGroupBox.Name = "contactInformationGroupBox";
@@ -216,23 +216,6 @@
             contactInformationGroupBox.TabIndex = 17;
             contactInformationGroupBox.TabStop = false;
             contactInformationGroupBox.Text = "Contact Information";
-            // 
-            // emailLabel
-            // 
-            emailLabel.Location = new Point(6, 46);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(304, 23);
-            emailLabel.TabIndex = 22;
-            // 
-            // emailAddressLabel
-            // 
-            emailAddressLabel.AutoSize = true;
-            emailAddressLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            emailAddressLabel.Location = new Point(6, 23);
-            emailAddressLabel.Name = "emailAddressLabel";
-            emailAddressLabel.Size = new Size(103, 20);
-            emailAddressLabel.TabIndex = 21;
-            emailAddressLabel.Text = "Email Address";
             // 
             // mobileTextField
             // 
@@ -252,15 +235,32 @@
             mobileLabel.TabIndex = 23;
             mobileLabel.Text = "Mobile Number";
             // 
+            // emailTextField
+            // 
+            emailTextField.Location = new Point(6, 46);
+            emailTextField.Name = "emailTextField";
+            emailTextField.Size = new Size(304, 23);
+            emailTextField.TabIndex = 22;
+            // 
+            // emailAddressLabel
+            // 
+            emailAddressLabel.AutoSize = true;
+            emailAddressLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            emailAddressLabel.Location = new Point(6, 23);
+            emailAddressLabel.Name = "emailAddressLabel";
+            emailAddressLabel.Size = new Size(103, 20);
+            emailAddressLabel.TabIndex = 21;
+            emailAddressLabel.Text = "Email Address";
+            // 
             // addressContactBox
             // 
-            addressContactBox.Controls.Add(countryField);
+            addressContactBox.Controls.Add(countryTextField);
             addressContactBox.Controls.Add(countryLabel);
-            addressContactBox.Controls.Add(stateField);
+            addressContactBox.Controls.Add(stateTextField);
             addressContactBox.Controls.Add(stateLabel);
-            addressContactBox.Controls.Add(textBox3);
-            addressContactBox.Controls.Add(label3);
-            addressContactBox.Controls.Add(textBox4);
+            addressContactBox.Controls.Add(cityTextField);
+            addressContactBox.Controls.Add(cityLabel);
+            addressContactBox.Controls.Add(suburbTextField);
             addressContactBox.Controls.Add(SuburbLabel);
             addressContactBox.Controls.Add(streetNameField);
             addressContactBox.Controls.Add(streetNameLabel);
@@ -272,6 +272,75 @@
             addressContactBox.TabIndex = 25;
             addressContactBox.TabStop = false;
             addressContactBox.Text = "Personal Address";
+            // 
+            // countryTextField
+            // 
+            countryTextField.Location = new Point(197, 165);
+            countryTextField.Name = "countryTextField";
+            countryTextField.Size = new Size(222, 23);
+            countryTextField.TabIndex = 34;
+            // 
+            // countryLabel
+            // 
+            countryLabel.AutoSize = true;
+            countryLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            countryLabel.Location = new Point(197, 142);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new Size(60, 20);
+            countryLabel.TabIndex = 33;
+            countryLabel.Text = "Country";
+            // 
+            // stateTextField
+            // 
+            stateTextField.Location = new Point(6, 165);
+            stateTextField.MaxLength = 100;
+            stateTextField.Name = "stateTextField";
+            stateTextField.Size = new Size(172, 23);
+            stateTextField.TabIndex = 32;
+            // 
+            // stateLabel
+            // 
+            stateLabel.AutoSize = true;
+            stateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stateLabel.Location = new Point(6, 142);
+            stateLabel.Name = "stateLabel";
+            stateLabel.Size = new Size(43, 20);
+            stateLabel.TabIndex = 31;
+            stateLabel.Text = "State";
+            // 
+            // cityTextField
+            // 
+            cityTextField.Location = new Point(197, 106);
+            cityTextField.Name = "cityTextField";
+            cityTextField.Size = new Size(222, 23);
+            cityTextField.TabIndex = 30;
+            // 
+            // cityLabel
+            // 
+            cityLabel.AutoSize = true;
+            cityLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cityLabel.Location = new Point(197, 83);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new Size(34, 20);
+            cityLabel.TabIndex = 29;
+            cityLabel.Text = "City";
+            // 
+            // suburbTextField
+            // 
+            suburbTextField.Location = new Point(6, 106);
+            suburbTextField.Name = "suburbTextField";
+            suburbTextField.Size = new Size(172, 23);
+            suburbTextField.TabIndex = 28;
+            // 
+            // SuburbLabel
+            // 
+            SuburbLabel.AutoSize = true;
+            SuburbLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            SuburbLabel.Location = new Point(6, 83);
+            SuburbLabel.Name = "SuburbLabel";
+            SuburbLabel.Size = new Size(56, 20);
+            SuburbLabel.TabIndex = 27;
+            SuburbLabel.Text = "Suburb";
             // 
             // streetNameField
             // 
@@ -308,86 +377,17 @@
             streetNumberLabel.TabIndex = 23;
             streetNumberLabel.Text = "Street Number";
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(197, 106);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(222, 23);
-            textBox3.TabIndex = 30;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(197, 83);
-            label3.Name = "label3";
-            label3.Size = new Size(34, 20);
-            label3.TabIndex = 29;
-            label3.Text = "City";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(6, 106);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(172, 23);
-            textBox4.TabIndex = 28;
-            // 
-            // SuburbLabel
-            // 
-            SuburbLabel.AutoSize = true;
-            SuburbLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            SuburbLabel.Location = new Point(6, 83);
-            SuburbLabel.Name = "SuburbLabel";
-            SuburbLabel.Size = new Size(56, 20);
-            SuburbLabel.TabIndex = 27;
-            SuburbLabel.Text = "Suburb";
-            // 
-            // countryField
-            // 
-            countryField.Location = new Point(197, 165);
-            countryField.Name = "countryField";
-            countryField.Size = new Size(222, 23);
-            countryField.TabIndex = 34;
-            // 
-            // countryLabel
-            // 
-            countryLabel.AutoSize = true;
-            countryLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            countryLabel.Location = new Point(197, 142);
-            countryLabel.Name = "countryLabel";
-            countryLabel.Size = new Size(60, 20);
-            countryLabel.TabIndex = 33;
-            countryLabel.Text = "Country";
-            // 
-            // stateField
-            // 
-            stateField.Location = new Point(6, 165);
-            stateField.MaxLength = 100;
-            stateField.Name = "stateField";
-            stateField.Size = new Size(172, 23);
-            stateField.TabIndex = 32;
-            // 
-            // stateLabel
-            // 
-            stateLabel.AutoSize = true;
-            stateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            stateLabel.Location = new Point(6, 142);
-            stateLabel.Name = "stateLabel";
-            stateLabel.Size = new Size(43, 20);
-            stateLabel.TabIndex = 31;
-            stateLabel.Text = "State";
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(currencyComboBox);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(accountNameField);
             groupBox1.Controls.Add(accountNameLabel);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(taxFileNumberTextField);
             groupBox1.Controls.Add(taxFileNumberLabel);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(accountNumberTextField);
+            groupBox1.Controls.Add(accountNumberLabel);
             groupBox1.Controls.Add(currencyCodeLabel);
-            groupBox1.Controls.Add(textBox8);
+            groupBox1.Controls.Add(bsbTextField);
             groupBox1.Controls.Add(bsbLabel);
             groupBox1.Location = new Point(447, 293);
             groupBox1.Name = "groupBox1";
@@ -396,12 +396,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Financial Information";
             // 
-            // textBox2
+            // currencyComboBox
             // 
-            textBox2.Location = new Point(6, 165);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(413, 23);
-            textBox2.TabIndex = 32;
+            currencyComboBox.FormattingEnabled = true;
+            currencyComboBox.Location = new Point(197, 43);
+            currencyComboBox.Name = "currencyComboBox";
+            currencyComboBox.Size = new Size(222, 23);
+            currencyComboBox.TabIndex = 33;
+            // 
+            // accountNameField
+            // 
+            accountNameField.Location = new Point(6, 165);
+            accountNameField.Name = "accountNameField";
+            accountNameField.Size = new Size(413, 23);
+            accountNameField.TabIndex = 32;
             // 
             // accountNameLabel
             // 
@@ -413,13 +421,13 @@
             accountNameLabel.TabIndex = 31;
             accountNameLabel.Text = "Account Name";
             // 
-            // textBox5
+            // taxFileNumberTextField
             // 
-            textBox5.Location = new Point(197, 106);
-            textBox5.MaxLength = 20;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(222, 23);
-            textBox5.TabIndex = 30;
+            taxFileNumberTextField.Location = new Point(197, 106);
+            taxFileNumberTextField.MaxLength = 20;
+            taxFileNumberTextField.Name = "taxFileNumberTextField";
+            taxFileNumberTextField.Size = new Size(222, 23);
+            taxFileNumberTextField.TabIndex = 30;
             // 
             // taxFileNumberLabel
             // 
@@ -431,23 +439,23 @@
             taxFileNumberLabel.TabIndex = 29;
             taxFileNumberLabel.Text = "Tax File Number";
             // 
-            // textBox6
+            // accountNumberTextField
             // 
-            textBox6.Location = new Point(6, 106);
-            textBox6.MaxLength = 10;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(172, 23);
-            textBox6.TabIndex = 28;
+            accountNumberTextField.Location = new Point(6, 106);
+            accountNumberTextField.MaxLength = 10;
+            accountNumberTextField.Name = "accountNumberTextField";
+            accountNumberTextField.Size = new Size(172, 23);
+            accountNumberTextField.TabIndex = 28;
             // 
-            // label5
+            // accountNumberLabel
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(6, 83);
-            label5.Name = "label5";
-            label5.Size = new Size(121, 20);
-            label5.TabIndex = 27;
-            label5.Text = "Account Number";
+            accountNumberLabel.AutoSize = true;
+            accountNumberLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            accountNumberLabel.Location = new Point(6, 83);
+            accountNumberLabel.Name = "accountNumberLabel";
+            accountNumberLabel.Size = new Size(121, 20);
+            accountNumberLabel.TabIndex = 27;
+            accountNumberLabel.Text = "Account Number";
             // 
             // currencyCodeLabel
             // 
@@ -459,13 +467,13 @@
             currencyCodeLabel.TabIndex = 25;
             currencyCodeLabel.Text = "Prefered Currency Code";
             // 
-            // textBox8
+            // bsbTextField
             // 
-            textBox8.Location = new Point(6, 43);
-            textBox8.MaxLength = 8;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(172, 23);
-            textBox8.TabIndex = 24;
+            bsbTextField.Location = new Point(6, 43);
+            bsbTextField.MaxLength = 8;
+            bsbTextField.Name = "bsbTextField";
+            bsbTextField.Size = new Size(172, 23);
+            bsbTextField.TabIndex = 24;
             // 
             // bsbLabel
             // 
@@ -477,40 +485,34 @@
             bsbLabel.TabIndex = 23;
             bsbLabel.Text = "BSB";
             // 
-            // currencyComboBox
-            // 
-            currencyComboBox.FormattingEnabled = true;
-            currencyComboBox.Location = new Point(197, 43);
-            currencyComboBox.Name = "currencyComboBox";
-            currencyComboBox.Size = new Size(222, 23);
-            currencyComboBox.TabIndex = 33;
-            // 
             // exitButton
             // 
             exitButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            exitButton.Location = new Point(140, 560);
+            exitButton.Location = new Point(158, 525);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(256, 40);
             exitButton.TabIndex = 36;
             exitButton.Text = "Disregard Changes and Exit";
             exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
             // 
-            // button1
+            // saveChangesButton
             // 
-            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(453, 560);
-            button1.Name = "button1";
-            button1.Size = new Size(256, 40);
-            button1.TabIndex = 37;
-            button1.Text = "Save Changes and Exit";
-            button1.UseVisualStyleBackColor = true;
+            saveChangesButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            saveChangesButton.Location = new Point(471, 525);
+            saveChangesButton.Name = "saveChangesButton";
+            saveChangesButton.Size = new Size(256, 40);
+            saveChangesButton.TabIndex = 37;
+            saveChangesButton.Text = "Save Changes and Exit";
+            saveChangesButton.UseVisualStyleBackColor = true;
+            saveChangesButton.Click += saveChangesButton_Click;
             // 
             // EmployeePICRequest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 661);
-            Controls.Add(button1);
+            ClientSize = new Size(884, 586);
+            Controls.Add(saveChangesButton);
             Controls.Add(exitButton);
             Controls.Add(groupBox1);
             Controls.Add(addressContactBox);
@@ -538,48 +540,48 @@
         private Label Subheader;
         private Label Header;
         private GroupBox personalInformationGroupBox;
-        private ComboBox comboBox1;
+        private ComboBox titleComboBox;
         private Label titleLabel;
         private TextBox lNameTextField;
         private Label lNameLabel;
         private TextBox fNameTextField;
         private Label fNameLabel;
         private Label dobLabel;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateOfBirthPicker;
         private TextBox passwordTextBox;
         private Label passwordLabel;
         private GroupBox contactInformationGroupBox;
         private TextBox mobileTextField;
         private Label mobileLabel;
-        private TextBox emailLabel;
+        private TextBox emailTextField;
         private Label emailAddressLabel;
         private GroupBox addressContactBox;
-        private TextBox textBox3;
-        private Label label3;
-        private TextBox textBox4;
+        private TextBox cityTextField;
+        private Label cityLabel;
+        private TextBox suburbTextField;
         private Label SuburbLabel;
         private TextBox streetNameField;
         private Label streetNameLabel;
         private TextBox streetNumberField;
         private Label streetNumberLabel;
-        private TextBox countryField;
+        private TextBox countryTextField;
         private Label countryLabel;
-        private TextBox stateField;
+        private TextBox stateTextField;
         private Label stateLabel;
         private GroupBox groupBox1;
         private TextBox textBox1;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox accountNameField;
         private Label accountNameLabel;
-        private TextBox textBox5;
+        private TextBox taxFileNumberTextField;
         private Label taxFileNumberLabel;
-        private TextBox textBox6;
-        private Label label5;
+        private TextBox accountNumberTextField;
+        private Label accountNumberLabel;
         private Label currencyCodeLabel;
-        private TextBox textBox8;
+        private TextBox bsbTextField;
         private Label bsbLabel;
         private ComboBox currencyComboBox;
         private Button exitButton;
-        private Button button1;
+        private Button saveChangesButton;
     }
 }
