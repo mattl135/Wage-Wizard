@@ -26,13 +26,37 @@ namespace Wage_Wizard.Views
         {
             base.OnLoad(e);
             using WageWizardContext context = new WageWizardContext();
-            dbContext = context;
             var leaveRequests = context.LeaveRequests;
-            leaveRequests.Load();
-            leaveHistoryDGV.DataSource = leaveRequests.Local.ToBindingList();
+            var employees = context.Employees;
+            var persons = context.Persons;
+
+            var filteredData = (from request in leaveRequests
+                                join employee in employees on request.employeeID equals employee.id
+                                join person in persons on employee.id equals person.id
+                                select new
+                                {
+                                    request.id,
+                                    request.employeeID,
+                                    person.fName,
+                                    person.lName,
+                                    request.hours,
+                                    employee.accumulatedLeave,
+                                    request.leaveDescription,
+                                    request.approvalStatus
+                                }).ToList();
+            leaveHistoryDGV.DataSource = filteredData;
+
+            leaveHistoryDGV.Columns["id"].HeaderText = "Leave Request ID";
+            leaveHistoryDGV.Columns["employeeID"].HeaderText = "Employee ID";
+            leaveHistoryDGV.Columns["fName"].HeaderText = "First Name";
+            leaveHistoryDGV.Columns["lName"].HeaderText = "Last Name";
+            leaveHistoryDGV.Columns["hours"].HeaderText = "Leave Ammount Requested";
+            leaveHistoryDGV.Columns["accumulatedLeave"].HeaderText = "Accumulated Leave Available";
+            leaveHistoryDGV.Columns["leaveDescription"].HeaderText = "Leave Description";
+            leaveHistoryDGV.Columns["approvalStatus"].HeaderText = "Approval Status";
+
+            //Refresh to load data
             leaveHistoryDGV.Refresh();
-            // Uncomment the line below to start fresh with a new database.
-            // this.dbContext.Database.EnsureDeleted();
 
             //Forces the screen to open the window in the topleft of the screen
             int x = Screen.PrimaryScreen.WorkingArea.Top;

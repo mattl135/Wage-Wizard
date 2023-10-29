@@ -53,7 +53,7 @@ namespace Wage_Wizard.Views
             payRequestsDGV.Columns["employeeID"].HeaderText = "Employee ID";
             payRequestsDGV.Columns["fName"].HeaderText = "First Name";
             payRequestsDGV.Columns["lName"].HeaderText = "Last Name";
-            payRequestsDGV.Columns["hours"].HeaderText = "Hourly Rate";
+            payRequestsDGV.Columns["hours"].HeaderText = "Hours Worked";
             payRequestsDGV.Columns["hourlyRate"].HeaderText = "Hourly Rate";
             payRequestsDGV.Columns["approvalStatus"].HeaderText = "Approval Status";
 
@@ -104,7 +104,10 @@ namespace Wage_Wizard.Views
                     if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
                     {
                         paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
+                        Employee employee = Utilities.Utilities.getEmployeeWithID(paymentRequest.employeeID);
+                        employee.accumulatedLeave = employee.accumulatedLeave + (paymentRequest.hours * Utilities.Utilities.getGlobalLeaveRate());
                         Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                        Utilities.Utilities.saveEmployeeChangesToDB(employee);
                     }
                     else
                     {

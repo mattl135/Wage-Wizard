@@ -29,7 +29,8 @@ namespace Wage_Wizard
                 {
                     if (Utilities.Utilities.CanConnectToDB())
                     {
-                        WageWizardContext.useProductionDB = false;
+                        //Don't change me, flag to change located in WageWizardContext.cs
+                        WageWizardContext.useProductionDB = true; 
                     }
                     else
                     {
@@ -37,6 +38,7 @@ namespace Wage_Wizard
                         MessageBox.Show("An error occured when attempting to connect to cloud storage.\nApplication will attempt to use localDB.", "Connection Error",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Stop);
+                        //Don't change me, flag to change located in WageWizardContext.cs
                         WageWizardContext.useProductionDB = false;
                     }
                 }
