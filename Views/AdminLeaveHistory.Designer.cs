@@ -31,11 +31,6 @@
             components = new System.ComponentModel.Container();
             exitBtn = new Button();
             leaveHistoryDGV = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            leaveDescriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             leaveRequestBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)leaveHistoryDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
@@ -53,51 +48,13 @@
             // 
             // leaveHistoryDGV
             // 
-            leaveHistoryDGV.AutoGenerateColumns = false;
             leaveHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leaveHistoryDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, leaveDescriptionDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
-            leaveHistoryDGV.DataSource = leaveRequestBindingSource;
-            leaveHistoryDGV.Location = new Point(11, 18);
+            leaveHistoryDGV.Location = new Point(12, 18);
             leaveHistoryDGV.Name = "leaveHistoryDGV";
             leaveHistoryDGV.RowTemplate.Height = 25;
-            leaveHistoryDGV.Size = new Size(852, 378);
+            leaveHistoryDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            leaveHistoryDGV.Size = new Size(871, 378);
             leaveHistoryDGV.TabIndex = 11;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeIDDataGridViewTextBoxColumn
-            // 
-            employeeIDDataGridViewTextBoxColumn.DataPropertyName = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.HeaderText = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
-            hoursDataGridViewTextBoxColumn.HeaderText = "hours";
-            hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            hoursDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // leaveDescriptionDataGridViewTextBoxColumn
-            // 
-            leaveDescriptionDataGridViewTextBoxColumn.DataPropertyName = "leaveDescription";
-            leaveDescriptionDataGridViewTextBoxColumn.FillWeight = 400F;
-            leaveDescriptionDataGridViewTextBoxColumn.HeaderText = "leaveDescription";
-            leaveDescriptionDataGridViewTextBoxColumn.Name = "leaveDescriptionDataGridViewTextBoxColumn";
-            leaveDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            leaveDescriptionDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // approvalStatusDataGridViewTextBoxColumn
-            // 
-            approvalStatusDataGridViewTextBoxColumn.DataPropertyName = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             // 
             // leaveRequestBindingSource
             // 
@@ -107,7 +64,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 500);
+            ClientSize = new Size(894, 500);
             Controls.Add(exitBtn);
             Controls.Add(leaveHistoryDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -123,11 +80,6 @@
 
         private Button exitBtn;
         private DataGridView leaveHistoryDGV;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn leaveDescriptionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
         private BindingSource leaveRequestBindingSource;
     }
 }
