@@ -29,7 +29,7 @@ namespace Wage_Wizard
                 {
                     if (Utilities.Utilities.CanConnectToDB())
                     {
-                        WageWizardContext.useProductionDB = true;
+                        WageWizardContext.useProductionDB = false;
                     }
                     else
                     {

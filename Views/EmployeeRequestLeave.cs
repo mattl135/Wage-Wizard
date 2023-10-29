@@ -19,6 +19,7 @@ namespace Wage_Wizard.Views
         public EmployeeRequestLeave()
         {
             InitializeComponent();
+            AvailHoursDisplay.Text = Convert.ToString(currentUser.accumulatedLeave);
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

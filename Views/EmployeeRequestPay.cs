@@ -69,6 +69,11 @@ namespace Wage_Wizard.Views
                 MessageBox.Show("Cannot submit with no hours worked.", "Request Payment - Failure");
             } else
             {
+                //add accumulate leave to employee
+                double leaveAccumulated = (double) sumOfHours * Utilities.Utilities.getGlobalLeaveRate();
+                currentUser.accumulatedLeave += leaveAccumulated;
+
+                //save request to DB
                 PaymentRequest paymentRequest = new PaymentRequest(currentUser.id, Convert.ToDouble(sumOfHours));
                 Utilities.Utilities.addPayRequestToDB(paymentRequest);
                 MessageBox.Show("Request submitted. The request ID is " + paymentRequest.id, "Request Payment - Success");
