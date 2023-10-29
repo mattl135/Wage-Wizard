@@ -33,9 +33,14 @@ namespace Wage_Wizard.Data
             Console.WriteLine("- Begin Verify Person Change Requests Count / Populate Person Change Requests -");
             PopulatePersonChangeRequests(context);
             Console.WriteLine("- End Verify Person Change Requests Count / Populate Person Change Requests -\n");
+
+            Console.WriteLine("- Begin Verify Global Settings / Populate Global Settings -");
+            PopulateGlobalSettings(context);
+            Console.WriteLine("- End Verify Global Settings / Populate Global Settings -");
+
         }
 
-        public static void PopulateAdministrators(WageWizardContext context) 
+        public static void PopulateAdministrators(WageWizardContext context)
         {
             var administrators = context.Administrators;
             if (administrators.Count() == 0)
@@ -78,7 +83,8 @@ namespace Wage_Wizard.Data
                 Employee employee15 = new Employee(123470, "Gary's Account", 78901248, 39, 123456803, "AUD", "password20", Title.Mr, "Gary", "Clark", "gary.clark@example.com", "2004-03-15", 0412345685, 115, "15th St", "Suburb15", "Hobart", "TAS", "Australia");
                 employees.AddRange(employee1, employee2, employee3, employee4, employee5, employee6, employee7, employee8, employee9, employee10, employee11, employee12, employee13, employee14, employee15);
                 context.SaveChanges();
-            } else
+            }
+            else
             {
                 Console.WriteLine($"{employees.Count()} Employees already exist in the table. No need to populate.");
             }
@@ -258,46 +264,69 @@ namespace Wage_Wizard.Data
                 Console.WriteLine($"{personChangeRequests.Count()} Employees change requests already exist in the table. No need to populate.");
             }
         }
-        /*
-                public static List<Employee> SeedEmployees()
-                {
-                    // List to hold Employee objects
-                    List<Employee> employees = new List<Employee>();
 
-                    // Common fields for Employee objects
-                    int commonBsb = 123456;
-                    string commonAccountName = "Employee Account";
-                    int commonAccountNumber = 78901234;
-                    int commonHourlyRate = 25;
-                    int commonTaxFileNumber = 123456789;
-
-                    // Create 15 Employee objects
-                    for (int i = 1; i <= 15; i++)
+        public static void PopulateGlobalSettings(WageWizardContext context)
+        {
+            var globalSettingsDB = context.GlobalSettings;
+            if (globalSettingsDB.Count() == 0)
+            {
+                Console.WriteLine("No Global Settings exist in the table. Attempting to Populate");
+                GlobalSettings globalSettings = new GlobalSettings();
+                globalSettings.globalLeaveRate = 0.15;//15% leave rate
+                globalSettings.globalTaxRate = 0.2; //20% tax rate
+                globalSettings.globalSuperAnnuationRate = 0.1; //10% super rate
+                globalSettingsDB.Add(globalSettings);
+                context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine($"{globalSettingsDB.Count()} GlobalSettings Objects already exist in the table. No need to populate.");
+                Console.WriteLine($"Tax rate: {Utilities.Utilities.getGlobalTaxRate()}\nSuperannuation Rate: {Utilities.Utilities.getGlobalSuperAnnuationRate()}\nLeave Rate: {Utilities.Utilities.getGlobalLeaveRate()}");
+                Utilities.Utilities.setGlobalLeaveRate(0.15); //15% leave rate
+                Utilities.Utilities.setGlobalTaxRate(0.2); //20% tax rate
+                Utilities.Utilities.setGlobalSuperAnnuationRate(0.1); //10% super rate
+            }
+        }
+            /*
+                    public static List<Employee> SeedEmployees()
                     {
-                        employees.Add(new Employee(
-                            commonBsb,
-                            commonAccountName,
-                            commonAccountNumber,
-                            commonHourlyRate,
-                            commonTaxFileNumber,
-                            "AUD",
-                            //i + 100000, // ID starts from 6 to avoid conflict with Administrators
-                            $"password{i + 5}",
-                            Title.Mr,
-                            $"FirstName{i}",
-                            $"LastName{i}",
-                            $"email{i}@example.com",
-                            $"1990-01-{i.ToString("D2")}",
-                            $"04123456{i + 10}",
-                            100 + i,
-                            $"{i}th St",
-                            $"{i + 4}th Suburb",
-                            "Sydney",
-                            "NSW",
-                            "Australia"
-                        ));
-                    }
-                    return employees;
-                }*/
+                        // List to hold Employee objects
+                        List<Employee> employees = new List<Employee>();
+
+                        // Common fields for Employee objects
+                        int commonBsb = 123456;
+                        string commonAccountName = "Employee Account";
+                        int commonAccountNumber = 78901234;
+                        int commonHourlyRate = 25;
+                        int commonTaxFileNumber = 123456789;
+
+                        // Create 15 Employee objects
+                        for (int i = 1; i <= 15; i++)
+                        {
+                            employees.Add(new Employee(
+                                commonBsb,
+                                commonAccountName,
+                                commonAccountNumber,
+                                commonHourlyRate,
+                                commonTaxFileNumber,
+                                "AUD",
+                                //i + 100000, // ID starts from 6 to avoid conflict with Administrators
+                                $"password{i + 5}",
+                                Title.Mr,
+                                $"FirstName{i}",
+                                $"LastName{i}",
+                                $"email{i}@example.com",
+                                $"1990-01-{i.ToString("D2")}",
+                                $"04123456{i + 10}",
+                                100 + i,
+                                $"{i}th St",
+                                $"{i + 4}th Suburb",
+                                "Sydney",
+                                "NSW",
+                                "Australia"
+                            ));
+                        }
+                        return employees;
+                    }*/
     }
 }

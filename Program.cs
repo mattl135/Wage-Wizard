@@ -29,7 +29,7 @@ namespace Wage_Wizard
             if (showConsole) { AllocConsole(); } 
             
             // This will test if the database can be written or not.
-            try
+            /*try
             {
                 WageWizardDBTest.dbTestCRUD(context);
             } catch (Exception e) {
@@ -38,7 +38,7 @@ namespace Wage_Wizard
                 MessageBox.Show(e.Message, "Database CRUD Test Failed",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Stop);
-            }
+            }*/
 
             try
             {
