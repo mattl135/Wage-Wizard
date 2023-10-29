@@ -149,18 +149,10 @@ namespace Wage_Wizard.Utilities
             paymentRequest.approvalStatus = Models.Request.ApprovalStatus.Rejected;
             Utilities.savePayRequestChangesToDB(paymentRequest);
 
-            //Tester
-
-            
-
-            //UpdatePaymentRequest
-            List<int> leaveRequests = Utilities.getLeaveRequestsIDs();
-            counter = 0;
-            foreach (int request in leaveRequests)
-            {
-                counter++;
-                Console.WriteLine($"\t {counter} : {request}");
-            }
+            //Test setting of employee annual leave
+            Employee employee = Utilities.getEmployeeWithID(employeeIDs.FirstOrDefault());
+            employee.accumulatedLeave = 24;
+            Console.WriteLine($"Employee {employee.GetPersonFullName()} ({employee.id}) has accumulated {employee.accumulatedLeave} hours leave.");
         }
 
 
