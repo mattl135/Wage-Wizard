@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client.Utils.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,17 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wage_Wizard.Data;
-using Wage_Wizard.Models;
-using Wage_Wizard.Utilities;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Wage_Wizard.Views
 {
-    public partial class AdminPayHistory : Form
+    public partial class EmployeePayHistory : Form
     {
         private object? dbContext;
 
-        public AdminPayHistory()
+        public EmployeePayHistory()
         {
             InitializeComponent();
         }
@@ -32,29 +30,21 @@ namespace Wage_Wizard.Views
 
             var payRequests = context.PaymentRequests;
             var employees = context.Employees;
-            var persons = context.Persons;
 
             var filteredData = (from request in payRequests
                                 join employee in employees on request.employeeID equals employee.id
-                                join person in persons on employee.id equals person.id
+                                where request.employeeID == Utilities.Utilities.currentUserId
                                 select new
                                 {
                                     request.id,
-                                    request.employeeID,
-                                    person.fName,
-                                    person.lName,
                                     request.hours,
                                     employee.hourlyRate,
                                     request.approvalStatus
                                 }).ToList();
 
             payHistoryDGV.DataSource = filteredData;
-            payHistoryDGV.DataSource = filteredData;
             payHistoryDGV.Columns["id"].HeaderText = "Pay Request ID";
-            payHistoryDGV.Columns["employeeID"].HeaderText = "Employee ID";
-            payHistoryDGV.Columns["fName"].HeaderText = "First Name";
-            payHistoryDGV.Columns["lName"].HeaderText = "Last Name";
-            payHistoryDGV.Columns["hours"].HeaderText = "Hourly Rate";
+            payHistoryDGV.Columns["hours"].HeaderText = "Hours Worked";
             payHistoryDGV.Columns["hourlyRate"].HeaderText = "Hourly Rate";
             payHistoryDGV.Columns["approvalStatus"].HeaderText = "Approval Status";
 
@@ -82,14 +72,6 @@ namespace Wage_Wizard.Views
 
             //Event Handler for calculations
             payHistoryDGV.CellFormatting += new DataGridViewCellFormattingEventHandler(payHistoryDGV_CellFormatting);
-
-            //Refresh to load data
-            payHistoryDGV.Refresh();
-
-            //Forces the screen to open the window in the topleft of the screen
-            int x = Screen.PrimaryScreen.WorkingArea.Top;
-            int y = Screen.PrimaryScreen.WorkingArea.Left;
-            this.Location = new Point(x, y);
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -98,15 +80,14 @@ namespace Wage_Wizard.Views
             dbContext = null;
         }
 
-        //Exit button to close menu
-        private void exitBtn_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void payHistoryDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+
             //Calculate the TotalPay, TaxPaid and SuperPaid columns
             //This must be grouped together, as TaxPaid and SuperPaid rely on TotalPay calculation
             if (payHistoryDGV.Columns[e.ColumnIndex].Name == "TotalPay")
