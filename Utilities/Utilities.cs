@@ -579,18 +579,10 @@ namespace Wage_Wizard.Utilities
 
         public static void addPersonChangeRequestsToDB(PersonChangeRequest personChangeRequest)
         {
-            try
-            {
                 using WageWizardContext context = new WageWizardContext();
                 var personChangeRequests = context.PersonChangeRequests;
                 personChangeRequests.Add(personChangeRequest);
                 context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.ToString());
-            }
         }
         public static void savePersonChangeRequestsChangesToDB(PersonChangeRequest personChangeRequest) //Confirmed
         {
@@ -602,7 +594,7 @@ namespace Wage_Wizard.Utilities
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.Message);
                 Console.WriteLine(ex.ToString());
             }
         }

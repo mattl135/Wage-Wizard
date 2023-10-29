@@ -35,7 +35,8 @@ namespace Wage_Wizard.Views
 
         private void PICRequestBTN_Click(object sender, EventArgs e)
         {
-
+            EmployeePICRequest employeePICRequest = new EmployeePICRequest(Utilities.Utilities.currentUserId);
+            employeePICRequest.Show();
         }
         private void payHistoryBTN_Click(object sender, EventArgs e)
         {

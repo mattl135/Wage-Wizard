@@ -20,7 +20,18 @@ namespace Wage_Wizard.Views
         {
             InitializeComponent();
             // Store the passed value for later use
-            this.employeeID = employeeID;
+            if (Utilities.Utilities.isEmployee(employeeID) )
+            {
+                this.employeeID = employeeID;
+            } else
+            {
+                Console.WriteLine($"The employee ID {employeeID} was not a valid employee.");
+                MessageBox.Show($"An error occured when attempting to retrieve and populate the employee fields.", "An Error Occured",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Stop);
+                this.Close();
+            }
+            
 
             // Bind TextBoxes that should only accept numbers
             mobileTextField.KeyPress += new KeyPressEventHandler(this.validateNumbersOnly_KeyPress);
@@ -154,7 +165,7 @@ namespace Wage_Wizard.Views
 
                 // Create PersonChangeRequest instance
                 PersonChangeRequest request = new PersonChangeRequest(
-                    1, // For example, EmployeeID = 1
+                    this.employeeID,
                     updatedPassword,
                     updatedTitle,
                     updatedFName,
@@ -174,8 +185,26 @@ namespace Wage_Wizard.Views
                     updatedTaxFileNumber,
                     updatedPaymentCurrencyCode);
 
-                Utilities.Utilities.addPersonChangeRequestsToDB(request);
-                this.Close();
+                try
+                {
+                    Utilities.Utilities.addPersonChangeRequestsToDB(request);
+                    Thread.Sleep(1000);
+                    MessageBox.Show($"The personal information change request was succesfully created.\nThe ID of the request is: {request.id}", "Request submitted successfully",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Unable to save employee information");
+                    Console.WriteLine($"{ex.Message}\n{ex.ToString()}");
+                    MessageBox.Show($"An error occured when attempting to retrieve and populate the employee fields.\n{ex.Message}", "An Error Occured",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Stop);
+                } finally
+                {
+                    this.Close();
+                }
             }
             else
             {
