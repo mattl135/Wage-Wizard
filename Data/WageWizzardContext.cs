@@ -15,7 +15,7 @@ namespace Wage_Wizard.Data
     {
         //!!!! Caution !!!!//
         //Flag for using either the localDB or Live Azure Cloud MySQL Database.
-        public const bool useProductionDB = false; 
+        public const bool useProductionDB = true; 
 
         public DbSet<Person> Persons { get; set; } = null!;
         public DbSet<GlobalSettings> GlobalSettings { get; set; } = null!;
