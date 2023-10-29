@@ -38,9 +38,10 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(756, 421);
+            exitBtn.Location = new Point(911, 573);
+            exitBtn.Margin = new Padding(3, 4, 3, 4);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(86, 61);
+            exitBtn.Size = new Size(98, 81);
             exitBtn.TabIndex = 14;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -49,11 +50,14 @@
             // leaveHistoryDGV
             // 
             leaveHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leaveHistoryDGV.Location = new Point(12, 18);
+            leaveHistoryDGV.Location = new Point(14, 24);
+            leaveHistoryDGV.Margin = new Padding(3, 4, 3, 4);
+            leaveHistoryDGV.MultiSelect = false;
             leaveHistoryDGV.Name = "leaveHistoryDGV";
+            leaveHistoryDGV.RowHeadersWidth = 51;
             leaveHistoryDGV.RowTemplate.Height = 25;
             leaveHistoryDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            leaveHistoryDGV.Size = new Size(871, 378);
+            leaveHistoryDGV.Size = new Size(995, 529);
             leaveHistoryDGV.TabIndex = 11;
             // 
             // leaveRequestBindingSource
@@ -62,12 +66,13 @@
             // 
             // AdminLeaveHistory
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(894, 500);
+            ClientSize = new Size(1022, 667);
             Controls.Add(exitBtn);
             Controls.Add(leaveHistoryDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "AdminLeaveHistory";
             Text = "AdminLeaveHistory";
