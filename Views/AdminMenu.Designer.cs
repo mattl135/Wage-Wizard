@@ -188,6 +188,8 @@
             Controls.Add(WelcomeMsg);
             Controls.Add(Subheader);
             Controls.Add(Header);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "AdminMenu";
             Text = "Admin Menu";
             Load += AdminMenu_Load;
