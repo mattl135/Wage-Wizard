@@ -29,50 +29,35 @@ namespace Wage_Wizard.Views
         {
             base.OnLoad(e);
             using WageWizardContext context = new WageWizardContext();
-            dbContext = context;
             var payRequests = context.PaymentRequests;
-            payRequests.Load();
-            payRequestsDGV.DataSource = payRequests.Local.ToBindingList();
+            var employees = context.Employees;
+            var persons = context.Persons;
+            /*var filteredData = (from request in payRequests
+                                where request.approvalStatus == Request.ApprovalStatus.Pending
+                                select request).ToList();*/
+
+            var filteredData = (from request in payRequests
+                                join employee in employees on request.employeeID equals employee.id
+                                join person in persons on employee.id equals person.id
+                                where request.approvalStatus == Request.ApprovalStatus.Pending
+                                select new
+                                {
+                                    request.id,
+                                    request.employeeID,
+                                    request.hours,
+                                    person.fName,
+                                    person.lName,
+                                    employee.hourlyRate,
+                                    request.approvalStatus
+                                }).ToList();
+
+            payRequestsDGV.DataSource = filteredData;
             payRequestsDGV.Refresh();
-            // Uncomment the line below to start fresh with a new database.
-            // this.dbContext.Database.EnsureDeleted();
 
             //Forces the screen to open the window in the topleft of the screen
             int x = Screen.PrimaryScreen.WorkingArea.Top;
             int y = Screen.PrimaryScreen.WorkingArea.Left;
             this.Location = new Point(x, y);
-
-
-            //payRequests.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '%{1}%'", 0, 0);
-
-            /* foreach (DataGridViewRow row in payRequestsDGV.Rows)
-            {
-                string s;
-                if (row.Cells[3].Value.ToString != null)
-                {
-                    s = row.Cells[3].Value.ToString();
-
-                    if (!s.StartsWith("0", true, null))
-                    {
-                        CurrencyManager payRequestsTable = (CurrencyManager)BindingContext[payRequestsDGV.DataSource];
-                        payRequestsTable.SuspendBinding();
-                        row.Visible = false;
-                        payRequestsTable.ResumeBinding();
-                    }
-                    else
-                        row.Visible = true;
-                }
-            } */
-
-            //int index = (from payRequestsDGV.Rows.Cast<DataGridViewRow>()
-
-
-            /* var sortByPending = (payRequestsDGV.Rows.Cast<DataGridViewRow>()
-                 .Where(r => r.Cells[3].Value != null)
-                 .Select(r => new { Page = Convert.ToInt32(r.Cells[3].Value) == 0 })
-                 .GroupBy(pageR => pageR)
-                 .OrderByDescending(g => g.Count())
-                 .Select(g => new {PAGE = g.Key.Page}) ).ToList(); */
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -83,50 +68,78 @@ namespace Wage_Wizard.Views
 
         private void approveBtn_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
-            {
-                //UpdatePaymentRequest
-                List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
-                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
-                if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
-                {
-                    paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
-                    Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
-                }
-                else
-                {
-                    MessageBox.Show("You can only edit 'Pending' requests!");
-                }
-            }
+            DialogResult dialogResult = MessageBox.Show(
+                "Are you sure you want to approve these payment requests?",
+                "Confirm Payment Request Approval?",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,  // This sets the icon to a question mark
+                MessageBoxDefaultButton.Button2);
 
-            //reopens the screen to refresh/update the database on screen
-            AdminPayApproval refresh = new AdminPayApproval();
-            refresh.Show();
-            this.Close();
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
+                {
+                    //UpdatePaymentRequest
+                    List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
+                    PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+                    if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
+                    {
+                        paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
+                        Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                    }
+                    else
+                    {
+                        MessageBox.Show("You can only edit 'Pending' requests!");
+                    }
+                }
+
+                //reopens the screen to refresh/update the database on screen
+                AdminPayApproval refresh = new AdminPayApproval();
+                refresh.Show();
+                this.Close();
+            }
+            else
+            {
+                // User clicked 'No', do nothing
+            }
         }
 
         private void denyBtn_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
-            {
-                //UpdatePaymentRequest
-                List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
-                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
-                if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
-                {
-                    paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
-                    Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
-                }
-                else
-                {
-                    MessageBox.Show("You can only edit 'Pending' requests!");
-                }
-            }
+            DialogResult dialogResult = MessageBox.Show(
+                "Are you sure you want to deny these payment requests?",
+                "Confirm Payment Request Rejection?",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,  // This sets the icon to a question mark
+                MessageBoxDefaultButton.Button2);
 
-            //reopens the screen to refresh/update the database on screen
-            AdminPayApproval refresh = new AdminPayApproval();
-            refresh.Show();
-            this.Close();
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
+                {
+                    //UpdatePaymentRequest
+                    List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
+                    PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+                    if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
+                    {
+                        paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
+                        Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                    }
+                    else
+                    {
+                        MessageBox.Show("You can only edit 'Pending' requests!");
+                    }
+                }
+
+                //reopens the screen to refresh/update the database on screen
+                AdminPayApproval refresh = new AdminPayApproval();
+                refresh.Show();
+                this.Close();
+            }
+            else
+            {
+                // User clicked 'No', do nothing
+            }
         }
 
         private void payRequestsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
