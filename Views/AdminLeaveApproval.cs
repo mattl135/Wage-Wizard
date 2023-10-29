@@ -60,9 +60,16 @@ namespace Wage_Wizard.Views
             {
                 //UpdatePaymentRequest
                 List<int> leaveRequests = Utilities.Utilities.getLeaveRequestsIDs();
-                LeaveRequest leaveRequest = Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[2].Value));
-                leaveRequest.approvalStatus = Request.ApprovalStatus.Approved;
-                Utilities.Utilities.saveLeaveRequestChangesToDB(leaveRequest);
+                LeaveRequest leaveRequest = Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+                if (Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
+                {
+                    leaveRequest.approvalStatus = Request.ApprovalStatus.Approved;
+                    Utilities.Utilities.saveLeaveRequestChangesToDB(leaveRequest);
+                }
+                else
+                {
+                    MessageBox.Show("You can only edit 'Pending' requests!");
+                }
             }
 
             //reopens the screen to refresh/update the database on screen
@@ -77,9 +84,16 @@ namespace Wage_Wizard.Views
             {
                 //UpdatePaymentRequest
                 List<int> leaveRequests = Utilities.Utilities.getLeaveRequestsIDs();
-                LeaveRequest leaveRequest = Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[2].Value));
-                leaveRequest.approvalStatus = Request.ApprovalStatus.Rejected;
-                Utilities.Utilities.saveLeaveRequestChangesToDB(leaveRequest);
+                LeaveRequest leaveRequest = Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+                if (Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
+                {
+                    leaveRequest.approvalStatus = Request.ApprovalStatus.Rejected;
+                    Utilities.Utilities.saveLeaveRequestChangesToDB(leaveRequest);
+                }
+                else
+                {
+                    MessageBox.Show("You can only edit 'Pending' requests!");
+                }
             }
 
             //reopens the screen to refresh/update the database on screen

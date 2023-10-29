@@ -87,9 +87,16 @@ namespace Wage_Wizard.Views
             {
                 //UpdatePaymentRequest
                 List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
-                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[1].Value));
-                paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
-                Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+                if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
+                {
+                    paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
+                    Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                }
+                else
+                {
+                    MessageBox.Show("You can only edit 'Pending' requests!");
+                }
             }
 
             //reopens the screen to refresh/update the database on screen
@@ -104,9 +111,16 @@ namespace Wage_Wizard.Views
             {
                 //UpdatePaymentRequest
                 List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
-                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[1].Value));
-                paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
-                Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+                if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
+                {
+                    paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
+                    Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+                }
+                else
+                {
+                    MessageBox.Show("You can only edit 'Pending' requests!");
+                }
             }
 
             //reopens the screen to refresh/update the database on screen
@@ -130,6 +144,6 @@ namespace Wage_Wizard.Views
             this.Close();
         }
 
-        
+
     }
 }
