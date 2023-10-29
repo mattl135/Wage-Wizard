@@ -16,6 +16,5 @@ namespace Wage_Wizard.Views
         {
             InitializeComponent();
         }
-
     }
 }
