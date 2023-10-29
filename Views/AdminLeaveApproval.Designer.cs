@@ -28,11 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             exitBtn = new Button();
             denyBtn = new Button();
             approveBtn = new Button();
             leaveRequestsDGV = new DataGridView();
+            leaveRequestBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            leaveDescriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
             SuspendLayout();
             // 
             // exitBtn
@@ -43,6 +51,7 @@
             exitBtn.TabIndex = 10;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
             // 
             // denyBtn
             // 
@@ -50,8 +59,9 @@
             denyBtn.Name = "denyBtn";
             denyBtn.Size = new Size(86, 61);
             denyBtn.TabIndex = 9;
-            denyBtn.Text = "Deny";
+            denyBtn.Text = "Reject";
             denyBtn.UseVisualStyleBackColor = true;
+            denyBtn.Click += denyBtn_Click;
             // 
             // approveBtn
             // 
@@ -61,15 +71,59 @@
             approveBtn.TabIndex = 8;
             approveBtn.Text = "Approve";
             approveBtn.UseVisualStyleBackColor = true;
+            approveBtn.Click += approveBtn_Click;
             // 
             // leaveRequestsDGV
             // 
+            leaveRequestsDGV.AutoGenerateColumns = false;
             leaveRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            leaveRequestsDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, leaveDescriptionDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
+            leaveRequestsDGV.DataSource = leaveRequestBindingSource;
             leaveRequestsDGV.Location = new Point(11, 18);
             leaveRequestsDGV.Name = "leaveRequestsDGV";
             leaveRequestsDGV.RowTemplate.Height = 25;
             leaveRequestsDGV.Size = new Size(852, 378);
             leaveRequestsDGV.TabIndex = 7;
+            // 
+            // leaveRequestBindingSource
+            // 
+            leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            idDataGridViewTextBoxColumn.HeaderText = "id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeIDDataGridViewTextBoxColumn
+            // 
+            employeeIDDataGridViewTextBoxColumn.DataPropertyName = "employeeID";
+            employeeIDDataGridViewTextBoxColumn.HeaderText = "employeeID";
+            employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
+            employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hoursDataGridViewTextBoxColumn
+            // 
+            hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
+            hoursDataGridViewTextBoxColumn.HeaderText = "hours";
+            hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
+            hoursDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // leaveDescriptionDataGridViewTextBoxColumn
+            // 
+            leaveDescriptionDataGridViewTextBoxColumn.DataPropertyName = "leaveDescription";
+            leaveDescriptionDataGridViewTextBoxColumn.FillWeight = 400F;
+            leaveDescriptionDataGridViewTextBoxColumn.HeaderText = "leaveDescription";
+            leaveDescriptionDataGridViewTextBoxColumn.Name = "leaveDescriptionDataGridViewTextBoxColumn";
+            leaveDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            leaveDescriptionDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // approvalStatusDataGridViewTextBoxColumn
+            // 
+            approvalStatusDataGridViewTextBoxColumn.DataPropertyName = "approvalStatus";
+            approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
+            approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             // 
             // AdminLeaveApproval
             // 
@@ -83,6 +137,7 @@
             Name = "AdminLeaveApproval";
             Text = "AdminLeaveApproval";
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -92,5 +147,11 @@
         private Button denyBtn;
         private Button approveBtn;
         private DataGridView leaveRequestsDGV;
+        private BindingSource leaveRequestBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn leaveDescriptionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
     }
 }
