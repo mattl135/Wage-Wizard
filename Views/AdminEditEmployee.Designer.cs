@@ -246,6 +246,51 @@
             countryDataGridViewTextBoxColumn.ReadOnly = true;
             countryDataGridViewTextBoxColumn.Width = 125;
             // 
+            // employeeBindingSource
+            // 
+            employeeBindingSource.DataSource = typeof(Models.Employee);
+            // 
+            // EditEmployeeBtn
+            // 
+            EditEmployeeBtn.Location = new Point(12, 574);
+            EditEmployeeBtn.Name = "EditEmployeeBtn";
+            EditEmployeeBtn.Size = new Size(219, 81);
+            EditEmployeeBtn.TabIndex = 4;
+            EditEmployeeBtn.Text = "Edit Selected Employee";
+            EditEmployeeBtn.UseVisualStyleBackColor = true;
+            EditEmployeeBtn.Click += button1_Click;
+            // 
+            // exitBtn
+            // 
+            exitBtn.Location = new Point(890, 573);
+            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Name = "exitBtn";
+            exitBtn.Size = new Size(98, 81);
+            exitBtn.TabIndex = 11;
+            exitBtn.Text = "Exit";
+            exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
+            // 
+            // Subheader
+            // 
+            Subheader.AutoSize = true;
+            Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subheader.Location = new Point(336, 87);
+            Subheader.Name = "Subheader";
+            Subheader.Size = new Size(349, 46);
+            Subheader.TabIndex = 15;
+            Subheader.Text = "View / Edit Employees";
+            // 
+            // Header
+            // 
+            Header.AutoSize = true;
+            Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            Header.Location = new Point(336, 9);
+            Header.Name = "Header";
+            Header.Size = new Size(321, 67);
+            Header.TabIndex = 14;
+            Header.Text = "Wage Wizard";
+            // 
             // EditEmployee
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
