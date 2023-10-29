@@ -66,6 +66,7 @@ namespace Wage_Wizard.Views
             dbContext = null;
         }
 
+        //Read the databse and determine the outcome of the request based on user input
         private void approveBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(
@@ -82,6 +83,8 @@ namespace Wage_Wizard.Views
                     //UpdatePaymentRequest
                     List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
                     PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+
+                    //Checks if the approval status is pending to prevent users from editing already actioned requests
                     if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
                     {
                         paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
@@ -104,6 +107,7 @@ namespace Wage_Wizard.Views
             }
         }
 
+        //Read the databse and determine the outcome of the request based on user input
         private void denyBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(
@@ -120,6 +124,8 @@ namespace Wage_Wizard.Views
                     //UpdatePaymentRequest
                     List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
                     PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
+
+                    //Checks if the approval status is pending to prevent users from editing already actioned requests
                     if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
                     {
                         paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
@@ -142,6 +148,7 @@ namespace Wage_Wizard.Views
             }
         }
 
+        //TEST PURPOSES methods to select the row when selecting a cell
         private void payRequestsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             /* int index = e.RowIndex;
@@ -152,6 +159,7 @@ namespace Wage_Wizard.Views
             //return cell;
         }
 
+        //Exit button to close menu
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();

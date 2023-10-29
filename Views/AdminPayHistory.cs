@@ -24,6 +24,7 @@ namespace Wage_Wizard.Views
             InitializeComponent();
         }
 
+        //Runs commands to create and display the database when the screen loads
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -48,6 +49,7 @@ namespace Wage_Wizard.Views
             dbContext = null;
         }
 
+        //Exit button to close menu
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
