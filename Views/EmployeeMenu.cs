@@ -29,7 +29,8 @@ namespace Wage_Wizard.Views
 
         private void leaveRequestBTN_Click(object sender, EventArgs e)
         {
-
+            EmployeeRequestLeave employeeRequestLeave = new EmployeeRequestLeave();
+            employeeRequestLeave.Show();
         }
 
         private void PICRequestBTN_Click(object sender, EventArgs e)
