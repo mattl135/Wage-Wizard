@@ -33,11 +33,6 @@
             denyBtn = new Button();
             approveBtn = new Button();
             leaveRequestsDGV = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            leaveDescriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             leaveRequestBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
@@ -75,51 +70,13 @@
             // 
             // leaveRequestsDGV
             // 
-            leaveRequestsDGV.AutoGenerateColumns = false;
             leaveRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leaveRequestsDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, leaveDescriptionDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
-            leaveRequestsDGV.DataSource = leaveRequestBindingSource;
-            leaveRequestsDGV.Location = new Point(11, 18);
+            leaveRequestsDGV.Location = new Point(12, 12);
             leaveRequestsDGV.Name = "leaveRequestsDGV";
             leaveRequestsDGV.RowTemplate.Height = 25;
-            leaveRequestsDGV.Size = new Size(852, 378);
+            leaveRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            leaveRequestsDGV.Size = new Size(871, 378);
             leaveRequestsDGV.TabIndex = 7;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeIDDataGridViewTextBoxColumn
-            // 
-            employeeIDDataGridViewTextBoxColumn.DataPropertyName = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.HeaderText = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
-            hoursDataGridViewTextBoxColumn.HeaderText = "hours";
-            hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            hoursDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // leaveDescriptionDataGridViewTextBoxColumn
-            // 
-            leaveDescriptionDataGridViewTextBoxColumn.DataPropertyName = "leaveDescription";
-            leaveDescriptionDataGridViewTextBoxColumn.FillWeight = 400F;
-            leaveDescriptionDataGridViewTextBoxColumn.HeaderText = "leaveDescription";
-            leaveDescriptionDataGridViewTextBoxColumn.Name = "leaveDescriptionDataGridViewTextBoxColumn";
-            leaveDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            leaveDescriptionDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // approvalStatusDataGridViewTextBoxColumn
-            // 
-            approvalStatusDataGridViewTextBoxColumn.DataPropertyName = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             // 
             // leaveRequestBindingSource
             // 
@@ -129,7 +86,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 500);
+            ClientSize = new Size(894, 500);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
             Controls.Add(approveBtn);
