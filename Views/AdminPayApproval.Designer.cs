@@ -33,23 +33,20 @@
             denyBtn = new Button();
             approveBtn = new Button();
             payRequestsDGV = new DataGridView();
+            paymentRequestBindingSource1 = new BindingSource(components);
             paymentRequestBindingSource = new BindingSource(components);
             Subtitle = new Label();
-            paymentRequestBindingSource1 = new BindingSource(components);
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             SuspendLayout();
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(382, 434);
+            exitBtn.Location = new Point(437, 579);
+            exitBtn.Margin = new Padding(3, 4, 3, 4);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(86, 61);
+            exitBtn.Size = new Size(98, 81);
             exitBtn.TabIndex = 10;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -57,9 +54,10 @@
             // 
             // denyBtn
             // 
-            denyBtn.Location = new Point(151, 434);
+            denyBtn.Location = new Point(173, 579);
+            denyBtn.Margin = new Padding(3, 4, 3, 4);
             denyBtn.Name = "denyBtn";
-            denyBtn.Size = new Size(86, 61);
+            denyBtn.Size = new Size(98, 81);
             denyBtn.TabIndex = 9;
             denyBtn.Text = "Reject";
             denyBtn.UseVisualStyleBackColor = true;
@@ -67,9 +65,10 @@
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(31, 434);
+            approveBtn.Location = new Point(35, 579);
+            approveBtn.Margin = new Padding(3, 4, 3, 4);
             approveBtn.Name = "approveBtn";
-            approveBtn.Size = new Size(86, 61);
+            approveBtn.Size = new Size(98, 81);
             approveBtn.TabIndex = 8;
             approveBtn.Text = "Approve";
             approveBtn.UseVisualStyleBackColor = true;
@@ -78,17 +77,21 @@
             // payRequestsDGV
             // 
             payRequestsDGV.AllowUserToDeleteRows = false;
-            payRequestsDGV.AutoGenerateColumns = false;
             payRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payRequestsDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
-            payRequestsDGV.DataSource = paymentRequestBindingSource1;
-            payRequestsDGV.Location = new Point(21, 50);
+            payRequestsDGV.Location = new Point(24, 67);
+            payRequestsDGV.Margin = new Padding(3, 4, 3, 4);
+            payRequestsDGV.MultiSelect = false;
             payRequestsDGV.Name = "payRequestsDGV";
+            payRequestsDGV.RowHeadersWidth = 51;
             payRequestsDGV.RowTemplate.Height = 25;
             payRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            payRequestsDGV.Size = new Size(447, 378);
+            payRequestsDGV.Size = new Size(511, 504);
             payRequestsDGV.TabIndex = 7;
             payRequestsDGV.CellClick += payRequestsDGV_CellClick;
+            // 
+            // paymentRequestBindingSource1
+            // 
+            paymentRequestBindingSource1.DataSource = typeof(Models.PaymentRequest);
             // 
             // paymentRequestBindingSource
             // 
@@ -98,60 +101,30 @@
             // 
             Subtitle.AutoSize = true;
             Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(81, 9);
+            Subtitle.Location = new Point(93, 12);
             Subtitle.Name = "Subtitle";
-            Subtitle.Size = new Size(335, 37);
+            Subtitle.Size = new Size(423, 46);
             Subtitle.TabIndex = 12;
             Subtitle.Text = "Pending Payment Requests";
             // 
-            // paymentRequestBindingSource1
-            // 
-            paymentRequestBindingSource1.DataSource = typeof(Models.PaymentRequest);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeIDDataGridViewTextBoxColumn
-            // 
-            employeeIDDataGridViewTextBoxColumn.DataPropertyName = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.HeaderText = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
-            hoursDataGridViewTextBoxColumn.HeaderText = "hours";
-            hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            hoursDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // approvalStatusDataGridViewTextBoxColumn
-            // 
-            approvalStatusDataGridViewTextBoxColumn.DataPropertyName = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
-            // 
             // AdminPayApproval
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(486, 500);
+            ClientSize = new Size(555, 667);
             Controls.Add(Subtitle);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
             Controls.Add(approveBtn);
             Controls.Add(payRequestsDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "AdminPayApproval";
             Text = "AdminPayApproval";
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).EndInit();
-            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
