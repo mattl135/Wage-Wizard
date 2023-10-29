@@ -31,6 +31,8 @@
             Header = new Label();
             Subheader = new Label();
             ExitBtn = new Button();
+            payHistoryDGV = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)payHistoryDGV).BeginInit();
             SuspendLayout();
             // 
             // Header
@@ -47,7 +49,7 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(318, 87);
+            Subheader.Location = new Point(307, 85);
             Subheader.Name = "Subheader";
             Subheader.Size = new Size(267, 46);
             Subheader.TabIndex = 14;
@@ -55,7 +57,7 @@
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(757, 609);
+            ExitBtn.Location = new Point(775, 624);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(94, 71);
             ExitBtn.TabIndex = 39;
@@ -64,17 +66,30 @@
             ExitBtn.UseVisualStyleBackColor = true;
             ExitBtn.Click += ExitBtn_Click;
             // 
+            // payHistoryDGV
+            // 
+            payHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            payHistoryDGV.Location = new Point(12, 146);
+            payHistoryDGV.Margin = new Padding(3, 4, 3, 4);
+            payHistoryDGV.Name = "payHistoryDGV";
+            payHistoryDGV.RowHeadersWidth = 51;
+            payHistoryDGV.RowTemplate.Height = 25;
+            payHistoryDGV.Size = new Size(857, 456);
+            payHistoryDGV.TabIndex = 40;
+            // 
             // EmployeePayHistory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(881, 707);
+            Controls.Add(payHistoryDGV);
             Controls.Add(ExitBtn);
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EmployeePayHistory";
             Text = "View Pay History";
+            ((System.ComponentModel.ISupportInitialize)payHistoryDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -84,5 +99,6 @@
         private Label Header;
         private Label Subheader;
         private Button ExitBtn;
+        private DataGridView payHistoryDGV;
     }
 }
