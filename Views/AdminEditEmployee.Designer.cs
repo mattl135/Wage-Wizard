@@ -54,6 +54,7 @@
             exitBtn = new Button();
             Subheader = new Label();
             Header = new Label();
+            removeEmployee = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             SuspendLayout();
@@ -66,13 +67,14 @@
             dataGridViewEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEmployees.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, bsbDataGridViewTextBoxColumn, accountNameDataGridViewTextBoxColumn, accountNumberDataGridViewTextBoxColumn, hourlyRateDataGridViewTextBoxColumn, taxFileNumberDataGridViewTextBoxColumn, paymentCurrencyCodeDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn, emailAddressDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, mobileNumberDataGridViewTextBoxColumn, streetNumberDataGridViewTextBoxColumn, streetNameDataGridViewTextBoxColumn, suburbDataGridViewTextBoxColumn, cityDataGridViewTextBoxColumn, stateDataGridViewTextBoxColumn, countryDataGridViewTextBoxColumn });
             dataGridViewEmployees.DataSource = employeeBindingSource;
-            dataGridViewEmployees.Location = new Point(13, 156);
+            dataGridViewEmployees.Location = new Point(21, 250);
+            dataGridViewEmployees.Margin = new Padding(5, 5, 5, 5);
             dataGridViewEmployees.MultiSelect = false;
             dataGridViewEmployees.Name = "dataGridViewEmployees";
             dataGridViewEmployees.ReadOnly = true;
             dataGridViewEmployees.RowHeadersWidth = 51;
             dataGridViewEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewEmployees.Size = new Size(975, 392);
+            dataGridViewEmployees.Size = new Size(1584, 627);
             dataGridViewEmployees.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -252,9 +254,10 @@
             // 
             // EditEmployeeBtn
             // 
-            EditEmployeeBtn.Location = new Point(12, 574);
+            EditEmployeeBtn.Location = new Point(20, 918);
+            EditEmployeeBtn.Margin = new Padding(5, 5, 5, 5);
             EditEmployeeBtn.Name = "EditEmployeeBtn";
-            EditEmployeeBtn.Size = new Size(219, 81);
+            EditEmployeeBtn.Size = new Size(356, 130);
             EditEmployeeBtn.TabIndex = 4;
             EditEmployeeBtn.Text = "Edit Selected Employee";
             EditEmployeeBtn.UseVisualStyleBackColor = true;
@@ -262,10 +265,10 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(890, 573);
-            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Location = new Point(1446, 917);
+            exitBtn.Margin = new Padding(5, 6, 5, 6);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(98, 81);
+            exitBtn.Size = new Size(159, 130);
             exitBtn.TabIndex = 11;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -275,9 +278,10 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(336, 87);
+            Subheader.Location = new Point(546, 139);
+            Subheader.Margin = new Padding(5, 0, 5, 0);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(349, 46);
+            Subheader.Size = new Size(556, 72);
             Subheader.TabIndex = 15;
             Subheader.Text = "View / Edit Employees";
             // 
@@ -285,25 +289,38 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(336, 9);
+            Header.Location = new Point(546, 14);
+            Header.Margin = new Padding(5, 0, 5, 0);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(515, 106);
             Header.TabIndex = 14;
             Header.Text = "Wage Wizard";
             // 
-            // EditEmployee
+            // removeEmployee
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            removeEmployee.Location = new Point(440, 918);
+            removeEmployee.Name = "removeEmployee";
+            removeEmployee.Size = new Size(356, 130);
+            removeEmployee.TabIndex = 16;
+            removeEmployee.Text = "Remove Selected Employee";
+            removeEmployee.UseVisualStyleBackColor = true;
+            removeEmployee.Click += removeEmployee_Click;
+            // 
+            // AdminEditEmployee
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(999, 667);
+            ClientSize = new Size(1623, 1067);
+            Controls.Add(removeEmployee);
             Controls.Add(Subheader);
             Controls.Add(Header);
             Controls.Add(exitBtn);
             Controls.Add(EditEmployeeBtn);
             Controls.Add(dataGridViewEmployees);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(5, 5, 5, 5);
             MaximizeBox = false;
-            Name = "EditEmployee";
+            Name = "AdminEditEmployee";
             Text = "View/Edit Employees";
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).EndInit();
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).EndInit();
@@ -339,5 +356,6 @@
         private Button exitBtn;
         private Label Subheader;
         private Label Header;
+        private Button removeEmployee;
     }
 }

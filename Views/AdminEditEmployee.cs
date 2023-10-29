@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wage_Wizard.Data;
+using Wage_Wizard.Models;
 
 namespace Wage_Wizard.Views
 {
@@ -51,6 +52,33 @@ namespace Wage_Wizard.Views
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void removeEmployee_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(
+               "Are you sure you want to delete these employees?",
+               "Confirm Employee Deletion?",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Warning,
+               MessageBoxDefaultButton.Button2);
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow r in dataGridViewEmployees.SelectedRows)
+                {
+                    Employee employee1 = Utilities.Utilities.getEmployeeWithID(Convert.ToInt32(r.Cells[0].Value));
+                    Utilities.Utilities.removeEmployeeFromDB(employee1);
+
+                }
+                //reopens the screen to refresh/update the database on screen
+                AdminEditEmployee refresh = new AdminEditEmployee();
+                refresh.Show();
+                this.Close();
+            }
+            else
+            {
+                // User clicked 'No', do nothing
+            }
         }
     }
 }
