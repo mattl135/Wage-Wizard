@@ -36,6 +36,7 @@
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             paymentRequestBindingSource = new BindingSource(components);
             exitBtn = new Button();
+            Subtitle = new Label();
             ((System.ComponentModel.ISupportInitialize)payHistoryDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             SuspendLayout();
@@ -46,10 +47,10 @@
             payHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             payHistoryDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
             payHistoryDGV.DataSource = paymentRequestBindingSource;
-            payHistoryDGV.Location = new Point(10, 12);
+            payHistoryDGV.Location = new Point(10, 51);
             payHistoryDGV.Name = "payHistoryDGV";
             payHistoryDGV.RowTemplate.Height = 25;
-            payHistoryDGV.Size = new Size(852, 378);
+            payHistoryDGV.Size = new Size(447, 378);
             payHistoryDGV.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn
@@ -85,7 +86,7 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(755, 415);
+            exitBtn.Location = new Point(371, 435);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 6;
@@ -93,11 +94,22 @@
             exitBtn.UseVisualStyleBackColor = true;
             exitBtn.Click += exitBtn_Click;
             // 
+            // Subtitle
+            // 
+            Subtitle.AutoSize = true;
+            Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subtitle.Location = new Point(46, 0);
+            Subtitle.Name = "Subtitle";
+            Subtitle.Size = new Size(311, 37);
+            Subtitle.TabIndex = 12;
+            Subtitle.Text = "Payment Request History";
+            // 
             // AdminPayHistory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 500);
+            ClientSize = new Size(472, 500);
+            Controls.Add(Subtitle);
             Controls.Add(exitBtn);
             Controls.Add(payHistoryDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -107,6 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)payHistoryDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -117,5 +130,6 @@
         private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
         private BindingSource paymentRequestBindingSource;
+        private Label Subtitle;
     }
 }

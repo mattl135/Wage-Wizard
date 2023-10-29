@@ -51,5 +51,10 @@ namespace Wage_Wizard.Views
         {
             this.Close();
         }
+
+        private void leaveHistoryDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

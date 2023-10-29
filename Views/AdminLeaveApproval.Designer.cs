@@ -39,13 +39,14 @@
             leaveDescriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             leaveRequestBindingSource = new BindingSource(components);
+            Subtitle = new Label();
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
             SuspendLayout();
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(756, 421);
+            exitBtn.Location = new Point(755, 437);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 10;
@@ -55,7 +56,7 @@
             // 
             // denyBtn
             // 
-            denyBtn.Location = new Point(150, 421);
+            denyBtn.Location = new Point(149, 437);
             denyBtn.Name = "denyBtn";
             denyBtn.Size = new Size(86, 61);
             denyBtn.TabIndex = 9;
@@ -65,7 +66,7 @@
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(30, 421);
+            approveBtn.Location = new Point(29, 437);
             approveBtn.Name = "approveBtn";
             approveBtn.Size = new Size(86, 61);
             approveBtn.TabIndex = 8;
@@ -79,7 +80,7 @@
             leaveRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             leaveRequestsDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, leaveDescriptionDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
             leaveRequestsDGV.DataSource = leaveRequestBindingSource;
-            leaveRequestsDGV.Location = new Point(11, 18);
+            leaveRequestsDGV.Location = new Point(10, 53);
             leaveRequestsDGV.Name = "leaveRequestsDGV";
             leaveRequestsDGV.RowTemplate.Height = 25;
             leaveRequestsDGV.Size = new Size(852, 378);
@@ -125,11 +126,22 @@
             // 
             leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
             // 
+            // Subtitle
+            // 
+            Subtitle.AutoSize = true;
+            Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subtitle.Location = new Point(281, 9);
+            Subtitle.Name = "Subtitle";
+            Subtitle.Size = new Size(301, 37);
+            Subtitle.TabIndex = 11;
+            Subtitle.Text = "Pending Leave Requests";
+            // 
             // AdminLeaveApproval
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(874, 500);
+            Controls.Add(Subtitle);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
             Controls.Add(approveBtn);
@@ -141,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -155,5 +168,6 @@
         private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn leaveDescriptionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
+        private Label Subtitle;
     }
 }
