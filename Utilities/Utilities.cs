@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -14,6 +15,20 @@ namespace Wage_Wizard.Utilities
     {
 
         /********************Universal************************/
+
+        public static bool CanConnectToCloudDB()
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                Console.WriteLine("Cloud Connection: " + context.Database.CanConnect().ToString());
+                return context.Database.CanConnect();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public static int currentUserId { get; set; }
 
