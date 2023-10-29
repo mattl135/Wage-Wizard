@@ -42,6 +42,7 @@
             PICRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             PICRequestsDGV.Location = new Point(14, 158);
             PICRequestsDGV.Margin = new Padding(3, 4, 3, 4);
+            PICRequestsDGV.MultiSelect = false;
             PICRequestsDGV.Name = "PICRequestsDGV";
             PICRequestsDGV.RowHeadersWidth = 51;
             PICRequestsDGV.RowTemplate.Height = 25;

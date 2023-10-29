@@ -78,6 +78,7 @@
             leaveRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             leaveRequestsDGV.Location = new Point(14, 146);
             leaveRequestsDGV.Margin = new Padding(3, 4, 3, 4);
+            leaveRequestsDGV.MultiSelect = false;
             leaveRequestsDGV.Name = "leaveRequestsDGV";
             leaveRequestsDGV.RowHeadersWidth = 51;
             leaveRequestsDGV.RowTemplate.Height = 25;
