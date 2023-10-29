@@ -36,9 +36,9 @@ namespace Wage_Wizard.Views
             leaveRequestBTN = new Button();
             payHistoryBTN = new Button();
             payRequestBtn = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            WelcomeMsg = new Label();
+            Subheader = new Label();
+            Header = new Label();
             LogoutBtn = new Button();
             SuspendLayout();
             // 
@@ -52,6 +52,7 @@ namespace Wage_Wizard.Views
             PICHistoryBTN.TabIndex = 19;
             PICHistoryBTN.Text = "View Personal Change Requests";
             PICHistoryBTN.UseVisualStyleBackColor = true;
+            PICHistoryBTN.Click += PICHistoryBTN_Click;
             // 
             // PICRequestBTN
             // 
@@ -63,6 +64,7 @@ namespace Wage_Wizard.Views
             PICRequestBTN.TabIndex = 18;
             PICRequestBTN.Text = "Request Personal Information Change";
             PICRequestBTN.UseVisualStyleBackColor = true;
+            PICRequestBTN.Click += PICRequestBTN_Click;
             // 
             // leaveHistoryBTN
             // 
@@ -74,6 +76,7 @@ namespace Wage_Wizard.Views
             leaveHistoryBTN.TabIndex = 17;
             leaveHistoryBTN.Text = "View Leave History";
             leaveHistoryBTN.UseVisualStyleBackColor = true;
+            leaveHistoryBTN.Click += leaveHistoryBTN_Click;
             // 
             // leaveRequestBTN
             // 
@@ -85,6 +88,7 @@ namespace Wage_Wizard.Views
             leaveRequestBTN.TabIndex = 16;
             leaveRequestBTN.Text = "Request Leave";
             leaveRequestBTN.UseVisualStyleBackColor = true;
+            leaveRequestBTN.Click += leaveRequestBTN_Click;
             // 
             // payHistoryBTN
             // 
@@ -96,6 +100,7 @@ namespace Wage_Wizard.Views
             payHistoryBTN.TabIndex = 15;
             payHistoryBTN.Text = "View Pay History";
             payHistoryBTN.UseVisualStyleBackColor = true;
+            payHistoryBTN.Click += payHistoryBTN_Click;
             // 
             // payRequestBtn
             // 
@@ -105,38 +110,39 @@ namespace Wage_Wizard.Views
             payRequestBtn.Name = "payRequestBtn";
             payRequestBtn.Size = new Size(264, 71);
             payRequestBtn.TabIndex = 14;
-            payRequestBtn.Text = "RequestPayment";
+            payRequestBtn.Text = "Request Payment";
             payRequestBtn.UseVisualStyleBackColor = true;
+            payRequestBtn.Click += payRequestBtn_Click;
             // 
-            // label3
+            // WelcomeMsg
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(287, 166);
-            label3.Name = "label3";
-            label3.Size = new Size(175, 35);
-            label3.TabIndex = 13;
-            label3.Text = "Welcome User";
+            WelcomeMsg.AutoSize = true;
+            WelcomeMsg.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            WelcomeMsg.Location = new Point(287, 166);
+            WelcomeMsg.Name = "WelcomeMsg";
+            WelcomeMsg.Size = new Size(175, 35);
+            WelcomeMsg.TabIndex = 13;
+            WelcomeMsg.Text = "Welcome User";
             // 
-            // label2
+            // Subheader
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(287, 91);
-            label2.Name = "label2";
-            label2.Size = new Size(262, 46);
-            label2.TabIndex = 12;
-            label2.Text = "Employee Menu";
+            Subheader.AutoSize = true;
+            Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subheader.Location = new Point(287, 91);
+            Subheader.Name = "Subheader";
+            Subheader.Size = new Size(262, 46);
+            Subheader.TabIndex = 12;
+            Subheader.Text = "Employee Menu";
             // 
-            // label1
+            // Header
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(258, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(321, 67);
-            label1.TabIndex = 11;
-            label1.Text = "Wage Wizard";
+            Header.AutoSize = true;
+            Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            Header.Location = new Point(258, 9);
+            Header.Name = "Header";
+            Header.Size = new Size(321, 67);
+            Header.TabIndex = 11;
+            Header.Text = "Wage Wizard";
             // 
             // LogoutBtn
             // 
@@ -161,9 +167,9 @@ namespace Wage_Wizard.Views
             Controls.Add(leaveRequestBTN);
             Controls.Add(payHistoryBTN);
             Controls.Add(payRequestBtn);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(WelcomeMsg);
+            Controls.Add(Subheader);
+            Controls.Add(Header);
             Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeMenu";
             Text = "Employee Menu";
@@ -178,9 +184,9 @@ namespace Wage_Wizard.Views
         private Button leaveRequestBTN;
         private Button payHistoryBTN;
         private Button payRequestBtn;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label WelcomeMsg;
+        private Label Subheader;
+        private Label Header;
         private Button LogoutBtn;
     }
 }
