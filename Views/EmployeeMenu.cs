@@ -53,10 +53,25 @@ namespace Wage_Wizard.Views
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Utilities.Utilities.currentUserId = 0;
-            Login login = new Login();
-            login.Show();
+            DialogResult dialogResult = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Logout?",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,  // This sets the icon to a question mark
+                MessageBoxDefaultButton.Button2);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+                Utilities.Utilities.currentUserId = 0;
+
+                Login login = new Login();
+                login.Show();
+            }
+            else
+            {
+                // User clicked 'No', do nothing
+            }
         }
     }
 }

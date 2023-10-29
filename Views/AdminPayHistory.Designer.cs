@@ -30,12 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             payHistoryDGV = new DataGridView();
-            exitBtn = new Button();
-            paymentRequestBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            paymentRequestBindingSource = new BindingSource(components);
+            exitBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)payHistoryDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             SuspendLayout();
@@ -51,20 +51,6 @@
             payHistoryDGV.RowTemplate.Height = 25;
             payHistoryDGV.Size = new Size(852, 378);
             payHistoryDGV.TabIndex = 3;
-            // 
-            // exitBtn
-            // 
-            exitBtn.Location = new Point(755, 415);
-            exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(86, 61);
-            exitBtn.TabIndex = 6;
-            exitBtn.Text = "Exit";
-            exitBtn.UseVisualStyleBackColor = true;
-            exitBtn.Click += exitBtn_Click;
-            // 
-            // paymentRequestBindingSource
-            // 
-            paymentRequestBindingSource.DataSource = typeof(Models.PaymentRequest);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -93,6 +79,20 @@
             approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
             approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             // 
+            // paymentRequestBindingSource
+            // 
+            paymentRequestBindingSource.DataSource = typeof(Models.PaymentRequest);
+            // 
+            // exitBtn
+            // 
+            exitBtn.Location = new Point(755, 415);
+            exitBtn.Name = "exitBtn";
+            exitBtn.Size = new Size(86, 61);
+            exitBtn.TabIndex = 6;
+            exitBtn.Text = "Exit";
+            exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
+            // 
             // AdminPayHistory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -100,6 +100,8 @@
             ClientSize = new Size(874, 500);
             Controls.Add(exitBtn);
             Controls.Add(payHistoryDGV);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MinimizeBox = false;
             Name = "AdminPayHistory";
             Text = "AdminPayHistory";
             ((System.ComponentModel.ISupportInitialize)payHistoryDGV).EndInit();

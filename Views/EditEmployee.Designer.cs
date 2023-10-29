@@ -66,11 +66,12 @@
             dataGridViewEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEmployees.Columns.AddRange(new DataGridViewColumn[] { bsbDataGridViewTextBoxColumn, accountNameDataGridViewTextBoxColumn, accountNumberDataGridViewTextBoxColumn, hourlyRateDataGridViewTextBoxColumn, taxFileNumberDataGridViewTextBoxColumn, paymentCurrencyCodeDataGridViewTextBoxColumn, idDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, titleDataGridViewTextBoxColumn, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn, emailAddressDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, mobileNumberDataGridViewTextBoxColumn, streetNumberDataGridViewTextBoxColumn, streetNameDataGridViewTextBoxColumn, suburbDataGridViewTextBoxColumn, cityDataGridViewTextBoxColumn, stateDataGridViewTextBoxColumn, countryDataGridViewTextBoxColumn });
             dataGridViewEmployees.DataSource = employeeBindingSource;
-            dataGridViewEmployees.Location = new Point(12, 73);
+            dataGridViewEmployees.Location = new Point(11, 55);
+            dataGridViewEmployees.Margin = new Padding(3, 2, 3, 2);
             dataGridViewEmployees.Name = "dataGridViewEmployees";
             dataGridViewEmployees.ReadOnly = true;
             dataGridViewEmployees.RowHeadersWidth = 51;
-            dataGridViewEmployees.Size = new Size(975, 457);
+            dataGridViewEmployees.Size = new Size(853, 343);
             dataGridViewEmployees.TabIndex = 0;
             // 
             // bsbDataGridViewTextBoxColumn
@@ -261,17 +262,18 @@
             // 
             Subtitle.AutoSize = true;
             Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(328, 9);
+            Subtitle.Location = new Point(288, 7);
             Subtitle.Name = "Subtitle";
-            Subtitle.Size = new Size(335, 46);
+            Subtitle.Size = new Size(270, 37);
             Subtitle.TabIndex = 2;
             Subtitle.Text = "View / Edit Employee";
             // 
             // EditEmployeeBtn
             // 
-            EditEmployeeBtn.Location = new Point(33, 553);
+            EditEmployeeBtn.Location = new Point(29, 415);
+            EditEmployeeBtn.Margin = new Padding(3, 2, 3, 2);
             EditEmployeeBtn.Name = "EditEmployeeBtn";
-            EditEmployeeBtn.Size = new Size(219, 81);
+            EditEmployeeBtn.Size = new Size(192, 61);
             EditEmployeeBtn.TabIndex = 4;
             EditEmployeeBtn.Text = "Edit Selected Employee";
             EditEmployeeBtn.UseVisualStyleBackColor = true;
@@ -279,10 +281,9 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(863, 553);
-            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Location = new Point(755, 415);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(98, 81);
+            exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 11;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -290,13 +291,16 @@
             // 
             // EditEmployee
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(999, 667);
+            ClientSize = new Size(874, 500);
             Controls.Add(exitBtn);
             Controls.Add(EditEmployeeBtn);
             Controls.Add(Subtitle);
             Controls.Add(dataGridViewEmployees);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "EditEmployee";
             Text = "View/Edit Employees";
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).EndInit();
