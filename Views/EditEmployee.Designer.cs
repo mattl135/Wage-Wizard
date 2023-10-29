@@ -30,10 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             dataGridViewEmployees = new DataGridView();
-            employeeBindingSource = new BindingSource(components);
-            Subtitle = new Label();
-            EditEmployeeBtn = new Button();
-            exitBtn = new Button();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             bsbDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             accountNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -53,6 +49,10 @@
             cityDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             stateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             countryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            employeeBindingSource = new BindingSource(components);
+            Subtitle = new Label();
+            EditEmployeeBtn = new Button();
+            exitBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             SuspendLayout();
@@ -74,41 +74,6 @@
             dataGridViewEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEmployees.Size = new Size(853, 343);
             dataGridViewEmployees.TabIndex = 0;
-            // 
-            // employeeBindingSource
-            // 
-            employeeBindingSource.DataSource = typeof(Models.Employee);
-            // 
-            // Subtitle
-            // 
-            Subtitle.AutoSize = true;
-            Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(288, 7);
-            Subtitle.Name = "Subtitle";
-            Subtitle.Size = new Size(270, 37);
-            Subtitle.TabIndex = 2;
-            Subtitle.Text = "View / Edit Employee";
-            // 
-            // EditEmployeeBtn
-            // 
-            EditEmployeeBtn.Location = new Point(29, 415);
-            EditEmployeeBtn.Margin = new Padding(3, 2, 3, 2);
-            EditEmployeeBtn.Name = "EditEmployeeBtn";
-            EditEmployeeBtn.Size = new Size(192, 61);
-            EditEmployeeBtn.TabIndex = 4;
-            EditEmployeeBtn.Text = "Edit Selected Employee";
-            EditEmployeeBtn.UseVisualStyleBackColor = true;
-            EditEmployeeBtn.Click += button1_Click;
-            // 
-            // exitBtn
-            // 
-            exitBtn.Location = new Point(755, 415);
-            exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(86, 61);
-            exitBtn.TabIndex = 11;
-            exitBtn.Text = "Exit";
-            exitBtn.UseVisualStyleBackColor = true;
-            exitBtn.Click += exitBtn_Click;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -280,6 +245,41 @@
             countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
             countryDataGridViewTextBoxColumn.ReadOnly = true;
             countryDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // employeeBindingSource
+            // 
+            employeeBindingSource.DataSource = typeof(Models.Employee);
+            // 
+            // Subtitle
+            // 
+            Subtitle.AutoSize = true;
+            Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subtitle.Location = new Point(288, 7);
+            Subtitle.Name = "Subtitle";
+            Subtitle.Size = new Size(270, 37);
+            Subtitle.TabIndex = 2;
+            Subtitle.Text = "View / Edit Employee";
+            // 
+            // EditEmployeeBtn
+            // 
+            EditEmployeeBtn.Location = new Point(11, 412);
+            EditEmployeeBtn.Margin = new Padding(3, 2, 3, 2);
+            EditEmployeeBtn.Name = "EditEmployeeBtn";
+            EditEmployeeBtn.Size = new Size(192, 61);
+            EditEmployeeBtn.TabIndex = 4;
+            EditEmployeeBtn.Text = "Edit Selected Employee";
+            EditEmployeeBtn.UseVisualStyleBackColor = true;
+            EditEmployeeBtn.Click += button1_Click;
+            // 
+            // exitBtn
+            // 
+            exitBtn.Location = new Point(778, 412);
+            exitBtn.Name = "exitBtn";
+            exitBtn.Size = new Size(86, 61);
+            exitBtn.TabIndex = 11;
+            exitBtn.Text = "Exit";
+            exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
             // 
             // EditEmployee
             // 

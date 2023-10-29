@@ -34,12 +34,14 @@
             label1 = new Label();
             loginDescription = new Label();
             exitApplication = new Button();
+            logo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             SuspendLayout();
             // 
             // userIDTextField
             // 
             userIDTextField.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            userIDTextField.Location = new Point(139, 179);
+            userIDTextField.Location = new Point(135, 348);
             userIDTextField.MaxLength = 8;
             userIDTextField.Name = "userIDTextField";
             userIDTextField.PlaceholderText = "User ID";
@@ -50,7 +52,7 @@
             // passwordTextField
             // 
             passwordTextField.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextField.Location = new Point(139, 227);
+            passwordTextField.Location = new Point(135, 396);
             passwordTextField.MaxLength = 32;
             passwordTextField.Name = "passwordTextField";
             passwordTextField.PasswordChar = '*';
@@ -63,7 +65,7 @@
             // loginBtn
             // 
             loginBtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            loginBtn.Location = new Point(174, 299);
+            loginBtn.Location = new Point(170, 468);
             loginBtn.Name = "loginBtn";
             loginBtn.Size = new Size(111, 46);
             loginBtn.TabIndex = 2;
@@ -76,7 +78,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(116, 58);
+            label1.Location = new Point(112, 227);
             label1.Name = "label1";
             label1.Size = new Size(227, 47);
             label1.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             loginDescription.AutoSize = true;
             loginDescription.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            loginDescription.Location = new Point(65, 128);
+            loginDescription.Location = new Point(61, 297);
             loginDescription.Name = "loginDescription";
             loginDescription.Size = new Size(350, 20);
             loginDescription.TabIndex = 4;
@@ -96,7 +98,7 @@
             // exitApplication
             // 
             exitApplication.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            exitApplication.Location = new Point(174, 362);
+            exitApplication.Location = new Point(170, 531);
             exitApplication.Name = "exitApplication";
             exitApplication.Size = new Size(111, 46);
             exitApplication.TabIndex = 5;
@@ -104,11 +106,22 @@
             exitApplication.UseVisualStyleBackColor = true;
             exitApplication.Click += exitApplication_Click;
             // 
+            // logo
+            // 
+            logo.ImageLocation = "";
+            logo.Location = new Point(86, 17);
+            logo.Name = "logo";
+            logo.Size = new Size(291, 207);
+            logo.TabIndex = 6;
+            logo.TabStop = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(473, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(473, 600);
+            Controls.Add(logo);
             Controls.Add(exitApplication);
             Controls.Add(loginDescription);
             Controls.Add(label1);
@@ -122,6 +135,7 @@
             Text = "Wage Wizard - Login";
             Click += LoginForm_Click;
             KeyDown += LoginForm_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,5 +148,6 @@
         private Label label1;
         private Label loginDescription;
         private Button exitApplication;
+        private PictureBox logo;
     }
 }

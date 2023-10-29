@@ -1,5 +1,6 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Collections.Immutable;
+using System.Windows.Forms;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
 using Wage_Wizard.Views;
@@ -11,6 +12,10 @@ namespace Wage_Wizard
         public Login()
         {
             InitializeComponent();
+            logo.Image = Image.FromFile("Resources\\Wage_Wizard-1.png");
+            logo.SizeMode = PictureBoxSizeMode.Zoom;
+            this.BackColor = ColorTranslator.FromHtml("#fffce6");
+
         }
 
         private void LoginForm_Click(object sender, EventArgs e)
