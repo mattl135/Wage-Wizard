@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {}
+    "C:\\Users\\Matt\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {
+    "C:\\Users\\Matt\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+        "projectUniqueName": "C:\\Users\\Matt\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
         "projectName": "Wage Wizard",
-        "projectPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+        "projectPath": "C:\\Users\\Matt\\source\\repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
         "packagesPath": "C:\\Users\\Matt\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Matt\\source\\repos\\mattl135\\Wage-Wizard\\obj\\",
         "projectStyle": "PackageReference",

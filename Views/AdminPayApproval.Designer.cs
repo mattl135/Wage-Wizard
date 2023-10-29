@@ -84,6 +84,7 @@
             payRequestsDGV.Location = new Point(11, 18);
             payRequestsDGV.Name = "payRequestsDGV";
             payRequestsDGV.RowTemplate.Height = 25;
+            payRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             payRequestsDGV.Size = new Size(852, 378);
             payRequestsDGV.TabIndex = 7;
             payRequestsDGV.CellClick += payRequestsDGV_CellClick;
