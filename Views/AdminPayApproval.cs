@@ -32,9 +32,6 @@ namespace Wage_Wizard.Views
             var payRequests = context.PaymentRequests;
             var employees = context.Employees;
             var persons = context.Persons;
-            /*var filteredData = (from request in payRequests
-                                where request.approvalStatus == Request.ApprovalStatus.Pending
-                                select request).ToList();*/
 
             var filteredData = (from request in payRequests
                                 join employee in employees on request.employeeID equals employee.id
