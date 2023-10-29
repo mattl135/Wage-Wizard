@@ -106,7 +106,7 @@ namespace Wage_Wizard.Views
 
         private void payHistoryDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+
             //Calculate the TotalPay, TaxPaid and SuperPaid columns
             //This must be grouped together, as TaxPaid and SuperPaid rely on TotalPay calculation
             if (payHistoryDGV.Columns[e.ColumnIndex].Name == "TotalPay")

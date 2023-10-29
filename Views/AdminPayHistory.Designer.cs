@@ -51,7 +51,7 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(755, 415);
+            exitBtn.Location = new Point(804, 408);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 6;
@@ -67,9 +67,10 @@
             Controls.Add(exitBtn);
             Controls.Add(payHistoryDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             MinimizeBox = false;
             Name = "AdminPayHistory";
-            Text = "AdminPayHistory";
+            Text = "Admin Pay History";
             ((System.ComponentModel.ISupportInitialize)payHistoryDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ResumeLayout(false);
