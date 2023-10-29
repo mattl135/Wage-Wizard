@@ -1,6 +1,6 @@
 ﻿namespace Wage_Wizard.Views
 {
-    partial class EmployeePICRequest
+    partial class NewEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -60,6 +60,8 @@
             streetNumberField = new TextBox();
             streetNumberLabel = new Label();
             groupBox1 = new GroupBox();
+            hourlyRateTextField = new TextBox();
+            hourlyRateLabel = new Label();
             currencyComboBox = new ComboBox();
             accountNameField = new TextBox();
             accountNameLabel = new Label();
@@ -82,12 +84,12 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(487, 134);
+            Subheader.Location = new Point(543, 134);
             Subheader.Margin = new Padding(6, 0, 6, 0);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(724, 72);
+            Subheader.Size = new Size(595, 72);
             Subheader.TabIndex = 15;
-            Subheader.Text = "Personal Information Change";
+            Subheader.Text = "Create a New Employee";
             // 
             // Header
             // 
@@ -113,9 +115,9 @@
             personalInformationGroupBox.Controls.Add(titleLabel);
             personalInformationGroupBox.Controls.Add(titleComboBox);
             personalInformationGroupBox.Location = new Point(22, 247);
-            personalInformationGroupBox.Margin = new Padding(6, 6, 6, 6);
+            personalInformationGroupBox.Margin = new Padding(6);
             personalInformationGroupBox.Name = "personalInformationGroupBox";
-            personalInformationGroupBox.Padding = new Padding(6, 6, 6, 6);
+            personalInformationGroupBox.Padding = new Padding(6);
             personalInformationGroupBox.Size = new Size(981, 343);
             personalInformationGroupBox.TabIndex = 16;
             personalInformationGroupBox.TabStop = false;
@@ -124,7 +126,7 @@
             // passwordTextBox
             // 
             passwordTextBox.Location = new Point(481, 243);
-            passwordTextBox.Margin = new Padding(6, 6, 6, 6);
+            passwordTextBox.Margin = new Padding(6);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(465, 39);
             passwordTextBox.TabIndex = 27;
@@ -143,7 +145,7 @@
             // dateOfBirthPicker
             // 
             dateOfBirthPicker.Location = new Point(11, 243);
-            dateOfBirthPicker.Margin = new Padding(6, 6, 6, 6);
+            dateOfBirthPicker.Margin = new Padding(6);
             dateOfBirthPicker.Name = "dateOfBirthPicker";
             dateOfBirthPicker.Size = new Size(422, 39);
             dateOfBirthPicker.TabIndex = 25;
@@ -163,7 +165,7 @@
             // lNameTextField
             // 
             lNameTextField.Location = new Point(643, 98);
-            lNameTextField.Margin = new Padding(6, 6, 6, 6);
+            lNameTextField.Margin = new Padding(6);
             lNameTextField.Name = "lNameTextField";
             lNameTextField.Size = new Size(303, 39);
             lNameTextField.TabIndex = 22;
@@ -182,7 +184,7 @@
             // fNameTextField
             // 
             fNameTextField.Location = new Point(286, 98);
-            fNameTextField.Margin = new Padding(6, 6, 6, 6);
+            fNameTextField.Margin = new Padding(6);
             fNameTextField.Name = "fNameTextField";
             fNameTextField.Size = new Size(303, 39);
             fNameTextField.TabIndex = 20;
@@ -214,7 +216,7 @@
             titleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             titleComboBox.FormattingEnabled = true;
             titleComboBox.Location = new Point(11, 98);
-            titleComboBox.Margin = new Padding(6, 6, 6, 6);
+            titleComboBox.Margin = new Padding(6);
             titleComboBox.Name = "titleComboBox";
             titleComboBox.Size = new Size(221, 40);
             titleComboBox.TabIndex = 17;
@@ -226,9 +228,9 @@
             contactInformationGroupBox.Controls.Add(emailTextField);
             contactInformationGroupBox.Controls.Add(emailAddressLabel);
             contactInformationGroupBox.Location = new Point(1033, 247);
-            contactInformationGroupBox.Margin = new Padding(6, 6, 6, 6);
+            contactInformationGroupBox.Margin = new Padding(6);
             contactInformationGroupBox.Name = "contactInformationGroupBox";
-            contactInformationGroupBox.Padding = new Padding(6, 6, 6, 6);
+            contactInformationGroupBox.Padding = new Padding(6);
             contactInformationGroupBox.Size = new Size(587, 343);
             contactInformationGroupBox.TabIndex = 17;
             contactInformationGroupBox.TabStop = false;
@@ -237,7 +239,7 @@
             // mobileTextField
             // 
             mobileTextField.Location = new Point(11, 243);
-            mobileTextField.Margin = new Padding(6, 6, 6, 6);
+            mobileTextField.Margin = new Padding(6);
             mobileTextField.MaxLength = 9;
             mobileTextField.Name = "mobileTextField";
             mobileTextField.Size = new Size(561, 39);
@@ -257,7 +259,7 @@
             // emailTextField
             // 
             emailTextField.Location = new Point(11, 98);
-            emailTextField.Margin = new Padding(6, 6, 6, 6);
+            emailTextField.Margin = new Padding(6);
             emailTextField.Name = "emailTextField";
             emailTextField.Size = new Size(561, 39);
             emailTextField.TabIndex = 22;
@@ -288,9 +290,9 @@
             addressContactBox.Controls.Add(streetNumberField);
             addressContactBox.Controls.Add(streetNumberLabel);
             addressContactBox.Location = new Point(22, 625);
-            addressContactBox.Margin = new Padding(6, 6, 6, 6);
+            addressContactBox.Margin = new Padding(6);
             addressContactBox.Name = "addressContactBox";
-            addressContactBox.Padding = new Padding(6, 6, 6, 6);
+            addressContactBox.Padding = new Padding(6);
             addressContactBox.Size = new Size(789, 429);
             addressContactBox.TabIndex = 25;
             addressContactBox.TabStop = false;
@@ -299,7 +301,7 @@
             // countryTextField
             // 
             countryTextField.Location = new Point(366, 352);
-            countryTextField.Margin = new Padding(6, 6, 6, 6);
+            countryTextField.Margin = new Padding(6);
             countryTextField.Name = "countryTextField";
             countryTextField.Size = new Size(409, 39);
             countryTextField.TabIndex = 34;
@@ -318,7 +320,7 @@
             // stateTextField
             // 
             stateTextField.Location = new Point(11, 352);
-            stateTextField.Margin = new Padding(6, 6, 6, 6);
+            stateTextField.Margin = new Padding(6);
             stateTextField.MaxLength = 100;
             stateTextField.Name = "stateTextField";
             stateTextField.Size = new Size(316, 39);
@@ -338,7 +340,7 @@
             // cityTextField
             // 
             cityTextField.Location = new Point(366, 226);
-            cityTextField.Margin = new Padding(6, 6, 6, 6);
+            cityTextField.Margin = new Padding(6);
             cityTextField.Name = "cityTextField";
             cityTextField.Size = new Size(409, 39);
             cityTextField.TabIndex = 30;
@@ -357,7 +359,7 @@
             // suburbTextField
             // 
             suburbTextField.Location = new Point(11, 226);
-            suburbTextField.Margin = new Padding(6, 6, 6, 6);
+            suburbTextField.Margin = new Padding(6);
             suburbTextField.Name = "suburbTextField";
             suburbTextField.Size = new Size(316, 39);
             suburbTextField.TabIndex = 28;
@@ -376,7 +378,7 @@
             // streetNameField
             // 
             streetNameField.Location = new Point(288, 92);
-            streetNameField.Margin = new Padding(6, 6, 6, 6);
+            streetNameField.Margin = new Padding(6);
             streetNameField.Name = "streetNameField";
             streetNameField.Size = new Size(487, 39);
             streetNameField.TabIndex = 26;
@@ -395,7 +397,7 @@
             // streetNumberField
             // 
             streetNumberField.Location = new Point(11, 92);
-            streetNumberField.Margin = new Padding(6, 6, 6, 6);
+            streetNumberField.Margin = new Padding(6);
             streetNumberField.MaxLength = 5;
             streetNumberField.Name = "streetNumberField";
             streetNumberField.Size = new Size(221, 39);
@@ -414,6 +416,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(hourlyRateTextField);
+            groupBox1.Controls.Add(hourlyRateLabel);
             groupBox1.Controls.Add(currencyComboBox);
             groupBox1.Controls.Add(accountNameField);
             groupBox1.Controls.Add(accountNameLabel);
@@ -425,20 +429,40 @@
             groupBox1.Controls.Add(bsbTextField);
             groupBox1.Controls.Add(bsbLabel);
             groupBox1.Location = new Point(830, 625);
-            groupBox1.Margin = new Padding(6, 6, 6, 6);
+            groupBox1.Margin = new Padding(6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(6, 6, 6, 6);
+            groupBox1.Padding = new Padding(6);
             groupBox1.Size = new Size(789, 429);
             groupBox1.TabIndex = 35;
             groupBox1.TabStop = false;
             groupBox1.Text = "Financial Information";
+            // 
+            // hourlyRateTextField
+            // 
+            hourlyRateTextField.Location = new Point(366, 352);
+            hourlyRateTextField.Margin = new Padding(6);
+            hourlyRateTextField.Name = "hourlyRateTextField";
+            hourlyRateTextField.Size = new Size(411, 39);
+            hourlyRateTextField.TabIndex = 35;
+            hourlyRateTextField.TextChanged += textBox2_TextChanged;
+            // 
+            // hourlyRateLabel
+            // 
+            hourlyRateLabel.AutoSize = true;
+            hourlyRateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            hourlyRateLabel.Location = new Point(366, 303);
+            hourlyRateLabel.Margin = new Padding(6, 0, 6, 0);
+            hourlyRateLabel.Name = "hourlyRateLabel";
+            hourlyRateLabel.Size = new Size(173, 41);
+            hourlyRateLabel.TabIndex = 34;
+            hourlyRateLabel.Text = "Hourly Rate";
             // 
             // currencyComboBox
             // 
             currencyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             currencyComboBox.FormattingEnabled = true;
             currencyComboBox.Location = new Point(366, 92);
-            currencyComboBox.Margin = new Padding(6, 6, 6, 6);
+            currencyComboBox.Margin = new Padding(6);
             currencyComboBox.Name = "currencyComboBox";
             currencyComboBox.Size = new Size(409, 40);
             currencyComboBox.TabIndex = 33;
@@ -446,9 +470,9 @@
             // accountNameField
             // 
             accountNameField.Location = new Point(11, 352);
-            accountNameField.Margin = new Padding(6, 6, 6, 6);
+            accountNameField.Margin = new Padding(6);
             accountNameField.Name = "accountNameField";
-            accountNameField.Size = new Size(764, 39);
+            accountNameField.Size = new Size(316, 39);
             accountNameField.TabIndex = 32;
             // 
             // accountNameLabel
@@ -465,7 +489,7 @@
             // taxFileNumberTextField
             // 
             taxFileNumberTextField.Location = new Point(366, 226);
-            taxFileNumberTextField.Margin = new Padding(6, 6, 6, 6);
+            taxFileNumberTextField.Margin = new Padding(6);
             taxFileNumberTextField.MaxLength = 9;
             taxFileNumberTextField.Name = "taxFileNumberTextField";
             taxFileNumberTextField.Size = new Size(409, 39);
@@ -485,7 +509,7 @@
             // accountNumberTextField
             // 
             accountNumberTextField.Location = new Point(11, 226);
-            accountNumberTextField.Margin = new Padding(6, 6, 6, 6);
+            accountNumberTextField.Margin = new Padding(6);
             accountNumberTextField.MaxLength = 10;
             accountNumberTextField.Name = "accountNumberTextField";
             accountNumberTextField.Size = new Size(316, 39);
@@ -516,7 +540,7 @@
             // bsbTextField
             // 
             bsbTextField.Location = new Point(11, 92);
-            bsbTextField.Margin = new Padding(6, 6, 6, 6);
+            bsbTextField.Margin = new Padding(6);
             bsbTextField.MaxLength = 8;
             bsbTextField.Name = "bsbTextField";
             bsbTextField.Size = new Size(316, 39);
@@ -537,7 +561,7 @@
             // 
             exitButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             exitButton.Location = new Point(293, 1120);
-            exitButton.Margin = new Padding(6, 6, 6, 6);
+            exitButton.Margin = new Padding(6);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(475, 85);
             exitButton.TabIndex = 36;
@@ -549,7 +573,7 @@
             // 
             saveChangesButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             saveChangesButton.Location = new Point(875, 1120);
-            saveChangesButton.Margin = new Padding(6, 6, 6, 6);
+            saveChangesButton.Margin = new Padding(6);
             saveChangesButton.Name = "saveChangesButton";
             saveChangesButton.Size = new Size(475, 85);
             saveChangesButton.TabIndex = 37;
@@ -557,7 +581,7 @@
             saveChangesButton.UseVisualStyleBackColor = true;
             saveChangesButton.Click += saveChangesButton_Click;
             // 
-            // EmployeePICRequest
+            // NewEmployee
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -571,10 +595,10 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             MaximizeBox = false;
-            Name = "EmployeePICRequest";
-            Text = "Employee Personal Information Change";
+            Name = "NewEmployee";
+            Text = "Create a New Employee";
             personalInformationGroupBox.ResumeLayout(false);
             personalInformationGroupBox.PerformLayout();
             contactInformationGroupBox.ResumeLayout(false);
@@ -634,5 +658,7 @@
         private ComboBox currencyComboBox;
         private Button exitButton;
         private Button saveChangesButton;
+        private TextBox hourlyRateTextField;
+        private Label hourlyRateLabel;
     }
 }

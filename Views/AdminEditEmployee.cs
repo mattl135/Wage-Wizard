@@ -80,5 +80,12 @@ namespace Wage_Wizard.Views
                 // User clicked 'No', do nothing
             }
         }
+
+        private void addNewEmployee_Click(object sender, EventArgs e)
+        {
+            NewEmployee newEmployee = new NewEmployee();
+            this.Close();
+            newEmployee.Show();
+        }
     }
 }

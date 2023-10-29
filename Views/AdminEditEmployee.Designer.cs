@@ -55,6 +55,7 @@
             Subheader = new Label();
             Header = new Label();
             removeEmployee = new Button();
+            addNewEmployee = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEmployees).BeginInit();
             ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
             SuspendLayout();
@@ -68,7 +69,7 @@
             dataGridViewEmployees.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, bsbDataGridViewTextBoxColumn, accountNameDataGridViewTextBoxColumn, accountNumberDataGridViewTextBoxColumn, hourlyRateDataGridViewTextBoxColumn, taxFileNumberDataGridViewTextBoxColumn, paymentCurrencyCodeDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn, emailAddressDataGridViewTextBoxColumn, dobDataGridViewTextBoxColumn, mobileNumberDataGridViewTextBoxColumn, streetNumberDataGridViewTextBoxColumn, streetNameDataGridViewTextBoxColumn, suburbDataGridViewTextBoxColumn, cityDataGridViewTextBoxColumn, stateDataGridViewTextBoxColumn, countryDataGridViewTextBoxColumn });
             dataGridViewEmployees.DataSource = employeeBindingSource;
             dataGridViewEmployees.Location = new Point(21, 250);
-            dataGridViewEmployees.Margin = new Padding(5, 5, 5, 5);
+            dataGridViewEmployees.Margin = new Padding(5);
             dataGridViewEmployees.MultiSelect = false;
             dataGridViewEmployees.Name = "dataGridViewEmployees";
             dataGridViewEmployees.ReadOnly = true;
@@ -255,7 +256,7 @@
             // EditEmployeeBtn
             // 
             EditEmployeeBtn.Location = new Point(20, 918);
-            EditEmployeeBtn.Margin = new Padding(5, 5, 5, 5);
+            EditEmployeeBtn.Margin = new Padding(5);
             EditEmployeeBtn.Name = "EditEmployeeBtn";
             EditEmployeeBtn.Size = new Size(356, 130);
             EditEmployeeBtn.TabIndex = 4;
@@ -298,19 +299,31 @@
             // 
             // removeEmployee
             // 
-            removeEmployee.Location = new Point(440, 918);
+            removeEmployee.Location = new Point(446, 918);
             removeEmployee.Name = "removeEmployee";
             removeEmployee.Size = new Size(356, 130);
             removeEmployee.TabIndex = 16;
-            removeEmployee.Text = "Remove Selected Employee";
+            removeEmployee.Text = "Delete Selected Employee";
             removeEmployee.UseVisualStyleBackColor = true;
             removeEmployee.Click += removeEmployee_Click;
+            // 
+            // addNewEmployee
+            // 
+            addNewEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+            addNewEmployee.Location = new Point(872, 918);
+            addNewEmployee.Name = "addNewEmployee";
+            addNewEmployee.Size = new Size(356, 130);
+            addNewEmployee.TabIndex = 17;
+            addNewEmployee.Text = "Create New Employee";
+            addNewEmployee.UseVisualStyleBackColor = true;
+            addNewEmployee.Click += addNewEmployee_Click;
             // 
             // AdminEditEmployee
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1623, 1067);
+            Controls.Add(addNewEmployee);
             Controls.Add(removeEmployee);
             Controls.Add(Subheader);
             Controls.Add(Header);
@@ -318,7 +331,7 @@
             Controls.Add(EditEmployeeBtn);
             Controls.Add(dataGridViewEmployees);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             MaximizeBox = false;
             Name = "AdminEditEmployee";
             Text = "View/Edit Employees";
@@ -357,5 +370,6 @@
         private Label Subheader;
         private Label Header;
         private Button removeEmployee;
+        private Button addNewEmployee;
     }
 }
