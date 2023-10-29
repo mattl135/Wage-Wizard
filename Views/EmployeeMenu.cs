@@ -13,10 +13,11 @@ namespace Wage_Wizard.Views
 {
     public partial class EmployeeMenu : Form
     {
+        Employee currentUser = Utilities.Utilities.getEmployeeWithID(Utilities.Utilities.currentUserId);
+
         public EmployeeMenu()
         {
             InitializeComponent();
-            Employee currentUser = Utilities.Utilities.getEmployeeWithID(Utilities.Utilities.currentUserId);
             WelcomeMsg.Text = "Welcome " + currentUser.GetPersonFullName();
         }
 
