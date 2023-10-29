@@ -22,7 +22,8 @@ namespace Wage_Wizard.Views
 
         private void payRequestBtn_Click(object sender, EventArgs e)
         {
-
+            EmployeeRequestPay employeeRequestPay = new EmployeeRequestPay();
+            employeeRequestPay.Show();
         }
 
         private void leaveRequestBTN_Click(object sender, EventArgs e)

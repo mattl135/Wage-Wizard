@@ -36,15 +36,24 @@
             WedLabel = new Label();
             ThuLabel = new Label();
             FriLabel = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
             HoursLabel = new Label();
             TotalHoursLabel = new Label();
             TotalHoursDisplay = new Label();
             RequestPayBtn = new Button();
+            MonHours = new NumericUpDown();
+            TueHours = new NumericUpDown();
+            WedHours = new NumericUpDown();
+            ThuHours = new NumericUpDown();
+            FriHours = new NumericUpDown();
+            LeaveRateLabel = new Label();
+            LeaveRateDisplay = new Label();
+            TotalPayLabel = new Label();
+            TotalPayDisplay = new Label();
+            ((System.ComponentModel.ISupportInitialize)MonHours).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TueHours).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)WedHours).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ThuHours).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)FriHours).BeginInit();
             SuspendLayout();
             // 
             // Subheader
@@ -82,7 +91,7 @@
             // 
             MonLabel.AutoSize = true;
             MonLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            MonLabel.Location = new Point(304, 227);
+            MonLabel.Location = new Point(128, 229);
             MonLabel.Name = "MonLabel";
             MonLabel.Size = new Size(102, 32);
             MonLabel.TabIndex = 22;
@@ -92,7 +101,7 @@
             // 
             TueLabel.AutoSize = true;
             TueLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TueLabel.Location = new Point(304, 288);
+            TueLabel.Location = new Point(128, 290);
             TueLabel.Name = "TueLabel";
             TueLabel.Size = new Size(102, 32);
             TueLabel.TabIndex = 23;
@@ -102,7 +111,7 @@
             // 
             WedLabel.AutoSize = true;
             WedLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            WedLabel.Location = new Point(269, 346);
+            WedLabel.Location = new Point(93, 348);
             WedLabel.Name = "WedLabel";
             WedLabel.Size = new Size(137, 32);
             WedLabel.TabIndex = 24;
@@ -112,7 +121,7 @@
             // 
             ThuLabel.AutoSize = true;
             ThuLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            ThuLabel.Location = new Point(295, 402);
+            ThuLabel.Location = new Point(119, 404);
             ThuLabel.Name = "ThuLabel";
             ThuLabel.Size = new Size(111, 32);
             ThuLabel.TabIndex = 25;
@@ -122,57 +131,17 @@
             // 
             FriLabel.AutoSize = true;
             FriLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            FriLabel.Location = new Point(328, 457);
+            FriLabel.Location = new Point(152, 459);
             FriLabel.Name = "FriLabel";
             FriLabel.Size = new Size(78, 32);
             FriLabel.TabIndex = 26;
             FriLabel.Text = "Friday";
             // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(434, 227);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(107, 39);
-            textBox1.TabIndex = 27;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(434, 288);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(107, 39);
-            textBox2.TabIndex = 28;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(434, 346);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(107, 39);
-            textBox3.TabIndex = 29;
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(434, 402);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(107, 39);
-            textBox4.TabIndex = 30;
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(434, 457);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(107, 39);
-            textBox5.TabIndex = 31;
-            // 
             // HoursLabel
             // 
             HoursLabel.AutoSize = true;
             HoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            HoursLabel.Location = new Point(450, 180);
+            HoursLabel.Location = new Point(274, 182);
             HoursLabel.Name = "HoursLabel";
             HoursLabel.Size = new Size(77, 32);
             HoursLabel.TabIndex = 33;
@@ -182,7 +151,7 @@
             // 
             TotalHoursLabel.AutoSize = true;
             TotalHoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalHoursLabel.Location = new Point(280, 540);
+            TotalHoursLabel.Location = new Point(517, 229);
             TotalHoursLabel.Name = "TotalHoursLabel";
             TotalHoursLabel.Size = new Size(135, 32);
             TotalHoursLabel.TabIndex = 34;
@@ -192,7 +161,7 @@
             // 
             TotalHoursDisplay.AutoSize = true;
             TotalHoursDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalHoursDisplay.Location = new Point(434, 540);
+            TotalHoursDisplay.Location = new Point(671, 229);
             TotalHoursDisplay.Name = "TotalHoursDisplay";
             TotalHoursDisplay.Size = new Size(27, 32);
             TotalHoursDisplay.TabIndex = 35;
@@ -209,20 +178,124 @@
             RequestPayBtn.UseMnemonic = false;
             RequestPayBtn.UseVisualStyleBackColor = true;
             // 
+            // MonHours
+            // 
+            MonHours.DecimalPlaces = 1;
+            MonHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            MonHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
+            MonHours.Location = new Point(258, 229);
+            MonHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            MonHours.Name = "MonHours";
+            MonHours.Size = new Size(107, 39);
+            MonHours.TabIndex = 38;
+            MonHours.ValueChanged += MonHours_ValueChanged;
+            // 
+            // TueHours
+            // 
+            TueHours.DecimalPlaces = 1;
+            TueHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            TueHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
+            TueHours.Location = new Point(258, 290);
+            TueHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            TueHours.Name = "TueHours";
+            TueHours.Size = new Size(107, 39);
+            TueHours.TabIndex = 39;
+            TueHours.ValueChanged += TueHours_ValueChanged;
+            // 
+            // WedHours
+            // 
+            WedHours.DecimalPlaces = 1;
+            WedHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            WedHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
+            WedHours.Location = new Point(258, 348);
+            WedHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            WedHours.Name = "WedHours";
+            WedHours.Size = new Size(107, 39);
+            WedHours.TabIndex = 40;
+            WedHours.ValueChanged += WedHours_ValueChanged;
+            // 
+            // ThuHours
+            // 
+            ThuHours.DecimalPlaces = 1;
+            ThuHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            ThuHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
+            ThuHours.Location = new Point(258, 404);
+            ThuHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            ThuHours.Name = "ThuHours";
+            ThuHours.Size = new Size(107, 39);
+            ThuHours.TabIndex = 41;
+            ThuHours.ValueChanged += ThuHours_ValueChanged;
+            // 
+            // FriHours
+            // 
+            FriHours.DecimalPlaces = 1;
+            FriHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            FriHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
+            FriHours.Location = new Point(258, 459);
+            FriHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
+            FriHours.Name = "FriHours";
+            FriHours.Size = new Size(107, 39);
+            FriHours.TabIndex = 42;
+            FriHours.ValueChanged += FriHours_ValueChanged;
+            // 
+            // LeaveRateLabel
+            // 
+            LeaveRateLabel.AutoSize = true;
+            LeaveRateLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            LeaveRateLabel.Location = new Point(523, 290);
+            LeaveRateLabel.Name = "LeaveRateLabel";
+            LeaveRateLabel.Size = new Size(129, 32);
+            LeaveRateLabel.TabIndex = 43;
+            LeaveRateLabel.Text = "Leave Rate";
+            // 
+            // LeaveRateDisplay
+            // 
+            LeaveRateDisplay.AutoSize = true;
+            LeaveRateDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            LeaveRateDisplay.Location = new Point(671, 292);
+            LeaveRateDisplay.Name = "LeaveRateDisplay";
+            LeaveRateDisplay.Size = new Size(27, 32);
+            LeaveRateDisplay.TabIndex = 44;
+            LeaveRateDisplay.Text = "0";
+            // 
+            // TotalPayLabel
+            // 
+            TotalPayLabel.AutoSize = true;
+            TotalPayLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            TotalPayLabel.Location = new Point(544, 348);
+            TotalPayLabel.Name = "TotalPayLabel";
+            TotalPayLabel.Size = new Size(108, 32);
+            TotalPayLabel.TabIndex = 45;
+            TotalPayLabel.Text = "Total Pay";
+            // 
+            // TotalPayDisplay
+            // 
+            TotalPayDisplay.AutoSize = true;
+            TotalPayDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            TotalPayDisplay.Location = new Point(671, 348);
+            TotalPayDisplay.Name = "TotalPayDisplay";
+            TotalPayDisplay.Size = new Size(27, 32);
+            TotalPayDisplay.TabIndex = 46;
+            TotalPayDisplay.Text = "0";
+            // 
             // EmployeeRequestPay
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(881, 707);
+            Controls.Add(TotalPayDisplay);
+            Controls.Add(TotalPayLabel);
+            Controls.Add(LeaveRateDisplay);
+            Controls.Add(LeaveRateLabel);
+            Controls.Add(FriHours);
+            Controls.Add(ThuHours);
+            Controls.Add(WedHours);
+            Controls.Add(TueHours);
+            Controls.Add(MonHours);
             Controls.Add(RequestPayBtn);
             Controls.Add(TotalHoursDisplay);
             Controls.Add(TotalHoursLabel);
             Controls.Add(HoursLabel);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(FriLabel);
             Controls.Add(ThuLabel);
             Controls.Add(WedLabel);
@@ -234,6 +307,11 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeRequestPay";
             Text = "Request Payment";
+            ((System.ComponentModel.ISupportInitialize)MonHours).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TueHours).EndInit();
+            ((System.ComponentModel.ISupportInitialize)WedHours).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ThuHours).EndInit();
+            ((System.ComponentModel.ISupportInitialize)FriHours).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,14 +325,18 @@
         private Label WedLabel;
         private Label ThuLabel;
         private Label FriLabel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
         private Label HoursLabel;
         private Label TotalHoursLabel;
         private Label TotalHoursDisplay;
         private Button RequestPayBtn;
+        private NumericUpDown MonHours;
+        private NumericUpDown TueHours;
+        private NumericUpDown WedHours;
+        private NumericUpDown ThuHours;
+        private NumericUpDown FriHours;
+        private Label LeaveRateLabel;
+        private Label LeaveRateDisplay;
+        private Label TotalPayLabel;
+        private Label TotalPayDisplay;
     }
 }
