@@ -39,12 +39,14 @@ namespace Wage_Wizard.Views
         }
         private void payHistoryBTN_Click(object sender, EventArgs e)
         {
-
+            EmployeePayHistory employeePayHistory = new EmployeePayHistory();
+            employeePayHistory.Show();
         }
 
         private void leaveHistoryBTN_Click(object sender, EventArgs e)
         {
-
+            EmployeeLeaveHistory employeeLeaveHistory = new EmployeeLeaveHistory();
+            employeeLeaveHistory.Show();
         }
 
         private void PICHistoryBTN_Click(object sender, EventArgs e)

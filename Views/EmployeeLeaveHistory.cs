@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +11,11 @@ using Wage_Wizard.Data;
 
 namespace Wage_Wizard.Views
 {
-    public partial class AdminLeaveHistory : Form
+    public partial class EmployeeLeaveHistory : Form
     {
         private object? dbContext;
 
-        public AdminLeaveHistory()
+        public EmployeeLeaveHistory()
         {
             InitializeComponent();
         }
@@ -32,13 +31,10 @@ namespace Wage_Wizard.Views
 
             var filteredData = (from request in leaveRequests
                                 join employee in employees on request.employeeID equals employee.id
-                                join person in persons on employee.id equals person.id
+                                where request.employeeID == Utilities.Utilities.currentUserId
                                 select new
                                 {
                                     request.id,
-                                    request.employeeID,
-                                    person.fName,
-                                    person.lName,
                                     request.hours,
                                     employee.accumulatedLeave,
                                     request.leaveDescription,
@@ -47,9 +43,6 @@ namespace Wage_Wizard.Views
             leaveHistoryDGV.DataSource = filteredData;
 
             leaveHistoryDGV.Columns["id"].HeaderText = "Leave Request ID";
-            leaveHistoryDGV.Columns["employeeID"].HeaderText = "Employee ID";
-            leaveHistoryDGV.Columns["fName"].HeaderText = "First Name";
-            leaveHistoryDGV.Columns["lName"].HeaderText = "Last Name";
             leaveHistoryDGV.Columns["hours"].HeaderText = "Leave Amount Requested";
             leaveHistoryDGV.Columns["accumulatedLeave"].HeaderText = "Accumulated Leave Available";
             leaveHistoryDGV.Columns["leaveDescription"].HeaderText = "Leave Description";
@@ -57,11 +50,6 @@ namespace Wage_Wizard.Views
 
             //Refresh to load data
             leaveHistoryDGV.Refresh();
-
-            //Forces the screen to open the window in the topleft of the screen
-            int x = Screen.PrimaryScreen.WorkingArea.Top;
-            int y = Screen.PrimaryScreen.WorkingArea.Left;
-            this.Location = new Point(x, y);
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -70,15 +58,9 @@ namespace Wage_Wizard.Views
             dbContext = null;
         }
 
-        //Exit button to close menu
-        private void exitBtn_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void leaveHistoryDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
