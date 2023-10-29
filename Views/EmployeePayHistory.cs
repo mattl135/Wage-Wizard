@@ -1,4 +1,5 @@
-﻿using Microsoft.Identity.Client.Utils.Windows;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client.Utils.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace Wage_Wizard.Views
 {
     public partial class EmployeePayHistory : Form
     {
+        private object? dbContext;
+
         public EmployeePayHistory()
         {
             InitializeComponent();
@@ -27,7 +30,6 @@ namespace Wage_Wizard.Views
 
             var payRequests = context.PaymentRequests;
             var employees = context.Employees;
-            var persons = context.Persons;
 
             var filteredData = (from request in payRequests
                                 join employee in employees on request.employeeID equals employee.id
@@ -72,10 +74,17 @@ namespace Wage_Wizard.Views
             payHistoryDGV.CellFormatting += new DataGridViewCellFormattingEventHandler(payHistoryDGV_CellFormatting);
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            dbContext = null;
+        }
+
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void payHistoryDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 

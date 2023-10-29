@@ -45,7 +45,8 @@ namespace Wage_Wizard.Views
 
         private void leaveHistoryBTN_Click(object sender, EventArgs e)
         {
-
+            EmployeeLeaveHistory employeeLeaveHistory = new EmployeeLeaveHistory();
+            employeeLeaveHistory.Show();
         }
 
         private void PICHistoryBTN_Click(object sender, EventArgs e)
