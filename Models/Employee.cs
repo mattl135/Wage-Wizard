@@ -69,6 +69,7 @@ namespace Wage_Wizard.Models
             this.hourlyRate = hourlyRate;
             this.taxFileNumber = taxFileNumber;
             this.paymentCurrencyCode = paymentCurrencyCode;
+            this.accumulatedLeave = 0;
         }
 
         public void updatePersonalInformationFromPersonChangeRequest(int personChangeRequestID)
