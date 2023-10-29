@@ -155,7 +155,7 @@ namespace Wage_Wizard.Views
                 foreach (DataGridViewRow r in PICRequestsDGV.SelectedRows)
                 {
                     PersonChangeRequest personChangeRequest = Utilities.Utilities.getPersonChangeReqestWithID(Convert.ToInt32(r.Cells[0].Value));
-                    
+
                     //Checks if the approval status is pending to prevent users from editing already actioned requests
                     if (Utilities.Utilities.getPersonChangeReqestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Models.Request.ApprovalStatus.Pending)
                     {

@@ -99,5 +99,9 @@ namespace Wage_Wizard.Views
         {
             this.Close();
         }
+
+        private void Header_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

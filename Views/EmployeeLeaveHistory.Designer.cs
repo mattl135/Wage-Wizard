@@ -39,7 +39,7 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(282, 9);
+            Header.Location = new Point(358, 18);
             Header.Name = "Header";
             Header.Size = new Size(321, 67);
             Header.TabIndex = 14;
@@ -49,7 +49,7 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(307, 85);
+            Subheader.Location = new Point(358, 96);
             Subheader.Name = "Subheader";
             Subheader.Size = new Size(301, 46);
             Subheader.TabIndex = 15;
@@ -58,17 +58,17 @@
             // leaveHistoryDGV
             // 
             leaveHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leaveHistoryDGV.Location = new Point(12, 146);
+            leaveHistoryDGV.Location = new Point(12, 164);
             leaveHistoryDGV.Margin = new Padding(3, 4, 3, 4);
             leaveHistoryDGV.Name = "leaveHistoryDGV";
             leaveHistoryDGV.RowHeadersWidth = 51;
             leaveHistoryDGV.RowTemplate.Height = 25;
-            leaveHistoryDGV.Size = new Size(857, 456);
+            leaveHistoryDGV.Size = new Size(998, 413);
             leaveHistoryDGV.TabIndex = 41;
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(775, 624);
+            ExitBtn.Location = new Point(916, 584);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(94, 71);
             ExitBtn.TabIndex = 42;
@@ -81,7 +81,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 707);
+            ClientSize = new Size(1022, 667);
             Controls.Add(ExitBtn);
             Controls.Add(leaveHistoryDGV);
             Controls.Add(Subheader);
