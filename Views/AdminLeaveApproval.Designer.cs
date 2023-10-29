@@ -33,12 +33,12 @@
             denyBtn = new Button();
             approveBtn = new Button();
             leaveRequestsDGV = new DataGridView();
-            leaveRequestBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             leaveDescriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            leaveRequestBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
             SuspendLayout();
@@ -85,10 +85,6 @@
             leaveRequestsDGV.Size = new Size(852, 378);
             leaveRequestsDGV.TabIndex = 7;
             // 
-            // leaveRequestBindingSource
-            // 
-            leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -125,6 +121,10 @@
             approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
             approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             // 
+            // leaveRequestBindingSource
+            // 
+            leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
+            // 
             // AdminLeaveApproval
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -134,6 +134,8 @@
             Controls.Add(denyBtn);
             Controls.Add(approveBtn);
             Controls.Add(leaveRequestsDGV);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "AdminLeaveApproval";
             Text = "AdminLeaveApproval";
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).EndInit();

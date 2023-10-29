@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Azure.Core;
+using Microsoft.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
+using Wage_Wizard.Views;
 using static Wage_Wizard.Models.Person;
 
 namespace Wage_Wizard.Utilities
@@ -143,8 +146,21 @@ namespace Wage_Wizard.Utilities
             //UpdatePaymentRequest
             List<int> paymentRequests = Utilities.getPayRequestIDs();
             PaymentRequest paymentRequest = Utilities.getPayRequestWithID(paymentRequests[0]);
-            paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
+            paymentRequest.approvalStatus = Models.Request.ApprovalStatus.Rejected;
             Utilities.savePayRequestChangesToDB(paymentRequest);
+
+            //Tester
+
+            
+
+            //UpdatePaymentRequest
+            List<int> leaveRequests = Utilities.getLeaveRequestsIDs();
+            counter = 0;
+            foreach (int request in leaveRequests)
+            {
+                counter++;
+                Console.WriteLine($"\t {counter} : {request}");
+            }
         }
 
 

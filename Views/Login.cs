@@ -106,5 +106,24 @@ namespace Wage_Wizard
                 this.ActiveControl = null;
             }
         }
+
+        private void exitApplication_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Exit Application",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,  // This sets the icon to a question mark
+                MessageBoxDefaultButton.Button2);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                // User clicked 'No', do nothing
+            }
+        }
     }
 }

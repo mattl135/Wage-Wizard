@@ -366,6 +366,9 @@
             Controls.Add(dataGridViewAdmins);
             Controls.Add(Employees);
             Controls.Add(Administrators);
+            Cursor = Cursors.IBeam;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "DisplayDBTable";
             Text = "Display DB Table";
             ((System.ComponentModel.ISupportInitialize)dataGridViewAdmins).EndInit();

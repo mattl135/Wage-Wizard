@@ -45,10 +45,9 @@ namespace Wage_Wizard.Views
             // PICHistoryBTN
             // 
             PICHistoryBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            PICHistoryBTN.Location = new Point(483, 457);
-            PICHistoryBTN.Margin = new Padding(3, 4, 3, 4);
+            PICHistoryBTN.Location = new Point(431, 343);
             PICHistoryBTN.Name = "PICHistoryBTN";
-            PICHistoryBTN.Size = new Size(264, 71);
+            PICHistoryBTN.Size = new Size(231, 53);
             PICHistoryBTN.TabIndex = 19;
             PICHistoryBTN.Text = "View Personal Change Requests";
             PICHistoryBTN.UseVisualStyleBackColor = true;
@@ -57,10 +56,9 @@ namespace Wage_Wizard.Views
             // PICRequestBTN
             // 
             PICRequestBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            PICRequestBTN.Location = new Point(114, 457);
-            PICRequestBTN.Margin = new Padding(3, 4, 3, 4);
+            PICRequestBTN.Location = new Point(108, 343);
             PICRequestBTN.Name = "PICRequestBTN";
-            PICRequestBTN.Size = new Size(264, 71);
+            PICRequestBTN.Size = new Size(231, 53);
             PICRequestBTN.TabIndex = 18;
             PICRequestBTN.Text = "Request Personal Information Change";
             PICRequestBTN.UseVisualStyleBackColor = true;
@@ -69,10 +67,9 @@ namespace Wage_Wizard.Views
             // leaveHistoryBTN
             // 
             leaveHistoryBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            leaveHistoryBTN.Location = new Point(483, 356);
-            leaveHistoryBTN.Margin = new Padding(3, 4, 3, 4);
+            leaveHistoryBTN.Location = new Point(431, 266);
             leaveHistoryBTN.Name = "leaveHistoryBTN";
-            leaveHistoryBTN.Size = new Size(264, 71);
+            leaveHistoryBTN.Size = new Size(231, 53);
             leaveHistoryBTN.TabIndex = 17;
             leaveHistoryBTN.Text = "View Leave History";
             leaveHistoryBTN.UseVisualStyleBackColor = true;
@@ -81,10 +78,9 @@ namespace Wage_Wizard.Views
             // leaveRequestBTN
             // 
             leaveRequestBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            leaveRequestBTN.Location = new Point(114, 356);
-            leaveRequestBTN.Margin = new Padding(3, 4, 3, 4);
+            leaveRequestBTN.Location = new Point(108, 266);
             leaveRequestBTN.Name = "leaveRequestBTN";
-            leaveRequestBTN.Size = new Size(264, 71);
+            leaveRequestBTN.Size = new Size(231, 53);
             leaveRequestBTN.TabIndex = 16;
             leaveRequestBTN.Text = "Request Leave";
             leaveRequestBTN.UseVisualStyleBackColor = true;
@@ -93,10 +89,9 @@ namespace Wage_Wizard.Views
             // payHistoryBTN
             // 
             payHistoryBTN.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            payHistoryBTN.Location = new Point(483, 252);
-            payHistoryBTN.Margin = new Padding(3, 4, 3, 4);
+            payHistoryBTN.Location = new Point(431, 189);
             payHistoryBTN.Name = "payHistoryBTN";
-            payHistoryBTN.Size = new Size(264, 71);
+            payHistoryBTN.Size = new Size(231, 53);
             payHistoryBTN.TabIndex = 15;
             payHistoryBTN.Text = "View Pay History";
             payHistoryBTN.UseVisualStyleBackColor = true;
@@ -105,10 +100,9 @@ namespace Wage_Wizard.Views
             // payRequestBtn
             // 
             payRequestBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            payRequestBtn.Location = new Point(114, 252);
-            payRequestBtn.Margin = new Padding(3, 4, 3, 4);
+            payRequestBtn.Location = new Point(108, 189);
             payRequestBtn.Name = "payRequestBtn";
-            payRequestBtn.Size = new Size(264, 71);
+            payRequestBtn.Size = new Size(231, 53);
             payRequestBtn.TabIndex = 14;
             payRequestBtn.Text = "Request Payment";
             payRequestBtn.UseVisualStyleBackColor = true;
@@ -116,21 +110,21 @@ namespace Wage_Wizard.Views
             // 
             // WelcomeMsg
             // 
-            WelcomeMsg.AutoSize = true;
             WelcomeMsg.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            WelcomeMsg.Location = new Point(287, 166);
+            WelcomeMsg.Location = new Point(0, 99);
             WelcomeMsg.Name = "WelcomeMsg";
-            WelcomeMsg.Size = new Size(175, 35);
+            WelcomeMsg.Size = new Size(771, 40);
             WelcomeMsg.TabIndex = 13;
             WelcomeMsg.Text = "Welcome User";
+            WelcomeMsg.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Subheader
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(287, 91);
+            Subheader.Location = new Point(281, 61);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(262, 46);
+            Subheader.Size = new Size(209, 37);
             Subheader.TabIndex = 12;
             Subheader.Text = "Employee Menu";
             // 
@@ -138,17 +132,18 @@ namespace Wage_Wizard.Views
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(258, 9);
+            Header.Location = new Point(257, 7);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 11;
             Header.Text = "Wage Wizard";
             // 
             // LogoutBtn
             // 
-            LogoutBtn.Location = new Point(757, 609);
+            LogoutBtn.Location = new Point(662, 457);
+            LogoutBtn.Margin = new Padding(3, 2, 3, 2);
             LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(94, 71);
+            LogoutBtn.Size = new Size(82, 53);
             LogoutBtn.TabIndex = 20;
             LogoutBtn.Text = "Logout";
             LogoutBtn.UseMnemonic = false;
@@ -157,9 +152,9 @@ namespace Wage_Wizard.Views
             // 
             // EmployeeMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 707);
+            ClientSize = new Size(771, 530);
             Controls.Add(LogoutBtn);
             Controls.Add(PICHistoryBTN);
             Controls.Add(PICRequestBTN);
@@ -170,7 +165,8 @@ namespace Wage_Wizard.Views
             Controls.Add(WelcomeMsg);
             Controls.Add(Subheader);
             Controls.Add(Header);
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "EmployeeMenu";
             Text = "Employee Menu";
             ResumeLayout(false);

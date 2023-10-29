@@ -31,12 +31,12 @@
             components = new System.ComponentModel.Container();
             exitBtn = new Button();
             leaveHistoryDGV = new DataGridView();
-            leaveRequestBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             leaveDescriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            leaveRequestBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)leaveHistoryDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
             SuspendLayout();
@@ -62,10 +62,6 @@
             leaveHistoryDGV.RowTemplate.Height = 25;
             leaveHistoryDGV.Size = new Size(852, 378);
             leaveHistoryDGV.TabIndex = 11;
-            // 
-            // leaveRequestBindingSource
-            // 
-            leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -103,6 +99,10 @@
             approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
             approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
             // 
+            // leaveRequestBindingSource
+            // 
+            leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
+            // 
             // AdminLeaveHistory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -110,6 +110,8 @@
             ClientSize = new Size(874, 500);
             Controls.Add(exitBtn);
             Controls.Add(leaveHistoryDGV);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "AdminLeaveHistory";
             Text = "AdminLeaveHistory";
             ((System.ComponentModel.ISupportInitialize)leaveHistoryDGV).EndInit();

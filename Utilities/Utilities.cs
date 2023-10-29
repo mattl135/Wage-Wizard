@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -14,6 +15,20 @@ namespace Wage_Wizard.Utilities
     {
 
         /********************Universal************************/
+
+        public static bool CanConnectToCloudDB()
+        {
+            try
+            {
+                using WageWizardContext context = new WageWizardContext();
+                Console.WriteLine("Cloud Connection: " + context.Database.CanConnect().ToString());
+                return context.Database.CanConnect();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public static int currentUserId { get; set; }
 
@@ -688,7 +703,7 @@ namespace Wage_Wizard.Utilities
                 using WageWizardContext context = new WageWizardContext();
                 var globalSettingsDB = context.GlobalSettings;
                 GlobalSettings globalSettings = globalSettingsDB.FirstOrDefault();
-                globalSettings.globalLeaveRate = newGlobalTaxRate;
+                globalSettings.globalTaxRate = newGlobalTaxRate;
                 globalSettingsDB.Update(globalSettings);
                 context.SaveChanges();
             }
