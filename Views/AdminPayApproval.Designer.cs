@@ -33,20 +33,14 @@
             denyBtn = new Button();
             approveBtn = new Button();
             payRequestsDGV = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            employeeIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            hoursDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            approvalStatusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            paymentRequestBindingSource1 = new BindingSource(components);
             paymentRequestBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
             SuspendLayout();
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(756, 421);
+            exitBtn.Location = new Point(800, 421);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 10;
@@ -77,48 +71,14 @@
             // payRequestsDGV
             // 
             payRequestsDGV.AllowUserToDeleteRows = false;
-            payRequestsDGV.AutoGenerateColumns = false;
             payRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payRequestsDGV.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, employeeIDDataGridViewTextBoxColumn, hoursDataGridViewTextBoxColumn, approvalStatusDataGridViewTextBoxColumn });
-            payRequestsDGV.DataSource = paymentRequestBindingSource1;
-            payRequestsDGV.Location = new Point(11, 18);
+            payRequestsDGV.Location = new Point(20, 18);
             payRequestsDGV.Name = "payRequestsDGV";
             payRequestsDGV.RowTemplate.Height = 25;
             payRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            payRequestsDGV.Size = new Size(852, 378);
+            payRequestsDGV.Size = new Size(866, 378);
             payRequestsDGV.TabIndex = 7;
             payRequestsDGV.CellClick += payRequestsDGV_CellClick;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            idDataGridViewTextBoxColumn.HeaderText = "id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // employeeIDDataGridViewTextBoxColumn
-            // 
-            employeeIDDataGridViewTextBoxColumn.DataPropertyName = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.HeaderText = "employeeID";
-            employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
-            hoursDataGridViewTextBoxColumn.HeaderText = "hours";
-            hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            hoursDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // approvalStatusDataGridViewTextBoxColumn
-            // 
-            approvalStatusDataGridViewTextBoxColumn.DataPropertyName = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.HeaderText = "approvalStatus";
-            approvalStatusDataGridViewTextBoxColumn.Name = "approvalStatusDataGridViewTextBoxColumn";
-            // 
-            // paymentRequestBindingSource1
-            // 
-            paymentRequestBindingSource1.DataSource = typeof(Models.PaymentRequest);
             // 
             // paymentRequestBindingSource
             // 
@@ -128,7 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 500);
+            ClientSize = new Size(914, 500);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
             Controls.Add(approveBtn);
@@ -138,7 +98,6 @@
             Name = "AdminPayApproval";
             Text = "AdminPayApproval";
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).EndInit();
-            ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -154,5 +113,6 @@
         private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
         private BindingSource paymentRequestBindingSource1;
+        private DataGridViewTextBoxColumn fName;
     }
 }
