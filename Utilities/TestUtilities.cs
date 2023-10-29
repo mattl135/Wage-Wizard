@@ -161,20 +161,6 @@ namespace Wage_Wizard.Utilities
                 counter++;
                 Console.WriteLine($"\t {counter} : {request}");
             }
-            
-
-            int id = 36;
-            LeaveRequest leaveRequest = Utilities.getLeaveReqestWithID(leaveRequests[1]);
-            Console.WriteLine($"leaveRequest id = {leaveRequest.id}");
-            Console.WriteLine($"leaveRequest id = {leaveRequest.approvalStatus.ToString()}");
-            //leaveRequest.approvalStatus = Request.ApprovalStatus.Approved;
-            //Utilities.saveLeaveRequestChangesToDB(leaveRequest);
-
-            //reopens the screen to refresh/update the database on screen
-            //AdminLeaveApproval refresh = new AdminLeaveApproval();
-            //refresh.Show();
-            //this.Close();
-
         }
 
 
