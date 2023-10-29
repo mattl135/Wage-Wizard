@@ -46,6 +46,7 @@
             exitBtn.TabIndex = 10;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
             // 
             // denyBtn
             // 
@@ -53,8 +54,9 @@
             denyBtn.Name = "denyBtn";
             denyBtn.Size = new Size(86, 61);
             denyBtn.TabIndex = 9;
-            denyBtn.Text = "Deny";
+            denyBtn.Text = "Reject";
             denyBtn.UseVisualStyleBackColor = true;
+            denyBtn.Click += denyBtn_Click;
             // 
             // approveBtn
             // 

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
 using Wage_Wizard.Utilities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Wage_Wizard.Views
 {
@@ -40,6 +41,38 @@ namespace Wage_Wizard.Views
             int x = Screen.PrimaryScreen.WorkingArea.Top;
             int y = Screen.PrimaryScreen.WorkingArea.Left;
             this.Location = new Point(x, y);
+
+
+            //payRequests.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '%{1}%'", 0, 0);
+
+            /* foreach (DataGridViewRow row in payRequestsDGV.Rows)
+            {
+                string s;
+                if (row.Cells[3].Value.ToString != null)
+                {
+                    s = row.Cells[3].Value.ToString();
+
+                    if (!s.StartsWith("0", true, null))
+                    {
+                        CurrencyManager payRequestsTable = (CurrencyManager)BindingContext[payRequestsDGV.DataSource];
+                        payRequestsTable.SuspendBinding();
+                        row.Visible = false;
+                        payRequestsTable.ResumeBinding();
+                    }
+                    else
+                        row.Visible = true;
+                }
+            } */
+
+            //int index = (from payRequestsDGV.Rows.Cast<DataGridViewRow>()
+
+
+            /* var sortByPending = (payRequestsDGV.Rows.Cast<DataGridViewRow>()
+                 .Where(r => r.Cells[3].Value != null)
+                 .Select(r => new { Page = Convert.ToInt32(r.Cells[3].Value) == 0 })
+                 .GroupBy(pageR => pageR)
+                 .OrderByDescending(g => g.Count())
+                 .Select(g => new {PAGE = g.Key.Page}) ).ToList(); */
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -52,14 +85,27 @@ namespace Wage_Wizard.Views
         {
             foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
             {
-                /* PaymentRequest paymentRequest = new PaymentRequest(employees[0], 15.53);
-                r.Cells[3].Value = 1; //use the column name instead of column index
-                Utilities.Utilities.savePayRequestChangesToDB(paymentRequest); */
-
                 //UpdatePaymentRequest
                 List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
-                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(paymentRequests[Convert.ToInt32(r.Cells[1].Value) - 1]);
+                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[1].Value));
                 paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
+                Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
+            }
+
+            //reopens the screen to refresh/update the database on screen
+            AdminPayApproval refresh = new AdminPayApproval();
+            refresh.Show();
+            this.Close();
+        }
+
+        private void denyBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in payRequestsDGV.SelectedRows)
+            {
+                //UpdatePaymentRequest
+                List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
+                PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[1].Value));
+                paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
                 Utilities.Utilities.savePayRequestChangesToDB(paymentRequest);
             }
 
@@ -78,5 +124,12 @@ namespace Wage_Wizard.Views
             */
             //return cell;
         }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }
