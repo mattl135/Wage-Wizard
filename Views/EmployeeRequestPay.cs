@@ -63,10 +63,18 @@ namespace Wage_Wizard.Views
 
         private void RequestPayBtn_Click(object sender, EventArgs e)
         {
-            PaymentRequest paymentRequest = new PaymentRequest(currentUser.id, Convert.ToDouble(sumOfHours));
-            Utilities.Utilities.addPayRequestToDB(paymentRequest);
-            MessageBox.Show("Request submitted.", "Payment Request - Success");
-            this.Close();
+            //if there's no hours submitted, don't allow for a submission
+            if (sumOfHours == 0)
+            {
+                MessageBox.Show("Cannot submit with no hours worked.", "Request Payment - Failure");
+            } else
+            {
+                PaymentRequest paymentRequest = new PaymentRequest(currentUser.id, Convert.ToDouble(sumOfHours));
+                Utilities.Utilities.addPayRequestToDB(paymentRequest);
+                MessageBox.Show("Request submitted. The request ID is " + paymentRequest.id, "Request Payment - Success");
+                this.Close();
+            }
+            
         }
     }
 }
