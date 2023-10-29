@@ -156,7 +156,7 @@
             employeesBTN.Name = "employeesBTN";
             employeesBTN.Size = new Size(231, 53);
             employeesBTN.TabIndex = 9;
-            employeesBTN.Text = "View/Edit Employees";
+            employeesBTN.Text = "View/Edit Employee";
             employeesBTN.UseVisualStyleBackColor = true;
             employeesBTN.Click += employeesBTN_Click;
             // 

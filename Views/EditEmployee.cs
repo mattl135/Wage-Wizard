@@ -42,11 +42,10 @@ namespace Wage_Wizard.Views
         private void button1_Click(object sender, EventArgs e)
         {
             int selectedRow = dataGridViewEmployees.SelectedCells[0].RowIndex;
-            int columnIndex = dataGridViewEmployees.CurrentCell.ColumnIndex;
-            string cellValue = dataGridViewEmployees.Rows[selectedRow].Cells[columnIndex].Value.ToString();
-            string empId = dataGridViewEmployees.Rows[selectedRow].Cells[6].Value.ToString();
+            string empId = dataGridViewEmployees.Rows[selectedRow].Cells[0].Value.ToString();
 
-            MessageBox.Show($"You clicked: {cellValue}, the userID of that person is {empId}", "Clicked Value");
+            EmployeePICRequest employeePICRequest = new EmployeePICRequest(Convert.ToInt32(empId));
+            employeePICRequest.Show();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
