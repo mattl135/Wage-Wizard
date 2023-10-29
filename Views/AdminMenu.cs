@@ -56,7 +56,8 @@ namespace Wage_Wizard.Views
 
         private void PICHistoryBTN_Click(object sender, EventArgs e)
         {
-
+            AdminPICHistory adminPICHistory = new AdminPICHistory();
+            adminPICHistory.Show();
         }
 
         private void employeesBTN_Click(object sender, EventArgs e)
