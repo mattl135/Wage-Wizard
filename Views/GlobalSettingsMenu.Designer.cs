@@ -226,6 +226,7 @@
             Controls.Add(exitBtn);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "GlobalSettingsMenu";
             Text = "Global Settings";
             Load += GlobalSettings_Load;
