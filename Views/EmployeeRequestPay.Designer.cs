@@ -179,6 +179,7 @@
             RequestPayBtn.Text = "Request Pay";
             RequestPayBtn.UseMnemonic = false;
             RequestPayBtn.UseVisualStyleBackColor = true;
+            RequestPayBtn.Click += RequestPayBtn_Click;
             // 
             // MonHours
             // 
