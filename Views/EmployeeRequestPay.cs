@@ -76,7 +76,7 @@ namespace Wage_Wizard.Views
                 //save request to DB
                 PaymentRequest paymentRequest = new PaymentRequest(currentUser.id, Convert.ToDouble(sumOfHours));
                 Utilities.Utilities.addPayRequestToDB(paymentRequest);
-                MessageBox.Show("Request submitted. The request ID is " + paymentRequest.id, "Request Payment - Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Request submitted. The request ID is: " + paymentRequest.id, "Request Payment - Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
 

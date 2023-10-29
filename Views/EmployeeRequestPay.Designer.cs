@@ -64,9 +64,9 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(315, 91);
+            Subheader.Location = new Point(276, 68);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(278, 46);
+            Subheader.Size = new Size(220, 37);
             Subheader.TabIndex = 12;
             Subheader.Text = "Request Payment";
             // 
@@ -74,17 +74,18 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(294, 9);
+            Header.Location = new Point(257, 7);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 11;
             Header.Text = "Wage Wizard";
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(775, 624);
+            ExitBtn.Location = new Point(678, 468);
+            ExitBtn.Margin = new Padding(3, 2, 3, 2);
             ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(94, 71);
+            ExitBtn.Size = new Size(82, 53);
             ExitBtn.TabIndex = 21;
             ExitBtn.Text = "Exit";
             ExitBtn.UseMnemonic = false;
@@ -95,9 +96,9 @@
             // 
             MonLabel.AutoSize = true;
             MonLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            MonLabel.Location = new Point(128, 240);
+            MonLabel.Location = new Point(112, 180);
             MonLabel.Name = "MonLabel";
-            MonLabel.Size = new Size(107, 32);
+            MonLabel.Size = new Size(85, 25);
             MonLabel.TabIndex = 22;
             MonLabel.Text = "Monday:";
             // 
@@ -105,9 +106,9 @@
             // 
             TueLabel.AutoSize = true;
             TueLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TueLabel.Location = new Point(128, 295);
+            TueLabel.Location = new Point(112, 221);
             TueLabel.Name = "TueLabel";
-            TueLabel.Size = new Size(107, 32);
+            TueLabel.Size = new Size(85, 25);
             TueLabel.TabIndex = 23;
             TueLabel.Text = "Tuesday:";
             // 
@@ -115,9 +116,9 @@
             // 
             WedLabel.AutoSize = true;
             WedLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            WedLabel.Location = new Point(96, 349);
+            WedLabel.Location = new Point(84, 262);
             WedLabel.Name = "WedLabel";
-            WedLabel.Size = new Size(142, 32);
+            WedLabel.Size = new Size(113, 25);
             WedLabel.TabIndex = 24;
             WedLabel.Text = "Wednesday:";
             // 
@@ -125,9 +126,9 @@
             // 
             ThuLabel.AutoSize = true;
             ThuLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            ThuLabel.Location = new Point(119, 404);
+            ThuLabel.Location = new Point(104, 303);
             ThuLabel.Name = "ThuLabel";
-            ThuLabel.Size = new Size(116, 32);
+            ThuLabel.Size = new Size(93, 25);
             ThuLabel.TabIndex = 25;
             ThuLabel.Text = "Thursday:";
             // 
@@ -135,9 +136,9 @@
             // 
             FriLabel.AutoSize = true;
             FriLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            FriLabel.Location = new Point(149, 459);
+            FriLabel.Location = new Point(130, 344);
             FriLabel.Name = "FriLabel";
-            FriLabel.Size = new Size(83, 32);
+            FriLabel.Size = new Size(67, 25);
             FriLabel.TabIndex = 26;
             FriLabel.Text = "Friday;";
             // 
@@ -145,9 +146,9 @@
             // 
             HoursLabel.AutoSize = true;
             HoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            HoursLabel.Location = new Point(269, 192);
+            HoursLabel.Location = new Point(235, 144);
             HoursLabel.Name = "HoursLabel";
-            HoursLabel.Size = new Size(77, 32);
+            HoursLabel.Size = new Size(62, 25);
             HoursLabel.TabIndex = 33;
             HoursLabel.Text = "Hours";
             // 
@@ -155,9 +156,9 @@
             // 
             TotalHoursLabel.AutoSize = true;
             TotalHoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalHoursLabel.Location = new Point(517, 240);
+            TotalHoursLabel.Location = new Point(452, 180);
             TotalHoursLabel.Name = "TotalHoursLabel";
-            TotalHoursLabel.Size = new Size(140, 32);
+            TotalHoursLabel.Size = new Size(111, 25);
             TotalHoursLabel.TabIndex = 34;
             TotalHoursLabel.Text = "Total Hours:";
             // 
@@ -165,18 +166,19 @@
             // 
             TotalHoursDisplay.AutoSize = true;
             TotalHoursDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalHoursDisplay.Location = new Point(671, 240);
+            TotalHoursDisplay.Location = new Point(587, 180);
             TotalHoursDisplay.Name = "TotalHoursDisplay";
-            TotalHoursDisplay.Size = new Size(27, 32);
+            TotalHoursDisplay.Size = new Size(22, 25);
             TotalHoursDisplay.TabIndex = 35;
             TotalHoursDisplay.Text = "0";
             TotalHoursDisplay.UseMnemonic = false;
             // 
             // RequestPayBtn
             // 
-            RequestPayBtn.Location = new Point(594, 624);
+            RequestPayBtn.Location = new Point(520, 468);
+            RequestPayBtn.Margin = new Padding(3, 2, 3, 2);
             RequestPayBtn.Name = "RequestPayBtn";
-            RequestPayBtn.Size = new Size(136, 71);
+            RequestPayBtn.Size = new Size(119, 53);
             RequestPayBtn.TabIndex = 36;
             RequestPayBtn.Text = "Request Pay";
             RequestPayBtn.UseMnemonic = false;
@@ -188,10 +190,11 @@
             MonHours.DecimalPlaces = 1;
             MonHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             MonHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            MonHours.Location = new Point(250, 235);
+            MonHours.Location = new Point(219, 176);
+            MonHours.Margin = new Padding(3, 2, 3, 2);
             MonHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
             MonHours.Name = "MonHours";
-            MonHours.Size = new Size(107, 39);
+            MonHours.Size = new Size(94, 32);
             MonHours.TabIndex = 38;
             MonHours.ValueChanged += MonHours_ValueChanged;
             // 
@@ -200,10 +203,11 @@
             TueHours.DecimalPlaces = 1;
             TueHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             TueHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            TueHours.Location = new Point(250, 289);
+            TueHours.Location = new Point(219, 217);
+            TueHours.Margin = new Padding(3, 2, 3, 2);
             TueHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
             TueHours.Name = "TueHours";
-            TueHours.Size = new Size(107, 39);
+            TueHours.Size = new Size(94, 32);
             TueHours.TabIndex = 39;
             TueHours.ValueChanged += TueHours_ValueChanged;
             // 
@@ -212,10 +216,11 @@
             WedHours.DecimalPlaces = 1;
             WedHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             WedHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            WedHours.Location = new Point(250, 344);
+            WedHours.Location = new Point(219, 258);
+            WedHours.Margin = new Padding(3, 2, 3, 2);
             WedHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
             WedHours.Name = "WedHours";
-            WedHours.Size = new Size(107, 39);
+            WedHours.Size = new Size(94, 32);
             WedHours.TabIndex = 40;
             WedHours.ValueChanged += WedHours_ValueChanged;
             // 
@@ -224,10 +229,11 @@
             ThuHours.DecimalPlaces = 1;
             ThuHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             ThuHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            ThuHours.Location = new Point(250, 399);
+            ThuHours.Location = new Point(219, 299);
+            ThuHours.Margin = new Padding(3, 2, 3, 2);
             ThuHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
             ThuHours.Name = "ThuHours";
-            ThuHours.Size = new Size(107, 39);
+            ThuHours.Size = new Size(94, 32);
             ThuHours.TabIndex = 41;
             ThuHours.ValueChanged += ThuHours_ValueChanged;
             // 
@@ -236,10 +242,11 @@
             FriHours.DecimalPlaces = 1;
             FriHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             FriHours.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            FriHours.Location = new Point(250, 453);
+            FriHours.Location = new Point(219, 340);
+            FriHours.Margin = new Padding(3, 2, 3, 2);
             FriHours.Maximum = new decimal(new int[] { 24, 0, 0, 0 });
             FriHours.Name = "FriHours";
-            FriHours.Size = new Size(107, 39);
+            FriHours.Size = new Size(94, 32);
             FriHours.TabIndex = 42;
             FriHours.ValueChanged += FriHours_ValueChanged;
             // 
@@ -247,9 +254,9 @@
             // 
             PayRateLabel.AutoSize = true;
             PayRateLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            PayRateLabel.Location = new Point(470, 295);
+            PayRateLabel.Location = new Point(411, 221);
             PayRateLabel.Name = "PayRateLabel";
-            PayRateLabel.Size = new Size(187, 32);
+            PayRateLabel.Size = new Size(148, 25);
             PayRateLabel.TabIndex = 43;
             PayRateLabel.Text = "Hourly Pay Rate:";
             // 
@@ -257,9 +264,9 @@
             // 
             PayRateDisplay.AutoSize = true;
             PayRateDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            PayRateDisplay.Location = new Point(671, 295);
+            PayRateDisplay.Location = new Point(587, 221);
             PayRateDisplay.Name = "PayRateDisplay";
-            PayRateDisplay.Size = new Size(40, 32);
+            PayRateDisplay.Size = new Size(32, 25);
             PayRateDisplay.TabIndex = 44;
             PayRateDisplay.Text = "$0";
             // 
@@ -267,9 +274,9 @@
             // 
             TotalPayLabel.AutoSize = true;
             TotalPayLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalPayLabel.Location = new Point(544, 349);
+            TotalPayLabel.Location = new Point(476, 262);
             TotalPayLabel.Name = "TotalPayLabel";
-            TotalPayLabel.Size = new Size(113, 32);
+            TotalPayLabel.Size = new Size(90, 25);
             TotalPayLabel.TabIndex = 45;
             TotalPayLabel.Text = "Total Pay:";
             // 
@@ -277,9 +284,9 @@
             // 
             TotalPayDisplay.AutoSize = true;
             TotalPayDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalPayDisplay.Location = new Point(671, 349);
+            TotalPayDisplay.Location = new Point(587, 262);
             TotalPayDisplay.Name = "TotalPayDisplay";
-            TotalPayDisplay.Size = new Size(40, 32);
+            TotalPayDisplay.Size = new Size(32, 25);
             TotalPayDisplay.TabIndex = 46;
             TotalPayDisplay.Text = "$0";
             // 
@@ -287,9 +294,9 @@
             // 
             SuperLabel.AutoSize = true;
             SuperLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            SuperLabel.Location = new Point(518, 404);
+            SuperLabel.Location = new Point(453, 303);
             SuperLabel.Name = "SuperLabel";
-            SuperLabel.Size = new Size(139, 32);
+            SuperLabel.Size = new Size(110, 25);
             SuperLabel.TabIndex = 47;
             SuperLabel.Text = "Total Super:";
             // 
@@ -297,9 +304,9 @@
             // 
             TotalSuperDisplay.AutoSize = true;
             TotalSuperDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalSuperDisplay.Location = new Point(671, 404);
+            TotalSuperDisplay.Location = new Point(587, 303);
             TotalSuperDisplay.Name = "TotalSuperDisplay";
-            TotalSuperDisplay.Size = new Size(40, 32);
+            TotalSuperDisplay.Size = new Size(32, 25);
             TotalSuperDisplay.TabIndex = 48;
             TotalSuperDisplay.Text = "$0";
             // 
@@ -307,9 +314,9 @@
             // 
             TotalTaxLabel.AutoSize = true;
             TotalTaxLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalTaxLabel.Location = new Point(547, 459);
+            TotalTaxLabel.Location = new Point(479, 344);
             TotalTaxLabel.Name = "TotalTaxLabel";
-            TotalTaxLabel.Size = new Size(110, 32);
+            TotalTaxLabel.Size = new Size(88, 25);
             TotalTaxLabel.TabIndex = 49;
             TotalTaxLabel.Text = "Total Tax:";
             // 
@@ -317,17 +324,17 @@
             // 
             TotalTaxDisplay.AutoSize = true;
             TotalTaxDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            TotalTaxDisplay.Location = new Point(671, 459);
+            TotalTaxDisplay.Location = new Point(587, 344);
             TotalTaxDisplay.Name = "TotalTaxDisplay";
-            TotalTaxDisplay.Size = new Size(40, 32);
+            TotalTaxDisplay.Size = new Size(32, 25);
             TotalTaxDisplay.TabIndex = 50;
             TotalTaxDisplay.Text = "$0";
             // 
             // EmployeeRequestPay
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 707);
+            ClientSize = new Size(771, 530);
             Controls.Add(TotalTaxDisplay);
             Controls.Add(TotalTaxLabel);
             Controls.Add(TotalSuperDisplay);
@@ -354,7 +361,6 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "EmployeeRequestPay";
             Text = "Request Payment";

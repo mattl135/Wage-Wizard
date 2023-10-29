@@ -82,9 +82,9 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(299, 84);
+            Subheader.Location = new Point(262, 63);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(454, 46);
+            Subheader.Size = new Size(361, 37);
             Subheader.TabIndex = 15;
             Subheader.Text = "Personal Information Change";
             // 
@@ -92,9 +92,9 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(359, 12);
+            Header.Location = new Point(314, 9);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 14;
             Header.Text = "Wage Wizard";
             // 
@@ -110,85 +110,79 @@
             personalInformationGroupBox.Controls.Add(fNameLabel);
             personalInformationGroupBox.Controls.Add(titleLabel);
             personalInformationGroupBox.Controls.Add(titleComboBox);
-            personalInformationGroupBox.Location = new Point(14, 155);
-            personalInformationGroupBox.Margin = new Padding(3, 4, 3, 4);
+            personalInformationGroupBox.Location = new Point(12, 116);
             personalInformationGroupBox.Name = "personalInformationGroupBox";
-            personalInformationGroupBox.Padding = new Padding(3, 4, 3, 4);
-            personalInformationGroupBox.Size = new Size(603, 215);
+            personalInformationGroupBox.Size = new Size(528, 161);
             personalInformationGroupBox.TabIndex = 16;
             personalInformationGroupBox.TabStop = false;
             personalInformationGroupBox.Text = "Personal Information";
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(296, 152);
-            passwordTextBox.Margin = new Padding(3, 4, 3, 4);
+            passwordTextBox.Location = new Point(259, 114);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(287, 27);
+            passwordTextBox.Size = new Size(252, 23);
             passwordTextBox.TabIndex = 27;
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordLabel.Location = new Point(296, 121);
+            passwordLabel.Location = new Point(259, 91);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(91, 25);
+            passwordLabel.Size = new Size(70, 20);
             passwordLabel.TabIndex = 26;
             passwordLabel.Text = "Password";
             // 
             // dateOfBirthPicker
             // 
-            dateOfBirthPicker.Location = new Point(7, 152);
-            dateOfBirthPicker.Margin = new Padding(3, 4, 3, 4);
+            dateOfBirthPicker.Location = new Point(6, 114);
             dateOfBirthPicker.Name = "dateOfBirthPicker";
-            dateOfBirthPicker.Size = new Size(261, 27);
+            dateOfBirthPicker.Size = new Size(229, 23);
             dateOfBirthPicker.TabIndex = 25;
             // 
             // dobLabel
             // 
             dobLabel.AutoSize = true;
             dobLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dobLabel.Location = new Point(7, 115);
+            dobLabel.Location = new Point(6, 86);
             dobLabel.Name = "dobLabel";
-            dobLabel.Size = new Size(115, 31);
+            dobLabel.Size = new Size(92, 25);
             dobLabel.TabIndex = 23;
             dobLabel.Text = "Date of Birth";
             dobLabel.UseCompatibleTextRendering = true;
             // 
             // lNameTextField
             // 
-            lNameTextField.Location = new Point(395, 61);
-            lNameTextField.Margin = new Padding(3, 4, 3, 4);
+            lNameTextField.Location = new Point(346, 46);
             lNameTextField.Name = "lNameTextField";
-            lNameTextField.Size = new Size(188, 27);
+            lNameTextField.Size = new Size(165, 23);
             lNameTextField.TabIndex = 22;
             // 
             // lNameLabel
             // 
             lNameLabel.AutoSize = true;
             lNameLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lNameLabel.Location = new Point(395, 31);
+            lNameLabel.Location = new Point(346, 23);
             lNameLabel.Name = "lNameLabel";
-            lNameLabel.Size = new Size(100, 25);
+            lNameLabel.Size = new Size(79, 20);
             lNameLabel.TabIndex = 21;
             lNameLabel.Text = "Last Name";
             // 
             // fNameTextField
             // 
-            fNameTextField.Location = new Point(176, 61);
-            fNameTextField.Margin = new Padding(3, 4, 3, 4);
+            fNameTextField.Location = new Point(154, 46);
             fNameTextField.Name = "fNameTextField";
-            fNameTextField.Size = new Size(188, 27);
+            fNameTextField.Size = new Size(165, 23);
             fNameTextField.TabIndex = 20;
             // 
             // fNameLabel
             // 
             fNameLabel.AutoSize = true;
             fNameLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            fNameLabel.Location = new Point(176, 31);
+            fNameLabel.Location = new Point(154, 23);
             fNameLabel.Name = "fNameLabel";
-            fNameLabel.Size = new Size(102, 25);
+            fNameLabel.Size = new Size(80, 20);
             fNameLabel.TabIndex = 19;
             fNameLabel.Text = "First Name";
             // 
@@ -196,19 +190,19 @@
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            titleLabel.Location = new Point(7, 31);
+            titleLabel.Location = new Point(6, 23);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(48, 25);
+            titleLabel.Size = new Size(38, 20);
             titleLabel.TabIndex = 18;
             titleLabel.Text = "Title";
             // 
             // titleComboBox
             // 
+            titleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             titleComboBox.FormattingEnabled = true;
-            titleComboBox.Location = new Point(7, 61);
-            titleComboBox.Margin = new Padding(3, 4, 3, 4);
+            titleComboBox.Location = new Point(6, 46);
             titleComboBox.Name = "titleComboBox";
-            titleComboBox.Size = new Size(138, 28);
+            titleComboBox.Size = new Size(121, 23);
             titleComboBox.TabIndex = 17;
             // 
             // contactInformationGroupBox
@@ -217,49 +211,45 @@
             contactInformationGroupBox.Controls.Add(mobileLabel);
             contactInformationGroupBox.Controls.Add(emailTextField);
             contactInformationGroupBox.Controls.Add(emailAddressLabel);
-            contactInformationGroupBox.Location = new Point(635, 155);
-            contactInformationGroupBox.Margin = new Padding(3, 4, 3, 4);
+            contactInformationGroupBox.Location = new Point(556, 116);
             contactInformationGroupBox.Name = "contactInformationGroupBox";
-            contactInformationGroupBox.Padding = new Padding(3, 4, 3, 4);
-            contactInformationGroupBox.Size = new Size(361, 215);
+            contactInformationGroupBox.Size = new Size(316, 161);
             contactInformationGroupBox.TabIndex = 17;
             contactInformationGroupBox.TabStop = false;
             contactInformationGroupBox.Text = "Contact Information";
             // 
             // mobileTextField
             // 
-            mobileTextField.Location = new Point(7, 152);
-            mobileTextField.Margin = new Padding(3, 4, 3, 4);
+            mobileTextField.Location = new Point(6, 114);
             mobileTextField.MaxLength = 11;
             mobileTextField.Name = "mobileTextField";
-            mobileTextField.Size = new Size(347, 27);
+            mobileTextField.Size = new Size(304, 23);
             mobileTextField.TabIndex = 24;
             // 
             // mobileLabel
             // 
             mobileLabel.AutoSize = true;
             mobileLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            mobileLabel.Location = new Point(7, 121);
+            mobileLabel.Location = new Point(6, 91);
             mobileLabel.Name = "mobileLabel";
-            mobileLabel.Size = new Size(145, 25);
+            mobileLabel.Size = new Size(114, 20);
             mobileLabel.TabIndex = 23;
             mobileLabel.Text = "Mobile Number";
             // 
             // emailTextField
             // 
-            emailTextField.Location = new Point(7, 61);
-            emailTextField.Margin = new Padding(3, 4, 3, 4);
+            emailTextField.Location = new Point(6, 46);
             emailTextField.Name = "emailTextField";
-            emailTextField.Size = new Size(347, 27);
+            emailTextField.Size = new Size(304, 23);
             emailTextField.TabIndex = 22;
             // 
             // emailAddressLabel
             // 
             emailAddressLabel.AutoSize = true;
             emailAddressLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            emailAddressLabel.Location = new Point(7, 31);
+            emailAddressLabel.Location = new Point(6, 23);
             emailAddressLabel.Name = "emailAddressLabel";
-            emailAddressLabel.Size = new Size(130, 25);
+            emailAddressLabel.Size = new Size(103, 20);
             emailAddressLabel.TabIndex = 21;
             emailAddressLabel.Text = "Email Address";
             // 
@@ -277,122 +267,114 @@
             addressContactBox.Controls.Add(streetNameLabel);
             addressContactBox.Controls.Add(streetNumberField);
             addressContactBox.Controls.Add(streetNumberLabel);
-            addressContactBox.Location = new Point(14, 391);
-            addressContactBox.Margin = new Padding(3, 4, 3, 4);
+            addressContactBox.Location = new Point(12, 293);
             addressContactBox.Name = "addressContactBox";
-            addressContactBox.Padding = new Padding(3, 4, 3, 4);
-            addressContactBox.Size = new Size(486, 268);
+            addressContactBox.Size = new Size(425, 201);
             addressContactBox.TabIndex = 25;
             addressContactBox.TabStop = false;
             addressContactBox.Text = "Personal Address";
             // 
             // countryTextField
             // 
-            countryTextField.Location = new Point(225, 220);
-            countryTextField.Margin = new Padding(3, 4, 3, 4);
+            countryTextField.Location = new Point(197, 165);
             countryTextField.Name = "countryTextField";
-            countryTextField.Size = new Size(253, 27);
+            countryTextField.Size = new Size(222, 23);
             countryTextField.TabIndex = 34;
             // 
             // countryLabel
             // 
             countryLabel.AutoSize = true;
             countryLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            countryLabel.Location = new Point(225, 189);
+            countryLabel.Location = new Point(197, 142);
             countryLabel.Name = "countryLabel";
-            countryLabel.Size = new Size(79, 25);
+            countryLabel.Size = new Size(60, 20);
             countryLabel.TabIndex = 33;
             countryLabel.Text = "Country";
             // 
             // stateTextField
             // 
-            stateTextField.Location = new Point(7, 220);
-            stateTextField.Margin = new Padding(3, 4, 3, 4);
+            stateTextField.Location = new Point(6, 165);
             stateTextField.MaxLength = 100;
             stateTextField.Name = "stateTextField";
-            stateTextField.Size = new Size(196, 27);
+            stateTextField.Size = new Size(172, 23);
             stateTextField.TabIndex = 32;
             // 
             // stateLabel
             // 
             stateLabel.AutoSize = true;
             stateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            stateLabel.Location = new Point(7, 189);
+            stateLabel.Location = new Point(6, 142);
             stateLabel.Name = "stateLabel";
-            stateLabel.Size = new Size(53, 25);
+            stateLabel.Size = new Size(43, 20);
             stateLabel.TabIndex = 31;
             stateLabel.Text = "State";
             // 
             // cityTextField
             // 
-            cityTextField.Location = new Point(225, 141);
-            cityTextField.Margin = new Padding(3, 4, 3, 4);
+            cityTextField.Location = new Point(197, 106);
             cityTextField.Name = "cityTextField";
-            cityTextField.Size = new Size(253, 27);
+            cityTextField.Size = new Size(222, 23);
             cityTextField.TabIndex = 30;
             // 
             // cityLabel
             // 
             cityLabel.AutoSize = true;
             cityLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cityLabel.Location = new Point(225, 111);
+            cityLabel.Location = new Point(197, 83);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(44, 25);
+            cityLabel.Size = new Size(34, 20);
             cityLabel.TabIndex = 29;
             cityLabel.Text = "City";
             // 
             // suburbTextField
             // 
-            suburbTextField.Location = new Point(7, 141);
-            suburbTextField.Margin = new Padding(3, 4, 3, 4);
+            suburbTextField.Location = new Point(6, 106);
             suburbTextField.Name = "suburbTextField";
-            suburbTextField.Size = new Size(196, 27);
+            suburbTextField.Size = new Size(172, 23);
             suburbTextField.TabIndex = 28;
             // 
             // SuburbLabel
             // 
             SuburbLabel.AutoSize = true;
             SuburbLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            SuburbLabel.Location = new Point(7, 111);
+            SuburbLabel.Location = new Point(6, 83);
             SuburbLabel.Name = "SuburbLabel";
-            SuburbLabel.Size = new Size(73, 25);
+            SuburbLabel.Size = new Size(56, 20);
             SuburbLabel.TabIndex = 27;
             SuburbLabel.Text = "Suburb";
             // 
             // streetNameField
             // 
-            streetNameField.Location = new Point(177, 57);
-            streetNameField.Margin = new Padding(3, 4, 3, 4);
+            streetNameField.Location = new Point(155, 43);
             streetNameField.Name = "streetNameField";
-            streetNameField.Size = new Size(301, 27);
+            streetNameField.Size = new Size(264, 23);
             streetNameField.TabIndex = 26;
             // 
             // streetNameLabel
             // 
             streetNameLabel.AutoSize = true;
             streetNameLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            streetNameLabel.Location = new Point(177, 27);
+            streetNameLabel.Location = new Point(155, 20);
             streetNameLabel.Name = "streetNameLabel";
-            streetNameLabel.Size = new Size(115, 25);
+            streetNameLabel.Size = new Size(92, 20);
             streetNameLabel.TabIndex = 25;
             streetNameLabel.Text = "Street Name";
             // 
             // streetNumberField
             // 
-            streetNumberField.Location = new Point(7, 57);
-            streetNumberField.Margin = new Padding(3, 4, 3, 4);
+            streetNumberField.Location = new Point(6, 43);
             streetNumberField.MaxLength = 5;
             streetNumberField.Name = "streetNumberField";
-            streetNumberField.Size = new Size(138, 27);
+            streetNumberField.Size = new Size(121, 23);
             streetNumberField.TabIndex = 24;
             // 
             // streetNumberLabel
             // 
             streetNumberLabel.AutoSize = true;
             streetNumberLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            streetNumberLabel.Location = new Point(7, 27);
+            streetNumberLabel.Location = new Point(6, 20);
             streetNumberLabel.Name = "streetNumberLabel";
-            streetNumberLabel.Size = new Size(134, 25);
+            streetNumberLabel.Size = new Size(106, 20);
             streetNumberLabel.TabIndex = 23;
             streetNumberLabel.Text = "Street Number";
             // 
@@ -408,77 +390,72 @@
             groupBox1.Controls.Add(currencyCodeLabel);
             groupBox1.Controls.Add(bsbTextField);
             groupBox1.Controls.Add(bsbLabel);
-            groupBox1.Location = new Point(511, 391);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(447, 293);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(486, 268);
+            groupBox1.Size = new Size(425, 201);
             groupBox1.TabIndex = 35;
             groupBox1.TabStop = false;
             groupBox1.Text = "Financial Information";
             // 
             // currencyComboBox
             // 
+            currencyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             currencyComboBox.FormattingEnabled = true;
-            currencyComboBox.Location = new Point(225, 57);
-            currencyComboBox.Margin = new Padding(3, 4, 3, 4);
+            currencyComboBox.Location = new Point(197, 43);
             currencyComboBox.Name = "currencyComboBox";
-            currencyComboBox.Size = new Size(253, 28);
+            currencyComboBox.Size = new Size(222, 23);
             currencyComboBox.TabIndex = 33;
             // 
             // accountNameField
             // 
-            accountNameField.Location = new Point(7, 220);
-            accountNameField.Margin = new Padding(3, 4, 3, 4);
+            accountNameField.Location = new Point(6, 165);
             accountNameField.Name = "accountNameField";
-            accountNameField.Size = new Size(471, 27);
+            accountNameField.Size = new Size(413, 23);
             accountNameField.TabIndex = 32;
             // 
             // accountNameLabel
             // 
             accountNameLabel.AutoSize = true;
             accountNameLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            accountNameLabel.Location = new Point(7, 189);
+            accountNameLabel.Location = new Point(6, 142);
             accountNameLabel.Name = "accountNameLabel";
-            accountNameLabel.Size = new Size(136, 25);
+            accountNameLabel.Size = new Size(107, 20);
             accountNameLabel.TabIndex = 31;
             accountNameLabel.Text = "Account Name";
             // 
             // taxFileNumberTextField
             // 
-            taxFileNumberTextField.Location = new Point(225, 141);
-            taxFileNumberTextField.Margin = new Padding(3, 4, 3, 4);
+            taxFileNumberTextField.Location = new Point(197, 106);
             taxFileNumberTextField.MaxLength = 20;
             taxFileNumberTextField.Name = "taxFileNumberTextField";
-            taxFileNumberTextField.Size = new Size(253, 27);
+            taxFileNumberTextField.Size = new Size(222, 23);
             taxFileNumberTextField.TabIndex = 30;
             // 
             // taxFileNumberLabel
             // 
             taxFileNumberLabel.AutoSize = true;
             taxFileNumberLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            taxFileNumberLabel.Location = new Point(225, 111);
+            taxFileNumberLabel.Location = new Point(197, 83);
             taxFileNumberLabel.Name = "taxFileNumberLabel";
-            taxFileNumberLabel.Size = new Size(147, 25);
+            taxFileNumberLabel.Size = new Size(115, 20);
             taxFileNumberLabel.TabIndex = 29;
             taxFileNumberLabel.Text = "Tax File Number";
             // 
             // accountNumberTextField
             // 
-            accountNumberTextField.Location = new Point(7, 141);
-            accountNumberTextField.Margin = new Padding(3, 4, 3, 4);
+            accountNumberTextField.Location = new Point(6, 106);
             accountNumberTextField.MaxLength = 10;
             accountNumberTextField.Name = "accountNumberTextField";
-            accountNumberTextField.Size = new Size(196, 27);
+            accountNumberTextField.Size = new Size(172, 23);
             accountNumberTextField.TabIndex = 28;
             // 
             // accountNumberLabel
             // 
             accountNumberLabel.AutoSize = true;
             accountNumberLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            accountNumberLabel.Location = new Point(7, 111);
+            accountNumberLabel.Location = new Point(6, 83);
             accountNumberLabel.Name = "accountNumberLabel";
-            accountNumberLabel.Size = new Size(155, 25);
+            accountNumberLabel.Size = new Size(121, 20);
             accountNumberLabel.TabIndex = 27;
             accountNumberLabel.Text = "Account Number";
             // 
@@ -486,38 +463,36 @@
             // 
             currencyCodeLabel.AutoSize = true;
             currencyCodeLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            currencyCodeLabel.Location = new Point(225, 25);
+            currencyCodeLabel.Location = new Point(197, 19);
             currencyCodeLabel.Name = "currencyCodeLabel";
-            currencyCodeLabel.Size = new Size(214, 25);
+            currencyCodeLabel.Size = new Size(165, 20);
             currencyCodeLabel.TabIndex = 25;
             currencyCodeLabel.Text = "Prefered Currency Code";
             // 
             // bsbTextField
             // 
-            bsbTextField.Location = new Point(7, 57);
-            bsbTextField.Margin = new Padding(3, 4, 3, 4);
+            bsbTextField.Location = new Point(6, 43);
             bsbTextField.MaxLength = 8;
             bsbTextField.Name = "bsbTextField";
-            bsbTextField.Size = new Size(196, 27);
+            bsbTextField.Size = new Size(172, 23);
             bsbTextField.TabIndex = 24;
             // 
             // bsbLabel
             // 
             bsbLabel.AutoSize = true;
             bsbLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            bsbLabel.Location = new Point(7, 27);
+            bsbLabel.Location = new Point(6, 20);
             bsbLabel.Name = "bsbLabel";
-            bsbLabel.Size = new Size(44, 25);
+            bsbLabel.Size = new Size(35, 20);
             bsbLabel.TabIndex = 23;
             bsbLabel.Text = "BSB";
             // 
             // exitButton
             // 
             exitButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            exitButton.Location = new Point(181, 700);
-            exitButton.Margin = new Padding(3, 4, 3, 4);
+            exitButton.Location = new Point(158, 525);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(293, 53);
+            exitButton.Size = new Size(256, 40);
             exitButton.TabIndex = 36;
             exitButton.Text = "Disregard Changes and Exit";
             exitButton.UseVisualStyleBackColor = true;
@@ -526,10 +501,9 @@
             // saveChangesButton
             // 
             saveChangesButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            saveChangesButton.Location = new Point(538, 700);
-            saveChangesButton.Margin = new Padding(3, 4, 3, 4);
+            saveChangesButton.Location = new Point(471, 525);
             saveChangesButton.Name = "saveChangesButton";
-            saveChangesButton.Size = new Size(293, 53);
+            saveChangesButton.Size = new Size(256, 40);
             saveChangesButton.TabIndex = 37;
             saveChangesButton.Text = "Save Changes and Exit";
             saveChangesButton.UseVisualStyleBackColor = true;
@@ -537,9 +511,9 @@
             // 
             // EmployeePICRequest
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1010, 781);
+            ClientSize = new Size(884, 586);
             Controls.Add(saveChangesButton);
             Controls.Add(exitButton);
             Controls.Add(groupBox1);
@@ -549,7 +523,6 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "EmployeePICRequest";
             Text = "Employee Personal Information Change";

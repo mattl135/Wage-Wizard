@@ -7,7 +7,7 @@ namespace Wage_Wizard
    
     public static class Program
     {
-        public static bool showConsole = true;
+        public static bool showConsole = false;
         //======Gather Resources to Display the Console======//
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
