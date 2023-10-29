@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {}
+    "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {
+    "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+        "projectUniqueName": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
         "projectName": "Wage Wizard",
-        "projectPath": "C:\\Users\\Matt\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
-        "packagesPath": "C:\\Users\\Matt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matt\\source\\repos\\mattl135\\Wage-Wizard\\obj\\",
+        "projectPath": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\Wage Wizard.csproj",
+        "packagesPath": "C:\\Users\\madha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\madha\\Source\\Repos\\mattl135\\Wage-Wizard\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "G:\\Visual Studio Resources\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Matt\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\madha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
