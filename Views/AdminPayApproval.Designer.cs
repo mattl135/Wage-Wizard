@@ -43,7 +43,7 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(437, 579);
+            exitBtn.Location = new Point(912, 579);
             exitBtn.Margin = new Padding(3, 4, 3, 4);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(98, 81);
@@ -54,7 +54,7 @@
             // 
             // denyBtn
             // 
-            denyBtn.Location = new Point(173, 579);
+            denyBtn.Location = new Point(156, 579);
             denyBtn.Margin = new Padding(3, 4, 3, 4);
             denyBtn.Name = "denyBtn";
             denyBtn.Size = new Size(98, 81);
@@ -65,7 +65,7 @@
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(35, 579);
+            approveBtn.Location = new Point(24, 579);
             approveBtn.Margin = new Padding(3, 4, 3, 4);
             approveBtn.Name = "approveBtn";
             approveBtn.Size = new Size(98, 81);
@@ -85,7 +85,7 @@
             payRequestsDGV.RowHeadersWidth = 51;
             payRequestsDGV.RowTemplate.Height = 25;
             payRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            payRequestsDGV.Size = new Size(511, 504);
+            payRequestsDGV.Size = new Size(986, 489);
             payRequestsDGV.TabIndex = 7;
             payRequestsDGV.CellClick += payRequestsDGV_CellClick;
             // 
@@ -101,7 +101,7 @@
             // 
             Subtitle.AutoSize = true;
             Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(93, 12);
+            Subtitle.Location = new Point(292, 9);
             Subtitle.Name = "Subtitle";
             Subtitle.Size = new Size(423, 46);
             Subtitle.TabIndex = 12;
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 667);
+            ClientSize = new Size(1022, 667);
             Controls.Add(Subtitle);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
