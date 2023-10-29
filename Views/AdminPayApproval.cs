@@ -44,14 +44,36 @@ namespace Wage_Wizard.Views
                                 {
                                     request.id,
                                     request.employeeID,
-                                    request.hours,
                                     person.fName,
                                     person.lName,
+                                    request.hours,
                                     employee.hourlyRate,
                                     request.approvalStatus
                                 }).ToList();
 
             payRequestsDGV.DataSource = filteredData;
+            payRequestsDGV.Columns["id"].HeaderText = "Pay Request ID";
+            payRequestsDGV.Columns["employeeID"].HeaderText = "Employee ID";
+            payRequestsDGV.Columns["fName"].HeaderText = "First Name";
+            payRequestsDGV.Columns["lName"].HeaderText = "Last Name";
+            payRequestsDGV.Columns["hours"].HeaderText = "Hourly Rate";
+            payRequestsDGV.Columns["hourlyRate"].HeaderText = "Hourly Rate";
+            payRequestsDGV.Columns["approvalStatus"].HeaderText = "Approval Status";
+
+            //Add Calculated Column called Total Pay
+            DataGridViewColumn calculatedColumn = new DataGridViewTextBoxColumn();
+            calculatedColumn.Name = "TotalPay";
+            calculatedColumn.HeaderText = "Total Pay";
+            payRequestsDGV.Columns.Add(calculatedColumn);
+
+            //Change Approve Column to be the last
+            int lastIndex = payRequestsDGV.Columns.Count - 1;
+            payRequestsDGV.Columns["approvalStatus"].DisplayIndex = lastIndex;
+
+            //Event Handler for calculations
+            payRequestsDGV.CellFormatting += new DataGridViewCellFormattingEventHandler(payRequestDGV_CellFormatting);
+
+            //Refresh to load data
             payRequestsDGV.Refresh();
 
             //Forces the screen to open the window in the topleft of the screen
@@ -66,7 +88,6 @@ namespace Wage_Wizard.Views
             dbContext = null;
         }
 
-        //Read the databse and determine the outcome of the request based on user input
         private void approveBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(
@@ -83,8 +104,6 @@ namespace Wage_Wizard.Views
                     //UpdatePaymentRequest
                     List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
                     PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
-
-                    //Checks if the approval status is pending to prevent users from editing already actioned requests
                     if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
                     {
                         paymentRequest.approvalStatus = Request.ApprovalStatus.Approved;
@@ -107,7 +126,6 @@ namespace Wage_Wizard.Views
             }
         }
 
-        //Read the databse and determine the outcome of the request based on user input
         private void denyBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(
@@ -124,8 +142,6 @@ namespace Wage_Wizard.Views
                     //UpdatePaymentRequest
                     List<int> paymentRequests = Utilities.Utilities.getPayRequestIDs();
                     PaymentRequest paymentRequest = Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value));
-
-                    //Checks if the approval status is pending to prevent users from editing already actioned requests
                     if (Utilities.Utilities.getPayRequestWithID(Convert.ToInt32(r.Cells[0].Value)).approvalStatus == Request.ApprovalStatus.Pending)
                     {
                         paymentRequest.approvalStatus = Request.ApprovalStatus.Rejected;
@@ -148,18 +164,28 @@ namespace Wage_Wizard.Views
             }
         }
 
-        //TEST PURPOSES methods to select the row when selecting a cell
-        private void payRequestsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void payRequestDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            /* int index = e.RowIndex;
-            int cell = 0;
-            DataGridViewRow selectedRow = payRequestsDGV.Rows[index];
-            cell = selectedRow.Cells[3] 
-            */
-            //return cell;
+            if (payRequestsDGV.Columns[e.ColumnIndex].Name == "TotalPay")
+            {
+                // Get the values of 'hours' and 'hourlyRate' from the current row
+                double hours = Convert.ToDouble(payRequestsDGV.Rows[e.RowIndex].Cells["hours"].Value);
+                double hourlyRate = Convert.ToDouble(payRequestsDGV.Rows[e.RowIndex].Cells["hourlyRate"].Value);
+
+                // Perform the calculation
+                double totalPay = hours * hourlyRate;
+
+                // Assign the calculated value to the cell
+                e.Value = String.Format("{0:C2}", totalPay);
+                e.FormattingApplied = true;
+            }
         }
 
-        //Exit button to close menu
+        private void payRequestsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
