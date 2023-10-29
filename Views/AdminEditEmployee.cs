@@ -13,11 +13,11 @@ using Wage_Wizard.Data;
 
 namespace Wage_Wizard.Views
 {
-    public partial class EditEmployee : Form
+    public partial class AdminEditEmployee : Form
     {
         private object? context;
 
-        public EditEmployee()
+        public AdminEditEmployee()
         {
             InitializeComponent();
         }

@@ -62,8 +62,8 @@ namespace Wage_Wizard.Views
 
         private void employeesBTN_Click(object sender, EventArgs e)
         {
-            EditEmployee editEmployee = new EditEmployee();
-            editEmployee.Show();
+            AdminEditEmployee adminEditEmployee = new AdminEditEmployee();
+            adminEditEmployee.Show();
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
