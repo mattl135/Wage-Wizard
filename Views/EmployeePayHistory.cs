@@ -39,6 +39,10 @@ namespace Wage_Wizard.Views
                                     request.id,
                                     request.hours,
                                     employee.hourlyRate,
+                                    employee.accountName,
+                                    employee.bsb,
+                                    employee.accountNumber,
+                                    employee.paymentCurrencyCode,
                                     request.approvalStatus
                                 }).ToList();
 
@@ -46,6 +50,10 @@ namespace Wage_Wizard.Views
             payHistoryDGV.Columns["id"].HeaderText = "Pay Request ID";
             payHistoryDGV.Columns["hours"].HeaderText = "Hours Worked";
             payHistoryDGV.Columns["hourlyRate"].HeaderText = "Hourly Rate";
+            payHistoryDGV.Columns["accountName"].HeaderText = "Account Name";
+            payHistoryDGV.Columns["bsb"].HeaderText = "Account BSB";
+            payHistoryDGV.Columns["accountNumber"].HeaderText = "Account Number";
+            payHistoryDGV.Columns["paymentCurrencyCode"].HeaderText = "Payment Currency";
             payHistoryDGV.Columns["approvalStatus"].HeaderText = "Approval Status";
 
             //Add Calculated Column called Total Pay

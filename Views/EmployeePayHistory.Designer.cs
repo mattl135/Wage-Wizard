@@ -39,9 +39,9 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(346, 9);
+            Header.Location = new Point(319, 7);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 13;
             Header.Text = "Wage Wizard";
             // 
@@ -49,17 +49,18 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(376, 85);
+            Subheader.Location = new Point(345, 64);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(267, 46);
+            Subheader.Size = new Size(214, 37);
             Subheader.TabIndex = 14;
             Subheader.Text = "View Pay History";
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(916, 584);
+            ExitBtn.Location = new Point(802, 438);
+            ExitBtn.Margin = new Padding(3, 2, 3, 2);
             ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(94, 71);
+            ExitBtn.Size = new Size(82, 53);
             ExitBtn.TabIndex = 39;
             ExitBtn.Text = "Exit";
             ExitBtn.UseMnemonic = false;
@@ -69,24 +70,24 @@
             // payHistoryDGV
             // 
             payHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payHistoryDGV.Location = new Point(12, 146);
-            payHistoryDGV.Margin = new Padding(3, 4, 3, 4);
+            payHistoryDGV.Location = new Point(11, 110);
             payHistoryDGV.Name = "payHistoryDGV";
             payHistoryDGV.RowHeadersWidth = 51;
             payHistoryDGV.RowTemplate.Height = 25;
-            payHistoryDGV.Size = new Size(998, 416);
+            payHistoryDGV.Size = new Size(873, 312);
             payHistoryDGV.TabIndex = 40;
             // 
             // EmployeePayHistory
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 667);
+            ClientSize = new Size(894, 500);
             Controls.Add(payHistoryDGV);
             Controls.Add(ExitBtn);
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeePayHistory";
             Text = "View Pay History";
             ((System.ComponentModel.ISupportInitialize)payHistoryDGV).EndInit();

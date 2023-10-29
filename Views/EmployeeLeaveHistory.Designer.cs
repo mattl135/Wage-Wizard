@@ -39,9 +39,9 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(358, 18);
+            Header.Location = new Point(319, 14);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 14;
             Header.Text = "Wage Wizard";
             // 
@@ -49,28 +49,28 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(358, 96);
+            Subheader.Location = new Point(327, 72);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(301, 46);
+            Subheader.Size = new Size(241, 37);
             Subheader.TabIndex = 15;
             Subheader.Text = "View Leave History";
             // 
             // leaveHistoryDGV
             // 
             leaveHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leaveHistoryDGV.Location = new Point(12, 164);
-            leaveHistoryDGV.Margin = new Padding(3, 4, 3, 4);
+            leaveHistoryDGV.Location = new Point(10, 123);
             leaveHistoryDGV.Name = "leaveHistoryDGV";
             leaveHistoryDGV.RowHeadersWidth = 51;
             leaveHistoryDGV.RowTemplate.Height = 25;
-            leaveHistoryDGV.Size = new Size(998, 413);
+            leaveHistoryDGV.Size = new Size(873, 310);
             leaveHistoryDGV.TabIndex = 41;
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(916, 584);
+            ExitBtn.Location = new Point(802, 438);
+            ExitBtn.Margin = new Padding(3, 2, 3, 2);
             ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(94, 71);
+            ExitBtn.Size = new Size(82, 53);
             ExitBtn.TabIndex = 42;
             ExitBtn.Text = "Exit";
             ExitBtn.UseMnemonic = false;
@@ -79,13 +79,14 @@
             // 
             // EmployeeLeaveHistory
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 667);
+            ClientSize = new Size(894, 500);
             Controls.Add(ExitBtn);
             Controls.Add(leaveHistoryDGV);
             Controls.Add(Subheader);
             Controls.Add(Header);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeLeaveHistory";
             Text = "View Leave History";
             ((System.ComponentModel.ISupportInitialize)leaveHistoryDGV).EndInit();
