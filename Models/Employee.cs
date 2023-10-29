@@ -87,7 +87,7 @@ namespace Wage_Wizard.Models
                         int changeRequestEmployeeID = personChangeRequest.employeeID;
                         if (Utilities.Utilities.isValidID(changeRequestEmployeeID) && this.id == changeRequestEmployeeID)
                         {
-                            if (personChangeRequest.approvalStatus == Request.ApprovalStatus.Pending) 
+                            if (personChangeRequest.approvalStatus == Request.ApprovalStatus.Approved) 
                             {
                                 this.password = personChangeRequest.updatedPassword;
                                 this.title = (Title)personChangeRequest.updatedTitle;

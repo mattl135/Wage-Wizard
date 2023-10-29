@@ -93,8 +93,6 @@ namespace Wage_Wizard.Views
             {
                 foreach (DataGridViewRow r in leaveRequestsDGV.SelectedRows)
                 {
-                    //UpdatePaymentRequest
-                    List<int> leaveRequests = Utilities.Utilities.getLeaveRequestsIDs();
                     LeaveRequest leaveRequest = Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[0].Value));
 
                     //Checks if the approval status is pending to prevent users from editing already actioned requests
@@ -145,8 +143,6 @@ namespace Wage_Wizard.Views
             {
                 foreach (DataGridViewRow r in leaveRequestsDGV.SelectedRows)
                 {
-                    //UpdateLeaveRequest
-                    List<int> leaveRequests = Utilities.Utilities.getLeaveRequestsIDs();
                     LeaveRequest leaveRequest = Utilities.Utilities.getLeaveRequestWithID(Convert.ToInt32(r.Cells[0].Value));
 
                     //Checks if the approval status is pending to prevent users from editing already actioned requests

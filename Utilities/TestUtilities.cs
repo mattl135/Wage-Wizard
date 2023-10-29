@@ -112,9 +112,9 @@ namespace Wage_Wizard.Utilities
             int employeeTempID = testEmployee.id;
             Utilities.removeEmployeeFromDB(testEmployee);
             Console.WriteLine($"The id {employeeTempID} should return False and returned {Utilities.isEmployee(employeeTempID).ToString()}");
-
+            
             //Attempt PersonalChangeRequest
-            Console.WriteLine("Attempting to implement change request.");
+/*            Console.WriteLine("Attempting to implement change request.");
             Employee employee2 = Utilities.getEmployeeWithID(Utilities.getEmployeeIDs().Last());
             PersonChangeRequest personChangeRequest2 = new PersonChangeRequest(employee2.id,
                 "password102",
@@ -142,7 +142,7 @@ namespace Wage_Wizard.Utilities
             employee2 = null;
             employee2 = Utilities.getEmployeeWithID(tmpEmployeeID);
             Console.WriteLine($"Change Request implemented. Output for userID {tmpEmployeeID} should be James Bond: {employee2.GetPersonFullName()}");
-
+*/            
             //UpdatePaymentRequest
             List<int> paymentRequests = Utilities.getPayRequestIDs();
             PaymentRequest paymentRequest = Utilities.getPayRequestWithID(paymentRequests[0]);

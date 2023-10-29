@@ -50,7 +50,8 @@ namespace Wage_Wizard.Views
 
         private void PICApprovalBTN_Click(object sender, EventArgs e)
         {
-
+            AdminPICRequest adminPICRequest = new AdminPICRequest();
+            adminPICRequest.Show();
         }
 
         private void PICHistoryBTN_Click(object sender, EventArgs e)
