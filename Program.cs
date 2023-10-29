@@ -7,7 +7,7 @@ namespace Wage_Wizard
    
     public static class Program
     {
-        public static bool showConsole = false;
+        public static bool showConsole = true;
         //======Gather Resources to Display the Console======//
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -25,17 +25,20 @@ namespace Wage_Wizard
             if (showConsole){ AllocConsole();}
             try
             {
-                if (Utilities.Utilities.CanConnectToCloudDB())
+                if (WageWizardContext.useProductionDB)
                 {
-                    WageWizardContext.useProductionDB = true;
-                }
-                else
-                {
-                    Console.WriteLine("Unable to connect to cloud database");
-                    MessageBox.Show("An error occured when attempting to connect to cloud storage.\nApplication will attempt to use localDB.", "Connection Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Stop);
-                    WageWizardContext.useProductionDB = false;
+                    if (Utilities.Utilities.CanConnectToDB())
+                    {
+                        WageWizardContext.useProductionDB = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unable to connect to cloud database");
+                        MessageBox.Show("An error occured when attempting to connect to cloud storage.\nApplication will attempt to use localDB.", "Connection Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop);
+                        WageWizardContext.useProductionDB = false;
+                    }
                 }
 
                 //Create the Database context

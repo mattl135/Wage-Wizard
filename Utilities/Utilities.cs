@@ -16,12 +16,12 @@ namespace Wage_Wizard.Utilities
 
         /********************Universal************************/
 
-        public static bool CanConnectToCloudDB()
+        public static bool CanConnectToDB()
         {
             try
             {
                 using WageWizardContext context = new WageWizardContext();
-                Console.WriteLine("Cloud Connection: " + context.Database.CanConnect().ToString());
+                Console.WriteLine("Successful Connection to Database: " + context.Database.CanConnect().ToString());
                 return context.Database.CanConnect();
             }
             catch (Exception)

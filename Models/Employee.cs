@@ -19,7 +19,10 @@ namespace Wage_Wizard.Models
         [Column(TypeName = "decimal(18, 2)")]
         public double hourlyRate {  get; set; }
         public int taxFileNumber { get; set;}
-        public string paymentCurrencyCode {  get; set; }
+        public string paymentCurrencyCode { get; set; }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public double accumulatedLeave { get; set; }
 
         // Navigation Property
         public ICollection<Request> requests { get; set; }
@@ -66,6 +69,7 @@ namespace Wage_Wizard.Models
             this.hourlyRate = hourlyRate;
             this.taxFileNumber = taxFileNumber;
             this.paymentCurrencyCode = paymentCurrencyCode;
+            this.accumulatedLeave = 0;
         }
 
         public void updatePersonalInformationFromPersonChangeRequest(int personChangeRequestID)
