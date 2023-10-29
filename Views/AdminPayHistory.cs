@@ -59,10 +59,22 @@ namespace Wage_Wizard.Views
             payHistoryDGV.Columns["approvalStatus"].HeaderText = "Approval Status";
 
             //Add Calculated Column called Total Pay
-            DataGridViewColumn calculatedColumn = new DataGridViewTextBoxColumn();
-            calculatedColumn.Name = "TotalPay";
-            calculatedColumn.HeaderText = "Total Pay";
-            payHistoryDGV.Columns.Add(calculatedColumn);
+            DataGridViewColumn totalPayColumn = new DataGridViewTextBoxColumn();
+            totalPayColumn.Name = "TotalPay";
+            totalPayColumn.HeaderText = "Total Pay";
+            payHistoryDGV.Columns.Add(totalPayColumn);
+
+            //Add Calculated Column called Tax Paid
+            DataGridViewColumn taxPaidColumn = new DataGridViewTextBoxColumn();
+            taxPaidColumn.Name = "TaxPaid";
+            taxPaidColumn.HeaderText = "Tax Paid";
+            payHistoryDGV.Columns.Add(taxPaidColumn);
+
+            //Add Calculated Column called Super Paid
+            DataGridViewColumn superPaidColumn = new DataGridViewTextBoxColumn();
+            superPaidColumn.Name = "SuperPaid";
+            superPaidColumn.HeaderText = "Super Paid";
+            payHistoryDGV.Columns.Add(superPaidColumn);
 
             //Change Approve Column to be the last
             int lastIndex = payHistoryDGV.Columns.Count - 1;
@@ -94,20 +106,30 @@ namespace Wage_Wizard.Views
 
         private void payHistoryDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            
+            //Calculate the TotalPay, TaxPaid and SuperPaid columns
+            //This must be grouped together, as TaxPaid and SuperPaid rely on TotalPay calculation
             if (payHistoryDGV.Columns[e.ColumnIndex].Name == "TotalPay")
             {
-                // Get the values of 'hours' and 'hourlyRate' from the current row
+                // Get values from the current row, or from global
                 double hours = Convert.ToDouble(payHistoryDGV.Rows[e.RowIndex].Cells["hours"].Value);
                 double hourlyRate = Convert.ToDouble(payHistoryDGV.Rows[e.RowIndex].Cells["hourlyRate"].Value);
+                double taxRate = Utilities.Utilities.getGlobalTaxRate();
+                double superRate = Utilities.Utilities.getGlobalSuperAnnuationRate();
 
                 // Perform the calculation
                 double totalPay = hours * hourlyRate;
+                double taxPaid = totalPay * taxRate;
+                double superPaid = totalPay * superRate;
 
                 // Assign the calculated value to the cell
                 e.Value = String.Format("{0:C2}", totalPay);
                 e.FormattingApplied = true;
+
+                payHistoryDGV.Rows[e.RowIndex].Cells["TaxPaid"].Value = String.Format("{0:C2}", taxPaid);
+                payHistoryDGV.Rows[e.RowIndex].Cells["SuperPaid"].Value = String.Format("{0:C2}", superPaid);
+
             }
         }
     }
 }
-
