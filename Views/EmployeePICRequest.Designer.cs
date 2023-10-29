@@ -82,11 +82,11 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(211, 63);
+            Subheader.Location = new Point(262, 63);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(462, 37);
+            Subheader.Size = new Size(361, 37);
             Subheader.TabIndex = 15;
-            Subheader.Text = "Personal Information Change Request";
+            Subheader.Text = "Personal Information Change";
             // 
             // Header
             // 
@@ -523,7 +523,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "EmployeePICRequest";
-            Text = "EmployeePICRequest";
+            Text = "Employee Personal Information Change";
             personalInformationGroupBox.ResumeLayout(false);
             personalInformationGroupBox.PerformLayout();
             contactInformationGroupBox.ResumeLayout(false);

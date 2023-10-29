@@ -20,10 +20,11 @@ namespace Wage_Wizard.Views
         {
             InitializeComponent();
             // Store the passed value for later use
-            if (Utilities.Utilities.isEmployee(employeeID) )
+            if (Utilities.Utilities.isEmployee(employeeID))
             {
                 this.employeeID = employeeID;
-            } else
+            }
+            else
             {
                 Console.WriteLine($"The employee ID {employeeID} was not a valid employee.");
                 MessageBox.Show($"An error occured when attempting to retrieve and populate the employee fields.", "An Error Occured",
@@ -31,7 +32,7 @@ namespace Wage_Wizard.Views
                             MessageBoxIcon.Stop);
                 this.Close();
             }
-            
+
 
             // Bind TextBoxes that should only accept numbers
             mobileTextField.KeyPress += new KeyPressEventHandler(this.validateNumbersOnly_KeyPress);
@@ -201,7 +202,8 @@ namespace Wage_Wizard.Views
                     MessageBox.Show($"An error occured when attempting to retrieve and populate the employee fields.\n{ex.Message}", "An Error Occured",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Stop);
-                } finally
+                }
+                finally
                 {
                     this.Close();
                 }
