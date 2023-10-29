@@ -45,9 +45,9 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(257, 7);
+            Header.Location = new Point(294, 9);
             Header.Name = "Header";
-            Header.Size = new Size(257, 54);
+            Header.Size = new Size(321, 67);
             Header.TabIndex = 12;
             Header.Text = "Wage Wizard";
             // 
@@ -55,18 +55,17 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(293, 65);
+            Subheader.Location = new Point(335, 87);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(186, 37);
+            Subheader.Size = new Size(234, 46);
             Subheader.TabIndex = 13;
             Subheader.Text = "Request Leave";
             // 
             // RequestLeaveBtn
             // 
-            RequestLeaveBtn.Location = new Point(516, 457);
-            RequestLeaveBtn.Margin = new Padding(3, 2, 3, 2);
+            RequestLeaveBtn.Location = new Point(589, 624);
             RequestLeaveBtn.Name = "RequestLeaveBtn";
-            RequestLeaveBtn.Size = new Size(119, 53);
+            RequestLeaveBtn.Size = new Size(136, 71);
             RequestLeaveBtn.TabIndex = 37;
             RequestLeaveBtn.Text = "Request Leave";
             RequestLeaveBtn.UseMnemonic = false;
@@ -75,10 +74,9 @@
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(662, 457);
-            ExitBtn.Margin = new Padding(3, 2, 3, 2);
+            ExitBtn.Location = new Point(775, 624);
             ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(82, 53);
+            ExitBtn.Size = new Size(94, 71);
             ExitBtn.TabIndex = 38;
             ExitBtn.Text = "Exit";
             ExitBtn.UseMnemonic = false;
@@ -90,11 +88,10 @@
             LeaveHours.DecimalPlaces = 2;
             LeaveHours.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             LeaveHours.Increment = new decimal(new int[] { 5, 0, 0, 131072 });
-            LeaveHours.Location = new Point(304, 219);
-            LeaveHours.Margin = new Padding(3, 2, 3, 2);
+            LeaveHours.Location = new Point(379, 297);
             LeaveHours.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             LeaveHours.Name = "LeaveHours";
-            LeaveHours.Size = new Size(94, 32);
+            LeaveHours.Size = new Size(107, 39);
             LeaveHours.TabIndex = 41;
             LeaveHours.Value = new decimal(new int[] { 1, 0, 0, 0 });
             LeaveHours.ValueChanged += LeaveHours_ValueChanged;
@@ -103,9 +100,9 @@
             // 
             HoursLabel.AutoSize = true;
             HoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            HoursLabel.Location = new Point(41, 223);
+            HoursLabel.Location = new Point(47, 297);
             HoursLabel.Name = "HoursLabel";
-            HoursLabel.Size = new Size(241, 25);
+            HoursLabel.Size = new Size(308, 32);
             HoursLabel.TabIndex = 40;
             HoursLabel.Text = "Hours to Request for Leave:";
             // 
@@ -113,9 +110,9 @@
             // 
             LeaveDesLabel.AutoSize = true;
             LeaveDesLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            LeaveDesLabel.Location = new Point(41, 282);
+            LeaveDesLabel.Location = new Point(47, 376);
             LeaveDesLabel.Name = "LeaveDesLabel";
-            LeaveDesLabel.Size = new Size(165, 25);
+            LeaveDesLabel.Size = new Size(208, 32);
             LeaveDesLabel.TabIndex = 42;
             LeaveDesLabel.Text = "Leave Description:";
             // 
@@ -123,20 +120,19 @@
             // 
             LeaveDesTextBox.AcceptsReturn = true;
             LeaveDesTextBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            LeaveDesTextBox.Location = new Point(41, 309);
-            LeaveDesTextBox.Margin = new Padding(3, 2, 3, 2);
+            LeaveDesTextBox.Location = new Point(47, 412);
             LeaveDesTextBox.Multiline = true;
             LeaveDesTextBox.Name = "LeaveDesTextBox";
-            LeaveDesTextBox.Size = new Size(659, 107);
+            LeaveDesTextBox.Size = new Size(753, 141);
             LeaveDesTextBox.TabIndex = 43;
             // 
             // AvailHoursLabel
             // 
             AvailHoursLabel.AutoSize = true;
             AvailHoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            AvailHoursLabel.Location = new Point(41, 168);
+            AvailHoursLabel.Location = new Point(47, 239);
             AvailHoursLabel.Name = "AvailHoursLabel";
-            AvailHoursLabel.Size = new Size(148, 25);
+            AvailHoursLabel.Size = new Size(185, 32);
             AvailHoursLabel.TabIndex = 44;
             AvailHoursLabel.Text = "Available Hours:";
             // 
@@ -144,17 +140,17 @@
             // 
             AvailHoursDisplay.AutoSize = true;
             AvailHoursDisplay.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            AvailHoursDisplay.Location = new Point(304, 168);
+            AvailHoursDisplay.Location = new Point(265, 239);
             AvailHoursDisplay.Name = "AvailHoursDisplay";
-            AvailHoursDisplay.Size = new Size(22, 25);
+            AvailHoursDisplay.Size = new Size(27, 32);
             AvailHoursDisplay.TabIndex = 45;
             AvailHoursDisplay.Text = "0";
             // 
             // EmployeeRequestLeave
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 530);
+            ClientSize = new Size(881, 707);
             Controls.Add(AvailHoursDisplay);
             Controls.Add(AvailHoursLabel);
             Controls.Add(LeaveDesTextBox);
@@ -166,7 +162,6 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeRequestLeave";
             Text = "Request Leave";
             ((System.ComponentModel.ISupportInitialize)LeaveHours).EndInit();

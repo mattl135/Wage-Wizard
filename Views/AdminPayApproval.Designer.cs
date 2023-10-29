@@ -36,6 +36,8 @@
             paymentRequestBindingSource1 = new BindingSource(components);
             paymentRequestBindingSource = new BindingSource(components);
             Subtitle = new Label();
+            Subheader = new Label();
+            Header = new Label();
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).BeginInit();
@@ -54,7 +56,7 @@
             // 
             // denyBtn
             // 
-            denyBtn.Location = new Point(156, 579);
+            denyBtn.Location = new Point(158, 579);
             denyBtn.Margin = new Padding(3, 4, 3, 4);
             denyBtn.Name = "denyBtn";
             denyBtn.Size = new Size(98, 81);
@@ -65,7 +67,7 @@
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(24, 579);
+            approveBtn.Location = new Point(12, 579);
             approveBtn.Margin = new Padding(3, 4, 3, 4);
             approveBtn.Name = "approveBtn";
             approveBtn.Size = new Size(98, 81);
@@ -78,14 +80,14 @@
             // 
             payRequestsDGV.AllowUserToDeleteRows = false;
             payRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payRequestsDGV.Location = new Point(24, 67);
+            payRequestsDGV.Location = new Point(12, 151);
             payRequestsDGV.Margin = new Padding(3, 4, 3, 4);
             payRequestsDGV.MultiSelect = false;
             payRequestsDGV.Name = "payRequestsDGV";
             payRequestsDGV.RowHeadersWidth = 51;
             payRequestsDGV.RowTemplate.Height = 25;
             payRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            payRequestsDGV.Size = new Size(986, 489);
+            payRequestsDGV.Size = new Size(998, 405);
             payRequestsDGV.TabIndex = 7;
             payRequestsDGV.CellClick += payRequestsDGV_CellClick;
             // 
@@ -101,17 +103,38 @@
             // 
             Subtitle.AutoSize = true;
             Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(292, 9);
+            Subtitle.Location = new Point(291, 53);
             Subtitle.Name = "Subtitle";
-            Subtitle.Size = new Size(423, 46);
+            Subtitle.Size = new Size(0, 46);
             Subtitle.TabIndex = 12;
-            Subtitle.Text = "Pending Payment Requests";
+            // 
+            // Subheader
+            // 
+            Subheader.AutoSize = true;
+            Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subheader.Location = new Point(362, 82);
+            Subheader.Name = "Subheader";
+            Subheader.Size = new Size(293, 46);
+            Subheader.TabIndex = 19;
+            Subheader.Text = "Payment Approval";
+            // 
+            // Header
+            // 
+            Header.AutoSize = true;
+            Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            Header.Location = new Point(349, 9);
+            Header.Name = "Header";
+            Header.Size = new Size(321, 67);
+            Header.TabIndex = 18;
+            Header.Text = "Wage Wizard";
             // 
             // AdminPayApproval
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1022, 667);
+            Controls.Add(Subheader);
+            Controls.Add(Header);
             Controls.Add(Subtitle);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
@@ -121,7 +144,7 @@
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "AdminPayApproval";
-            Text = "AdminPayApproval";
+            Text = "Pay Approval";
             ((System.ComponentModel.ISupportInitialize)payRequestsDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)paymentRequestBindingSource).EndInit();
@@ -142,5 +165,7 @@
         private DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
+        private Label Subheader;
+        private Label Header;
     }
 }

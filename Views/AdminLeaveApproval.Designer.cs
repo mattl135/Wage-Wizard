@@ -34,15 +34,18 @@
             approveBtn = new Button();
             leaveRequestsDGV = new DataGridView();
             leaveRequestBindingSource = new BindingSource(components);
+            Subheader = new Label();
+            Header = new Label();
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).BeginInit();
             SuspendLayout();
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(756, 421);
+            exitBtn.Location = new Point(911, 561);
+            exitBtn.Margin = new Padding(3, 4, 3, 4);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(86, 61);
+            exitBtn.Size = new Size(98, 81);
             exitBtn.TabIndex = 10;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -50,9 +53,10 @@
             // 
             // denyBtn
             // 
-            denyBtn.Location = new Point(150, 421);
+            denyBtn.Location = new Point(171, 561);
+            denyBtn.Margin = new Padding(3, 4, 3, 4);
             denyBtn.Name = "denyBtn";
-            denyBtn.Size = new Size(86, 61);
+            denyBtn.Size = new Size(98, 81);
             denyBtn.TabIndex = 9;
             denyBtn.Text = "Reject";
             denyBtn.UseVisualStyleBackColor = true;
@@ -60,9 +64,10 @@
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(30, 421);
+            approveBtn.Location = new Point(34, 561);
+            approveBtn.Margin = new Padding(3, 4, 3, 4);
             approveBtn.Name = "approveBtn";
-            approveBtn.Size = new Size(86, 61);
+            approveBtn.Size = new Size(98, 81);
             approveBtn.TabIndex = 8;
             approveBtn.Text = "Approve";
             approveBtn.UseVisualStyleBackColor = true;
@@ -71,33 +76,60 @@
             // leaveRequestsDGV
             // 
             leaveRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            leaveRequestsDGV.Location = new Point(12, 12);
+            leaveRequestsDGV.Location = new Point(14, 146);
+            leaveRequestsDGV.Margin = new Padding(3, 4, 3, 4);
+            leaveRequestsDGV.MultiSelect = false;
             leaveRequestsDGV.Name = "leaveRequestsDGV";
+            leaveRequestsDGV.RowHeadersWidth = 51;
             leaveRequestsDGV.RowTemplate.Height = 25;
             leaveRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            leaveRequestsDGV.Size = new Size(871, 378);
+            leaveRequestsDGV.Size = new Size(995, 391);
             leaveRequestsDGV.TabIndex = 7;
             // 
             // leaveRequestBindingSource
             // 
             leaveRequestBindingSource.DataSource = typeof(Models.LeaveRequest);
             // 
+            // Subheader
+            // 
+            Subheader.AutoSize = true;
+            Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Subheader.Location = new Point(378, 76);
+            Subheader.Name = "Subheader";
+            Subheader.Size = new Size(249, 46);
+            Subheader.TabIndex = 17;
+            Subheader.Text = "Leave Approval";
+            // 
+            // Header
+            // 
+            Header.AutoSize = true;
+            Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            Header.Location = new Point(339, 9);
+            Header.Name = "Header";
+            Header.Size = new Size(321, 67);
+            Header.TabIndex = 16;
+            Header.Text = "Wage Wizard";
+            // 
             // AdminLeaveApproval
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(894, 500);
+            ClientSize = new Size(1022, 667);
+            Controls.Add(Subheader);
+            Controls.Add(Header);
             Controls.Add(exitBtn);
             Controls.Add(denyBtn);
             Controls.Add(approveBtn);
             Controls.Add(leaveRequestsDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "AdminLeaveApproval";
-            Text = "AdminLeaveApproval";
+            Text = "Leave Approval";
             ((System.ComponentModel.ISupportInitialize)leaveRequestsDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)leaveRequestBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -112,5 +144,7 @@
         private DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn leaveDescriptionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn approvalStatusDataGridViewTextBoxColumn;
+        private Label Subheader;
+        private Label Header;
     }
 }

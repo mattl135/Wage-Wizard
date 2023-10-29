@@ -39,7 +39,7 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(282, 9);
+            Header.Location = new Point(346, 9);
             Header.Name = "Header";
             Header.Size = new Size(321, 67);
             Header.TabIndex = 13;
@@ -49,7 +49,7 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(307, 85);
+            Subheader.Location = new Point(376, 85);
             Subheader.Name = "Subheader";
             Subheader.Size = new Size(267, 46);
             Subheader.TabIndex = 14;
@@ -57,7 +57,7 @@
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(775, 624);
+            ExitBtn.Location = new Point(916, 584);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(94, 71);
             ExitBtn.TabIndex = 39;
@@ -74,14 +74,14 @@
             payHistoryDGV.Name = "payHistoryDGV";
             payHistoryDGV.RowHeadersWidth = 51;
             payHistoryDGV.RowTemplate.Height = 25;
-            payHistoryDGV.Size = new Size(857, 456);
+            payHistoryDGV.Size = new Size(998, 416);
             payHistoryDGV.TabIndex = 40;
             // 
             // EmployeePayHistory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 707);
+            ClientSize = new Size(1022, 667);
             Controls.Add(payHistoryDGV);
             Controls.Add(ExitBtn);
             Controls.Add(Subheader);

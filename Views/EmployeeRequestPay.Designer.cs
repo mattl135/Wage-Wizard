@@ -82,7 +82,7 @@
             // 
             // ExitBtn
             // 
-            ExitBtn.Location = new Point(757, 609);
+            ExitBtn.Location = new Point(775, 624);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(94, 71);
             ExitBtn.TabIndex = 21;
@@ -97,9 +97,9 @@
             MonLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             MonLabel.Location = new Point(128, 240);
             MonLabel.Name = "MonLabel";
-            MonLabel.Size = new Size(102, 32);
+            MonLabel.Size = new Size(107, 32);
             MonLabel.TabIndex = 22;
-            MonLabel.Text = "Monday";
+            MonLabel.Text = "Monday:";
             // 
             // TueLabel
             // 
@@ -107,9 +107,9 @@
             TueLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             TueLabel.Location = new Point(128, 295);
             TueLabel.Name = "TueLabel";
-            TueLabel.Size = new Size(102, 32);
+            TueLabel.Size = new Size(107, 32);
             TueLabel.TabIndex = 23;
-            TueLabel.Text = "Tuesday";
+            TueLabel.Text = "Tuesday:";
             // 
             // WedLabel
             // 
@@ -117,9 +117,9 @@
             WedLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             WedLabel.Location = new Point(96, 349);
             WedLabel.Name = "WedLabel";
-            WedLabel.Size = new Size(137, 32);
+            WedLabel.Size = new Size(142, 32);
             WedLabel.TabIndex = 24;
-            WedLabel.Text = "Wednesday";
+            WedLabel.Text = "Wednesday:";
             // 
             // ThuLabel
             // 
@@ -127,9 +127,9 @@
             ThuLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             ThuLabel.Location = new Point(119, 404);
             ThuLabel.Name = "ThuLabel";
-            ThuLabel.Size = new Size(111, 32);
+            ThuLabel.Size = new Size(116, 32);
             ThuLabel.TabIndex = 25;
-            ThuLabel.Text = "Thursday";
+            ThuLabel.Text = "Thursday:";
             // 
             // FriLabel
             // 
@@ -137,9 +137,9 @@
             FriLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             FriLabel.Location = new Point(149, 459);
             FriLabel.Name = "FriLabel";
-            FriLabel.Size = new Size(78, 32);
+            FriLabel.Size = new Size(83, 32);
             FriLabel.TabIndex = 26;
-            FriLabel.Text = "Friday";
+            FriLabel.Text = "Friday;";
             // 
             // HoursLabel
             // 
@@ -157,9 +157,9 @@
             TotalHoursLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             TotalHoursLabel.Location = new Point(517, 240);
             TotalHoursLabel.Name = "TotalHoursLabel";
-            TotalHoursLabel.Size = new Size(135, 32);
+            TotalHoursLabel.Size = new Size(140, 32);
             TotalHoursLabel.TabIndex = 34;
-            TotalHoursLabel.Text = "Total Hours";
+            TotalHoursLabel.Text = "Total Hours:";
             // 
             // TotalHoursDisplay
             // 
@@ -174,7 +174,7 @@
             // 
             // RequestPayBtn
             // 
-            RequestPayBtn.Location = new Point(590, 609);
+            RequestPayBtn.Location = new Point(594, 624);
             RequestPayBtn.Name = "RequestPayBtn";
             RequestPayBtn.Size = new Size(136, 71);
             RequestPayBtn.TabIndex = 36;
@@ -249,9 +249,9 @@
             PayRateLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             PayRateLabel.Location = new Point(470, 295);
             PayRateLabel.Name = "PayRateLabel";
-            PayRateLabel.Size = new Size(182, 32);
+            PayRateLabel.Size = new Size(187, 32);
             PayRateLabel.TabIndex = 43;
-            PayRateLabel.Text = "Hourly Pay Rate";
+            PayRateLabel.Text = "Hourly Pay Rate:";
             // 
             // PayRateDisplay
             // 
@@ -269,9 +269,9 @@
             TotalPayLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             TotalPayLabel.Location = new Point(544, 349);
             TotalPayLabel.Name = "TotalPayLabel";
-            TotalPayLabel.Size = new Size(108, 32);
+            TotalPayLabel.Size = new Size(113, 32);
             TotalPayLabel.TabIndex = 45;
-            TotalPayLabel.Text = "Total Pay";
+            TotalPayLabel.Text = "Total Pay:";
             // 
             // TotalPayDisplay
             // 
@@ -289,9 +289,9 @@
             SuperLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             SuperLabel.Location = new Point(518, 404);
             SuperLabel.Name = "SuperLabel";
-            SuperLabel.Size = new Size(134, 32);
+            SuperLabel.Size = new Size(139, 32);
             SuperLabel.TabIndex = 47;
-            SuperLabel.Text = "Total Super";
+            SuperLabel.Text = "Total Super:";
             // 
             // TotalSuperDisplay
             // 
@@ -309,9 +309,9 @@
             TotalTaxLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             TotalTaxLabel.Location = new Point(547, 459);
             TotalTaxLabel.Name = "TotalTaxLabel";
-            TotalTaxLabel.Size = new Size(105, 32);
+            TotalTaxLabel.Size = new Size(110, 32);
             TotalTaxLabel.TabIndex = 49;
-            TotalTaxLabel.Text = "Total Tax";
+            TotalTaxLabel.Text = "Total Tax:";
             // 
             // TotalTaxDisplay
             // 
