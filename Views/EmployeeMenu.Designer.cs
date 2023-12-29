@@ -169,6 +169,7 @@ namespace Wage_Wizard.Views
             MaximizeBox = false;
             Name = "EmployeeMenu";
             Text = "Employee Menu";
+            FormClosing += formClosing;
             ResumeLayout(false);
             PerformLayout();
         }

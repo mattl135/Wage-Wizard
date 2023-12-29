@@ -192,6 +192,7 @@
             MaximizeBox = false;
             Name = "AdminMenu";
             Text = "Admin Menu";
+            FormClosing += formClosing;
             Load += AdminMenu_Load;
             ResumeLayout(false);
             PerformLayout();

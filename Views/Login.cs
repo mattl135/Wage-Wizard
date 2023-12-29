@@ -1,5 +1,6 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Wage_Wizard.Data;
 using Wage_Wizard.Models;
@@ -114,6 +115,7 @@ namespace Wage_Wizard
 
         private void exitApplication_Click(object sender, EventArgs e)
         {
+
             DialogResult dialogResult = MessageBox.Show(
                 "Are you sure you want to exit?",
                 "Exit Application",
@@ -123,11 +125,46 @@ namespace Wage_Wizard
 
             if (dialogResult == DialogResult.Yes)
             {
+                isProgramicClose = true;
                 Application.Exit();
             }
             else
             {
                 // User clicked 'No', do nothing
+            }
+        }
+
+        //Handles Application Closing
+        private bool isProgramicClose = false;
+        private bool isClosingHandled = false;
+        private void formClosing(Object sender, FormClosingEventArgs e)
+        {
+
+            if (isClosingHandled || isProgramicClose)
+            {
+                return; // Already handled, do nothing
+            }
+            else
+            {
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    DialogResult dialogResult = MessageBox.Show(
+                        "Are you sure you want to exit?",
+                        "Exit Application",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning,  // This sets the icon to a question mark
+                        MessageBoxDefaultButton.Button2);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        isProgramicClose = true;
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    else
+                    {
+                        e.Cancel = true; //Stop form from Closing
+                    }
+                }
             }
         }
     }

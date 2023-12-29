@@ -133,6 +133,7 @@
             Name = "Login";
             Padding = new Padding(25);
             Text = "Wage Wizard - Login";
+            FormClosing += formClosing;
             Click += LoginForm_Click;
             KeyDown += LoginForm_KeyDown;
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
