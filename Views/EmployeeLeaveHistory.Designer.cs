@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeLeaveHistory));
             Header = new Label();
             Subheader = new Label();
             leaveHistoryDGV = new DataGridView();
@@ -86,6 +87,7 @@
             Controls.Add(leaveHistoryDGV);
             Controls.Add(Subheader);
             Controls.Add(Header);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeLeaveHistory";
             Text = "View Leave History";

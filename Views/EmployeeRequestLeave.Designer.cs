@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeRequestLeave));
             Header = new Label();
             Subheader = new Label();
             RequestLeaveBtn = new Button();
@@ -166,6 +167,7 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeRequestLeave";
             Text = "Request Leave";

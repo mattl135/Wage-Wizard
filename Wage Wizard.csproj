@@ -8,7 +8,14 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>4d1d2d34-5db8-42ee-8d2e-6460e8f30789</UserSecretsId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>Wage_Wizard-1.png</PackageIcon>
+    <ApplicationIcon>Resources\Wage_Wizard-Icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Wage_Wizard-Icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
@@ -27,9 +34,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\NewEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Views\NewEmployee.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,8 +45,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Resources\Wage_Wizard-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 

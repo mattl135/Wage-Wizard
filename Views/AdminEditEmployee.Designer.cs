@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEditEmployee));
             dataGridViewEmployees = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             bsbDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -330,6 +331,7 @@
             Controls.Add(EditEmployeeBtn);
             Controls.Add(dataGridViewEmployees);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "AdminEditEmployee";

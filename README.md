@@ -24,7 +24,7 @@
 
 ## Instructions on how to modify the database schema
  1. Open the package manager console by Menu Bar > View > Other Windows > Package Manager Console.
- 2. Enter the command "Add-Migration <YourNewMigrationNam>" into the Package Manager Console.
+ 2. Enter the command "Add-Migration <YourNewMigrationName>" into the Package Manager Console.
  3. If successful, a migration file will be created. Review the file CAREFULLY to ensure that changes to be applied are accurate.
  4. If the migration file is blank, or is incorrect, it can be disregarded using the command "Remove-Migration".
  5. If the migration file is acceptible, it can be applied to the database using the command "update-database".
@@ -34,3 +34,12 @@
  2. Input a relevant message describing changes made.
  3. Click Commit.
  4. In the menu bar, under the menu option "Git", select "Sync" and wait for the operation to complete.
+
+ ## Application Logins
+ ### Administrator Account
+ ID: 100000
+ Password: password1
+
+ ### Employees Logins
+ ID: 100006
+ Password: password7

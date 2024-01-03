@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GlobalSettingsMenu));
             globalTaxRateNumericField = new NumericUpDown();
             GlobalLeaveRateDescriptionLabel = new Label();
             GlobalSuperRateDescriptionLabel = new Label();
@@ -226,6 +227,7 @@
             Controls.Add(exitBtn);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "GlobalSettingsMenu";
             Text = "Global Settings";

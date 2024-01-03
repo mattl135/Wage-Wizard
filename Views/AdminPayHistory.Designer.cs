@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPayHistory));
             payHistoryDGV = new DataGridView();
             paymentRequestBindingSource = new BindingSource(components);
             exitBtn = new Button();
@@ -41,12 +42,11 @@
             // payHistoryDGV
             // 
             payHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payHistoryDGV.Location = new Point(12, 141);
-            payHistoryDGV.Margin = new Padding(3, 4, 3, 4);
+            payHistoryDGV.Location = new Point(10, 106);
             payHistoryDGV.Name = "payHistoryDGV";
             payHistoryDGV.RowHeadersWidth = 51;
             payHistoryDGV.RowTemplate.Height = 25;
-            payHistoryDGV.Size = new Size(1021, 407);
+            payHistoryDGV.Size = new Size(893, 305);
             payHistoryDGV.TabIndex = 3;
             // 
             // paymentRequestBindingSource
@@ -55,10 +55,9 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(935, 573);
-            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Location = new Point(818, 430);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(98, 81);
+            exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 6;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -68,9 +67,9 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(442, 79);
+            Subheader.Location = new Point(387, 59);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(186, 46);
+            Subheader.Size = new Size(149, 37);
             Subheader.TabIndex = 19;
             Subheader.Text = "Pay History";
             // 
@@ -78,23 +77,23 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(369, 12);
+            Header.Location = new Point(323, 9);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 18;
             Header.Text = "Wage Wizard";
             // 
             // AdminPayHistory
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 667);
+            ClientSize = new Size(914, 500);
             Controls.Add(Subheader);
             Controls.Add(Header);
             Controls.Add(exitBtn);
             Controls.Add(payHistoryDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AdminPayHistory";

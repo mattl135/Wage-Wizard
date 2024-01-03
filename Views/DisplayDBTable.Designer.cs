@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayDBTable));
             Administrators = new Label();
             Employees = new Label();
             dataGridViewAdmins = new DataGridView();
@@ -368,6 +369,7 @@
             Controls.Add(Administrators);
             Cursor = Cursors.IBeam;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "DisplayDBTable";
             Text = "Display DB Table";

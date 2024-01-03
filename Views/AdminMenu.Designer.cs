@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMenu));
             Header = new Label();
             Subheader = new Label();
             WelcomeMsg = new Label();
@@ -189,6 +190,7 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "AdminMenu";
             Text = "Admin Menu";

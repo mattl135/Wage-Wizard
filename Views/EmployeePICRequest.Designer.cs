@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeePICRequest));
             Subheader = new Label();
             Header = new Label();
             personalInformationGroupBox = new GroupBox();
@@ -523,6 +524,7 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "EmployeePICRequest";
             Text = "Employee Personal Information Change";

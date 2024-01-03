@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPayApproval));
             exitBtn = new Button();
             denyBtn = new Button();
             approveBtn = new Button();
@@ -45,10 +46,9 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(912, 579);
-            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Location = new Point(798, 434);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(98, 81);
+            exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 10;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -56,10 +56,9 @@
             // 
             // denyBtn
             // 
-            denyBtn.Location = new Point(158, 579);
-            denyBtn.Margin = new Padding(3, 4, 3, 4);
+            denyBtn.Location = new Point(138, 434);
             denyBtn.Name = "denyBtn";
-            denyBtn.Size = new Size(98, 81);
+            denyBtn.Size = new Size(86, 61);
             denyBtn.TabIndex = 9;
             denyBtn.Text = "Reject";
             denyBtn.UseVisualStyleBackColor = true;
@@ -67,10 +66,9 @@
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(12, 579);
-            approveBtn.Margin = new Padding(3, 4, 3, 4);
+            approveBtn.Location = new Point(10, 434);
             approveBtn.Name = "approveBtn";
-            approveBtn.Size = new Size(98, 81);
+            approveBtn.Size = new Size(86, 61);
             approveBtn.TabIndex = 8;
             approveBtn.Text = "Approve";
             approveBtn.UseVisualStyleBackColor = true;
@@ -80,14 +78,13 @@
             // 
             payRequestsDGV.AllowUserToDeleteRows = false;
             payRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payRequestsDGV.Location = new Point(12, 151);
-            payRequestsDGV.Margin = new Padding(3, 4, 3, 4);
+            payRequestsDGV.Location = new Point(10, 113);
             payRequestsDGV.MultiSelect = false;
             payRequestsDGV.Name = "payRequestsDGV";
             payRequestsDGV.RowHeadersWidth = 51;
             payRequestsDGV.RowTemplate.Height = 25;
             payRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            payRequestsDGV.Size = new Size(998, 405);
+            payRequestsDGV.Size = new Size(873, 304);
             payRequestsDGV.TabIndex = 7;
             payRequestsDGV.CellClick += payRequestsDGV_CellClick;
             // 
@@ -103,18 +100,18 @@
             // 
             Subtitle.AutoSize = true;
             Subtitle.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subtitle.Location = new Point(291, 53);
+            Subtitle.Location = new Point(255, 40);
             Subtitle.Name = "Subtitle";
-            Subtitle.Size = new Size(0, 46);
+            Subtitle.Size = new Size(0, 37);
             Subtitle.TabIndex = 12;
             // 
             // Subheader
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(362, 82);
+            Subheader.Location = new Point(317, 62);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(293, 46);
+            Subheader.Size = new Size(234, 37);
             Subheader.TabIndex = 19;
             Subheader.Text = "Payment Approval";
             // 
@@ -122,17 +119,17 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(349, 9);
+            Header.Location = new Point(305, 7);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 18;
             Header.Text = "Wage Wizard";
             // 
             // AdminPayApproval
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 667);
+            ClientSize = new Size(894, 500);
             Controls.Add(Subheader);
             Controls.Add(Header);
             Controls.Add(Subtitle);
@@ -141,7 +138,7 @@
             Controls.Add(approveBtn);
             Controls.Add(payRequestsDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "AdminPayApproval";
             Text = "Pay Approval";

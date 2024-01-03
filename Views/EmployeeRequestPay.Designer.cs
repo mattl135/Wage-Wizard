@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeRequestPay));
             Subheader = new Label();
             Header = new Label();
             ExitBtn = new Button();
@@ -361,6 +362,7 @@
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "EmployeeRequestPay";
             Text = "Request Payment";

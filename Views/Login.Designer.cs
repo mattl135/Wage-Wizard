@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             userIDTextField = new TextBox();
             passwordTextField = new TextBox();
             loginBtn = new Button();
@@ -129,6 +130,7 @@
             Controls.Add(passwordTextField);
             Controls.Add(userIDTextField);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Login";
             Padding = new Padding(25);

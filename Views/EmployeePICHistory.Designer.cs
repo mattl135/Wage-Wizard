@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeePICHistory));
             PICHistoryDGV = new DataGridView();
             exitBtn = new Button();
             Subheader = new Label();
@@ -38,20 +39,18 @@
             // PICHistoryDGV
             // 
             PICHistoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PICHistoryDGV.Location = new Point(12, 166);
-            PICHistoryDGV.Margin = new Padding(3, 4, 3, 4);
+            PICHistoryDGV.Location = new Point(10, 124);
             PICHistoryDGV.Name = "PICHistoryDGV";
             PICHistoryDGV.RowHeadersWidth = 51;
             PICHistoryDGV.RowTemplate.Height = 25;
-            PICHistoryDGV.Size = new Size(1021, 381);
+            PICHistoryDGV.Size = new Size(893, 286);
             PICHistoryDGV.TabIndex = 4;
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(935, 573);
-            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Location = new Point(818, 430);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(98, 81);
+            exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 7;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -61,9 +60,9 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(170, 99);
+            Subheader.Location = new Point(149, 74);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(779, 46);
+            Subheader.Size = new Size(618, 37);
             Subheader.TabIndex = 16;
             Subheader.Text = "View Personal Information Change Request History";
             // 
@@ -71,23 +70,23 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(375, 18);
+            Header.Location = new Point(328, 14);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 15;
             Header.Text = "Wage Wizard";
             // 
             // EmployeePICHistory
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 667);
+            ClientSize = new Size(914, 500);
             Controls.Add(Subheader);
             Controls.Add(Header);
             Controls.Add(exitBtn);
             Controls.Add(PICHistoryDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "EmployeePICHistory";
             Text = "Employee Personal Information Change Request History";

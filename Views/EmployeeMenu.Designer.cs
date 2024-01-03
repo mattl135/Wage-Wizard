@@ -30,6 +30,7 @@ namespace Wage_Wizard.Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMenu));
             PICHistoryBTN = new Button();
             PICRequestBTN = new Button();
             leaveHistoryBTN = new Button();
@@ -166,6 +167,7 @@ namespace Wage_Wizard.Views
             Controls.Add(Subheader);
             Controls.Add(Header);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "EmployeeMenu";
             Text = "Employee Menu";

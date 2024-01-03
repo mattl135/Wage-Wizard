@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPICRequest));
             PICRequestsDGV = new DataGridView();
             approveBtn = new Button();
             rejectBtn = new Button();
@@ -40,22 +41,20 @@
             // PICRequestsDGV
             // 
             PICRequestsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PICRequestsDGV.Location = new Point(14, 158);
-            PICRequestsDGV.Margin = new Padding(3, 4, 3, 4);
+            PICRequestsDGV.Location = new Point(12, 118);
             PICRequestsDGV.MultiSelect = false;
             PICRequestsDGV.Name = "PICRequestsDGV";
             PICRequestsDGV.RowHeadersWidth = 51;
             PICRequestsDGV.RowTemplate.Height = 25;
             PICRequestsDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            PICRequestsDGV.Size = new Size(995, 390);
+            PICRequestsDGV.Size = new Size(871, 292);
             PICRequestsDGV.TabIndex = 8;
             // 
             // approveBtn
             // 
-            approveBtn.Location = new Point(14, 573);
-            approveBtn.Margin = new Padding(3, 4, 3, 4);
+            approveBtn.Location = new Point(12, 430);
             approveBtn.Name = "approveBtn";
-            approveBtn.Size = new Size(98, 81);
+            approveBtn.Size = new Size(86, 61);
             approveBtn.TabIndex = 9;
             approveBtn.Text = "Approve";
             approveBtn.UseVisualStyleBackColor = true;
@@ -63,10 +62,9 @@
             // 
             // rejectBtn
             // 
-            rejectBtn.Location = new Point(149, 573);
-            rejectBtn.Margin = new Padding(3, 4, 3, 4);
+            rejectBtn.Location = new Point(130, 430);
             rejectBtn.Name = "rejectBtn";
-            rejectBtn.Size = new Size(98, 81);
+            rejectBtn.Size = new Size(86, 61);
             rejectBtn.TabIndex = 10;
             rejectBtn.Text = "Reject";
             rejectBtn.UseVisualStyleBackColor = true;
@@ -74,10 +72,9 @@
             // 
             // exitBtn
             // 
-            exitBtn.Location = new Point(911, 573);
-            exitBtn.Margin = new Padding(3, 4, 3, 4);
+            exitBtn.Location = new Point(797, 430);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(98, 81);
+            exitBtn.Size = new Size(86, 61);
             exitBtn.TabIndex = 11;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = true;
@@ -87,9 +84,9 @@
             // 
             Header.AutoSize = true;
             Header.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Header.Location = new Point(347, 9);
+            Header.Location = new Point(304, 7);
             Header.Name = "Header";
-            Header.Size = new Size(321, 67);
+            Header.Size = new Size(257, 54);
             Header.TabIndex = 13;
             Header.Text = "Wage Wizard";
             // 
@@ -97,17 +94,17 @@
             // 
             Subheader.AutoSize = true;
             Subheader.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            Subheader.Location = new Point(243, 90);
+            Subheader.Location = new Point(213, 68);
             Subheader.Name = "Subheader";
-            Subheader.Size = new Size(583, 46);
+            Subheader.Size = new Size(462, 37);
             Subheader.TabIndex = 14;
             Subheader.Text = "Personal Information Change Request";
             // 
             // AdminPICRequest
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 667);
+            ClientSize = new Size(894, 500);
             Controls.Add(Subheader);
             Controls.Add(Header);
             Controls.Add(exitBtn);
@@ -115,7 +112,7 @@
             Controls.Add(approveBtn);
             Controls.Add(PICRequestsDGV);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "AdminPICRequest";
             Text = "Personal Information Change Request";
