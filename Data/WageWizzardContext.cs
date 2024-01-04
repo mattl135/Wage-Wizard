@@ -15,7 +15,7 @@ namespace Wage_Wizard.Data
     {
         //!!!! Caution !!!!//
         //Flag for using either the localDB or Live Azure Cloud MySQL Database.
-        public static bool useProductionDB { get; set; } = true; //Change me to toggle cloud DB
+        public static bool useProductionDB { get; set; } = false; //Change me to toggle cloud DB
         public DbSet<Person> Persons { get; set; } = null!;
         public DbSet<GlobalSettings> GlobalSettings { get; set; } = null!;
         public DbSet<Request> Requests { get; set; } = null!;
@@ -32,7 +32,9 @@ namespace Wage_Wizard.Data
             base.OnConfiguring(optionsBuilder);
             if (useProductionDB)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=tcp:wage-wizard.database.windows.net,1433;Initial Catalog=Wage-Wizard-DB;User Id=SuperAdmin@wage-wizard;Password=7As3GfsZ97hU");
+                //This has now been turned off cause it costs money. RIP cloud db.
+                //Please follow instructions on ReadMe.md to use local DB
+                optionsBuilder.UseSqlServer(@"Data Source=tcp:old-wage-wizard.database.windows.net,1433;Initial Catalog=Wage-Wizard-DB;User Id=SuperAdmin@wage-wizard;Password=7As3GfsZ97hU");
             }
             else
             {

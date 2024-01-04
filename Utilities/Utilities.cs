@@ -21,8 +21,9 @@ namespace Wage_Wizard.Utilities
             try
             {
                 using WageWizardContext context = new WageWizardContext();
-                Console.WriteLine("Successful Connection to Database: " + context.Database.CanConnect().ToString());
-                return context.Database.CanConnect();
+                bool canConnect = context.Database.CanConnect();
+                Console.WriteLine("Successful Connection to Database: " + canConnect.ToString());
+                return canConnect;
             }
             catch (Exception)
             {
