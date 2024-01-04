@@ -1,5 +1,6 @@
 # Wage-Wizard
- An application developed in DotNet 6.0 for the subject Applications Development in .Net (31927)
+ An application developed in DotNet 6.0 for the subject Applications Development in .Net (31927).
+ Please note that the CloudDB has been switched off, please follow section titled "Instructions on running the program with a local database". 
 
  ## Instructions for cloning the repository:
  1. Open Visual Studio to the "Get Started" screen.
@@ -16,7 +17,7 @@
  5. Wage Wizard should now be able to be executed with the Cloud Database. Note that if local database is required follow the steps below.
 
  ## Instructions on running the program with a local database
- 1. Change the variable "useProductionDB" in the path "Wage-Wizard\Data\WageWizzardContext.cs" to "False".
+ 1. Ensure that the variable "useProductionDB" in the path "Wage-Wizard\Data\WageWizzardContext.cs" is set to "False".
  2. Open the package manager console by Menu Bar > View > Other Windows > Package Manager Console.
  3. Enter the command "update-database" into the Package Manager Console.
  4. When the command has finished running, the program should be able to be run.
