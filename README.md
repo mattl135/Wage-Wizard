@@ -1,7 +1,7 @@
 # Wage-Wizard
  An application developed in DotNet 6.0 for the subject Applications Development in .Net (31927)
 
- ## Inatructions for cloning the repository:
+ ## Instructions for cloning the repository:
  1. Open Visual Studio to the "Get Started" screen.
  2. Click "Clone Repository"
  3. Click "GitHub" (Sign in if required).
